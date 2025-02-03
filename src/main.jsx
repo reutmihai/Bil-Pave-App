@@ -7,6 +7,7 @@ const theme = createTheme({
   palette: {
     primary: {
       main: "#E5C020",
+      yellowTransparent: "rgba(229, 192, 32, 0.8)",
     },
     secondary: {
       main: "#000000",
@@ -54,13 +55,13 @@ const theme = createTheme({
 
     MuiCssBaseline: {
       styleOverrides: {
-          a: {
-            color: "#000000",
-            textDecoration: "none",
-            "&:hover": {
-              color: "#aaa9a9",
-            },
+        a: {
+          color: "#000000",
+          textDecoration: "none",
+          "&:hover": {
+            color: "#aaa9a9",
           },
+        },
       },
     },
 
@@ -81,10 +82,10 @@ const theme = createTheme({
           flexDirection: "column",
           alignItems: "center",
           // justifyContent: "center",
-          backgroundColor: "#222", 
-          color: "#fff", 
-          width: "250px", 
-          padding: "20px", 
+          backgroundColor: "rgba(2,2,2,0.7)",
+          color: "#fff",
+          width: "250px",
+          padding: "20px",
         },
       },
     },

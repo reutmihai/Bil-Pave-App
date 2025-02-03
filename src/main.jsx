@@ -1,15 +1,15 @@
-import { createRoot } from 'react-dom/client';
+import { createRoot } from "react-dom/client";
 import "./index.css";
-import App from './App.jsx';
-import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+import App from "./App.jsx";
+import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#E5C020", 
+      main: "#E5C020",
     },
     secondary: {
-      main: "#000000", 
+      main: "#000000",
       white: "#FFFFFF",
     },
   },
@@ -32,10 +32,10 @@ const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          '&:hover': {
-            backgroundColor: 'transparent', 
+          "&:hover": {
+            backgroundColor: "transparent",
             color: "#aaa9a9",
-            transition: 'color 0.3s ease',
+            transition: "color 0.3s ease",
           },
         },
       },
@@ -43,36 +43,57 @@ const theme = createTheme({
     MuiLink: {
       styleOverrides: {
         root: {
-          color: '#FFFFFF', 
-          textDecoration: 'none', 
-          '&:hover': {
-            color: '#aaa9a9', 
+          color: "#FFFFFF",
+          textDecoration: "none",
+          "&:hover": {
+            color: "#aaa9a9",
           },
         },
       },
     },
-  },
 
-  components: {
     MuiCssBaseline: {
       styleOverrides: {
-        '*': {
-          'a': {
-            color: '#000000', 
-            textDecoration: 'none', 
-            '&:hover': {
-              color: '#aaa9a9', 
+          a: {
+            color: "#000000",
+            textDecoration: "none",
+            "&:hover": {
+              color: "#aaa9a9",
             },
           },
+      },
+    },
+
+    MuiIconButton: {
+      styleOverrides: {
+        root: {
+          "&:focus": {
+            outline: "none", // Elimină conturul la focus
+          },
+        },
+      },
+    },
+
+    MuiDrawer: {
+      styleOverrides: {
+        paper: {
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          // justifyContent: "center",
+          backgroundColor: "#222", 
+          color: "#fff", 
+          width: "250px", 
+          padding: "20px", 
         },
       },
     },
   },
 });
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <ThemeProvider theme={theme}>
-     <CssBaseline />
+    <CssBaseline />
     <App />
   </ThemeProvider>
-)
+);

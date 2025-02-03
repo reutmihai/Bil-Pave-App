@@ -8,7 +8,7 @@ import { About } from "./pages/About";
 
 function App() {
   return (
-    <Router basename="/Bil-Pave-App">
+    <Router basename="/Bil-Pave-App/">
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />

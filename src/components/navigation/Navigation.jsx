@@ -9,7 +9,7 @@ import {
   IconButton,
 } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
-// import EmailIcon from "../icons/EmailIcon.jsx";
+import EmailIcon from "../icons/EmailIcon.jsx";
 import PhoneIcon from "../icons/PhoneIcon.jsx";
 import MenuIcon from "@mui/icons-material/Menu";
 import logo from "../../assets/logo.png";
@@ -44,6 +44,7 @@ export const Navigation = () => {
           sx={{
             display: "flex",
             justifyContent: "space-around",
+            alignItems: "center",
           }}
         >
           <Box
@@ -54,13 +55,13 @@ export const Navigation = () => {
               justifyContent: "flex-star",
             }}
           >
-            <Typography
+            {/* <Typography
               variant="body1"
               sx={{ fontSize: "14px", fontWeight: 600, ml: 1 }}
             >
-              Contacts
-            </Typography>
-            {/* <Box
+              CONTACTS
+            </Typography> */}
+            <Box
               sx={{
                 display: "flex",
                 alignItems: "center",
@@ -76,8 +77,8 @@ export const Navigation = () => {
                   0747605936
                 </a>
               </Typography>
-            </Box> */}
-            {/* <Box
+            </Box>
+            <Box
             sx={{
               display: "flex",
               alignItems: "center",
@@ -87,23 +88,24 @@ export const Navigation = () => {
             <Typography variant="body1" sx={{ fontSize: "14px", ml: 1 }}>
               <a href="mailto:contact@firma.ro" target="_blank" rel="noopener norefferer">contact@firma.ro</a>
             </Typography>
-          </Box> */}
+          </Box>
           </Box>
 
           {/* Logo */}
           <Box display="flex" alignItems="center" gap={2}>
-          <Link to="/">
-            <Box
-              component="img"
-              src={logo}
-              alt="logo"
-              sx={{
-                height: { xs: "50px", sm: "130px" },
-                width: "auto",
-                transition: "all 0.3s ease",
-              }}
-            />
-          </Link>
+            <Link to="/">
+              <Box
+                component="img"
+                src={logo}
+                alt="logo"
+                sx={{
+                  height: { xs: "50px", sm: "70px", md: "130px" },
+                  width: "auto",
+                  transition: "all 0.3s ease",
+                  pt: { xs: "5px", sm: "0px" },
+                }}
+              />
+            </Link>
           </Box>
 
           {/* Mobile navigation */}

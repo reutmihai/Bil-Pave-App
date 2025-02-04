@@ -22,20 +22,28 @@ export const Navigation = () => {
     setDrawerOpen(open);
   };
 
+  const menuItems = [
+    { label: "Home", path: "/" },
+    { label: "Services", path: "/services" },
+    { label: "Portfolio", path: "/portfolio" },
+    { label: "About Us", path: "/about" },
+  ];
+
   return (
     <>
       <AppBar
-        position="fixed"
         sx={{
+          position: "fixed",
           backgroundColor: "primary.yellowTransparent",
-          padding: "5px 20px",
+          mt: "35px",
+          maxHeight: "60px",
+          zIndex: 1200,
         }}
       >
         <Toolbar
           sx={{
             display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
+            justifyContent: "space-around",
           }}
         >
           <Box
@@ -46,7 +54,13 @@ export const Navigation = () => {
               justifyContent: "flex-star",
             }}
           >
-            <Box
+            <Typography
+              variant="body1"
+              sx={{ fontSize: "14px", fontWeight: 600, ml: 1 }}
+            >
+              Contacts
+            </Typography>
+            {/* <Box
               sx={{
                 display: "flex",
                 alignItems: "center",
@@ -55,14 +69,14 @@ export const Navigation = () => {
               <PhoneIcon />
               <Typography variant="body1" sx={{ fontSize: "14px", ml: 1 }}>
                 <a
-                  href="https:///wa.me/+40785972259"
+                  href="https:///wa.me/+0747605936"
                   target="_blank"
                   rel="noopener norefferer"
                 >
-                  +40 712 345 678
+                  0747605936
                 </a>
               </Typography>
-            </Box>
+            </Box> */}
             {/* <Box
             sx={{
               display: "flex",
@@ -75,15 +89,22 @@ export const Navigation = () => {
             </Typography>
           </Box> */}
           </Box>
-            <Link to='/'>
-            <Box 
-            component="img"
-            src={logo}
-            alt="logo"
-            sx={{ 
-              height : {xs: "30px", sm: "60px"},
-            width: "auto" }}/>
-            </Link>
+
+          {/* Logo */}
+          <Box display="flex" alignItems="center" gap={2}>
+          <Link to="/">
+            <Box
+              component="img"
+              src={logo}
+              alt="logo"
+              sx={{
+                height: { xs: "50px", sm: "130px" },
+                width: "auto",
+                transition: "all 0.3s ease",
+              }}
+            />
+          </Link>
+          </Box>
 
           {/* Mobile navigation */}
           <IconButton
@@ -96,57 +117,41 @@ export const Navigation = () => {
             <MenuIcon />
           </IconButton>
 
-          <Box sx={{ display: { xs: "none", sm: "flex" }, gap: 3 }}>
-            <Button
-              sx={{
-                color: location.pathname === "/" ? "white" : "inherit",
-                fontWeight: location.pathname === "/" ? "bold" : "normal",
-              }}
-              component={Link}
-              to="/"
-            >
-              Home
-            </Button>
-            <Button
-              sx={{
-                color: location.pathname === "/services" ? "white" : "inherit",
-                fontWeight:
-                  location.pathname === "/services" ? "bold" : "normal",
-              }}
-              component={Link}
-              to="/services"
-            >
-              Services
-            </Button>
-            <Button
-              sx={{
-                color: location.pathname === "/portfolio" ? "white" : "inherit",
-                fontWeight:
-                  location.pathname === "/portfolio" ? "bold" : "normal",
-              }}
-              component={Link}
-              to="/portfolio"
-            >
-              Portfolio
-            </Button>
-            <Button
-              sx={{
-                color: location.pathname === "/about" ? "white" : "inherit",
-                fontWeight: location.pathname === "/about" ? "bold" : "normal",
-              }}
-              component={Link}
-              to="/about"
-            >
-              About Us
-            </Button>
+          <Box
+            sx={{
+              display: { xs: "none", sm: "flex" },
+              justifyContent: "center",
+              gap: 3,
+            }}
+          >
+            {menuItems.map((item) => (
+              <Button
+                key={item.label}
+                sx={{
+                  color: location.pathname === item.path ? "white" : "inherit",
+                  fontWeight:
+                    location.pathname === item.path ? "bold" : "normal",
+                }}
+                component={Link}
+                to={item.path}
+              >
+                {item.label}
+              </Button>
+            ))}
           </Box>
         </Toolbar>
       </AppBar>
 
       <Drawer
-        anchor="right"
+        anchor="left"
         open={drawerOpen}
         onClose={() => toggleDrawer(false)}
+        sx={{
+          position: "absolute",
+          top: 0,
+          right: 0,
+          bottom: 0,
+        }}
       >
         <Box
           sx={{
@@ -158,44 +163,18 @@ export const Navigation = () => {
           }}
         >
           {/* Meniu pentru mobil */}
-          <Button
-            sx={{ color: location.pathname === "/" ? "yellow" : "inherit" }}
-            component={Link}
-            to="/"
-            onClick={() => toggleDrawer(false)}
-          >
-            Home
-          </Button>
-          <Button
-            sx={{
-              color: location.pathname === "/services" ? "yellow" : "inherit",
-            }}
-            component={Link}
-            to="/services"
-            onClick={() => toggleDrawer(false)}
-          >
-            Services
-          </Button>
-          <Button
-            sx={{
-              color: location.pathname === "/portfolio" ? "yellow" : "inherit",
-            }}
-            component={Link}
-            to="/portfolio"
-            onClick={() => toggleDrawer(false)}
-          >
-            Portfolio
-          </Button>
-          <Button
-            sx={{
-              color: location.pathname === "/about" ? "yellow" : "inherit",
-            }}
-            component={Link}
-            to="/about"
-            onClick={() => toggleDrawer(false)}
-          >
-            About Us
-          </Button>
+          {menuItems.map((item) => (
+            <Button
+              key={item.label}
+              sx={{
+                color: location.pathname === item.path ? "white" : "inherit",
+              }}
+              component={Link}
+              to={item.path}
+            >
+              {item.label}
+            </Button>
+          ))}
         </Box>
       </Drawer>
     </>

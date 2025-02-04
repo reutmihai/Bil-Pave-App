@@ -1,5 +1,5 @@
 import { createRoot } from "react-dom/client";
-import "./index.css";
+// import "./index.css";
 import App from "./App.jsx";
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 
@@ -62,6 +62,13 @@ const theme = createTheme({
             color: "#aaa9a9",
           },
         },
+        body: {
+            margin: "0",
+            display: "flex",
+            placeItems: "center",
+            minWidth: "320px",
+            minHeight: '100vh',      
+        }
       },
     },
 
@@ -81,7 +88,6 @@ const theme = createTheme({
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          // justifyContent: "center",
           backgroundColor: "rgba(2,2,2,0.7)",
           color: "#fff",
           width: "250px",

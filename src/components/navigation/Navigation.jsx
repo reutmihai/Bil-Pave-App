@@ -35,7 +35,7 @@ export const Navigation = () => {
         sx={{
           position: "fixed",
           backgroundColor: "primary.yellowTransparent",
-          mt: "35px",
+          mt: {xs: "13px", sm:"20px", md:"35px"},
           maxHeight: "60px",
           zIndex: 1200,
         }}
@@ -43,7 +43,7 @@ export const Navigation = () => {
         <Toolbar
           sx={{
             display: "flex",
-            justifyContent: "space-around",
+            justifyContent: "space-between",
             alignItems: "center",
           }}
         >
@@ -68,7 +68,7 @@ export const Navigation = () => {
               }}
             >
               <PhoneIcon />
-              <Typography variant="body1" sx={{ fontSize: "14px", ml: 1 }}>
+              <Typography variant="body1" sx={{ display: {xs: "none", sm: "none", md: "inherit"} }}>
                 <a
                   href="https:///wa.me/+0747605936"
                   target="_blank"
@@ -85,7 +85,7 @@ export const Navigation = () => {
             }}
           >
             <EmailIcon sx={{ pt: 2 }} />
-            <Typography variant="body1" sx={{ fontSize: "14px", ml: 1 }}>
+            <Typography variant="body1" sx={{ display: {xs: "none", sm: "none", md: "inherit"} }}>
               <a href="mailto:contact@firma.ro" target="_blank" rel="noopener norefferer">contact@firma.ro</a>
             </Typography>
           </Box>
@@ -99,7 +99,7 @@ export const Navigation = () => {
                 src={logo}
                 alt="logo"
                 sx={{
-                  height: { xs: "50px", sm: "70px", md: "130px" },
+                  height: { xs: "90px", sm: "100px", md: "130px" },
                   width: "auto",
                   transition: "all 0.3s ease",
                   pt: { xs: "5px", sm: "0px" },
@@ -123,7 +123,7 @@ export const Navigation = () => {
             sx={{
               display: { xs: "none", sm: "flex" },
               justifyContent: "center",
-              gap: 3,
+              gap: {sm: "3px", md: 3},
             }}
           >
             {menuItems.map((item) => (
@@ -133,6 +133,7 @@ export const Navigation = () => {
                   color: location.pathname === item.path ? "white" : "inherit",
                   fontWeight:
                     location.pathname === item.path ? "bold" : "normal",
+                  fontSize: { xs: "10px", md: "14px"},
                 }}
                 component={Link}
                 to={item.path}

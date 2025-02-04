@@ -12,6 +12,7 @@ import { Link, useLocation } from "react-router-dom";
 // import EmailIcon from "../icons/EmailIcon.jsx";
 import PhoneIcon from "../icons/PhoneIcon.jsx";
 import MenuIcon from "@mui/icons-material/Menu";
+import logo from "../../assets/logo.png";
 
 export const Navigation = () => {
   const location = useLocation();
@@ -74,13 +75,15 @@ export const Navigation = () => {
             </Typography>
           </Box> */}
           </Box>
-
-          <Typography
-            variant="h6"
-            sx={{ flexGrow: 1, textAlign: "center", fontWeight: "bold" }}
-          >
-            Logo
-          </Typography>
+            <Link to='/'>
+            <Box 
+            component="img"
+            src={logo}
+            alt="logo"
+            sx={{ 
+              height : {xs: "30px", sm: "60px"},
+            width: "auto" }}/>
+            </Link>
 
           {/* Mobile navigation */}
           <IconButton

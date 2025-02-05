@@ -9,10 +9,10 @@ import {
   IconButton,
 } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
-import EmailIcon from "../icons/EmailIcon.jsx";
-import PhoneIcon from "../icons/PhoneIcon.jsx";
 import MenuIcon from "@mui/icons-material/Menu";
 import logo from "../../assets/logo.png";
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import EmailIcon from '@mui/icons-material/Email';
 
 export const Navigation = () => {
   const location = useLocation();
@@ -43,7 +43,7 @@ export const Navigation = () => {
         <Toolbar
           sx={{
             display: "flex",
-            justifyContent: "space-between",
+            justifyContent: "space-around",
             alignItems: "center",
           }}
         >
@@ -67,7 +67,7 @@ export const Navigation = () => {
                 alignItems: "center",
               }}
             >
-              <PhoneIcon />
+              <WhatsAppIcon sx={{mr: "10px"}}/>
               <Typography variant="body1" sx={{ display: {xs: "none", sm: "none", md: "inherit"} }}>
                 <a
                   href="https:///wa.me/+0747605936"
@@ -84,7 +84,7 @@ export const Navigation = () => {
               alignItems: "center",
             }}
           >
-            <EmailIcon sx={{ pt: 2 }} />
+            <EmailIcon sx={{mr: "10px"}}/>
             <Typography variant="body1" sx={{ display: {xs: "none", sm: "none", md: "inherit"} }}>
               <a href="mailto:contact@firma.ro" target="_blank" rel="noopener norefferer">contact@firma.ro</a>
             </Typography>

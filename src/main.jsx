@@ -1,26 +1,33 @@
 import { createRoot } from "react-dom/client";
+import "@fontsource/alfa-slab-one";
 // import "./index.css";
 import App from "./App.jsx";
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
+import backgroundImage from "./assets/images/bg.jpg";
 
 const theme = createTheme({
   palette: {
     primary: {
       main: "#E5C020",
       yellowTransparent: "rgba(229, 192, 32, 0.8)",
+      blackTransparent: "rgba(0, 0, 0, 0.3)",
     },
     secondary: {
       main: "#000000",
       white: "#FFFFFF",
     },
+    text: {
+      primary: "#FFFFFF",
+      secondary: "#000000"
+    }
   },
 
   typography: {
     p: {
       fontFamily: "Inter",
     },
-    h1: {
-      fontFamily: "Alfa Slab One",
+    h4: {
+      fontFamily: "Alfa Slab One, sans-serif",
       fontWeight: 600,
     },
     h2: {
@@ -34,7 +41,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           "&:hover": {
-            backgroundColor: "transparent",
+            // backgroundColor: "transparent",
             color: "#aaa9a9",
             transition: "color 0.3s ease",
           },
@@ -63,12 +70,18 @@ const theme = createTheme({
           },
         },
         body: {
-            margin: "0",
-            display: "flex",
-            placeItems: "center",
-            minWidth: "320px",
-            minHeight: '100vh',      
-        }
+          margin: "0",
+          display: "flex",
+          placeItems: "center",
+          minWidth: "320px",
+          minHeight: "100vh",
+          justifyContent: "center",
+          backgroundImage: `url(${backgroundImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          minHeight: "100vh",
+        },
       },
     },
 
@@ -76,7 +89,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           "&:focus": {
-            outline: "none", // Elimină conturul la focus
+            outline: "none",
           },
         },
       },

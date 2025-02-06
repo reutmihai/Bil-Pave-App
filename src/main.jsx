@@ -23,16 +23,27 @@ const theme = createTheme({
   },
 
   typography: {
-    p: {
-      fontFamily: "Inter",
-    },
-    h4: {
-      fontFamily: "Alfa Slab One, sans-serif",
-      fontWeight: 600,
+    h1: {
+      fontSize: "2.5rem", 
+      "@media (max-width:900px)": { fontSize: "2rem" }, 
+      "@media (max-width:600px)": { fontSize: "1.5rem" }, 
     },
     h2: {
-      fontFamily: "Roboto",
-      fontWeight: 400,
+      fontSize: "2rem",
+      "@media (max-width:900px)": { fontSize: "1.8rem" },
+      "@media (max-width:600px)": { fontSize: "1.3rem" },
+    },
+    h3: {
+      fontFamily: "Alfa Slab One, sans-serif",
+      fontWeight: 600,
+      fontSize: "1.2rem",
+      "@media (max-width:900px)": { fontSize: "1.2rem" },
+      "@media (max-width:600px)": { fontSize: "0.9rem" },
+    },
+    body1: {
+      fontSize: "1rem",
+      "@media (max-width:900px)": { fontSize: "0.9rem" },
+      "@media (max-width:600px)": { fontSize: "0.7rem" },
     },
   },
 
@@ -80,7 +91,6 @@ const theme = createTheme({
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          minHeight: "100vh",
         },
       },
     },

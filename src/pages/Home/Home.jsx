@@ -7,53 +7,56 @@ import pavajc from "../../assets/images/pave7.jpg";
 export const Home = () => {
   return (
     <Container
-      maxWidth="lg"
       sx={{
-        mt: { xs: 5, sm: "100px", md: "120px" },
-        px: { xs: 2, sm: 4, md: 6 },
+        maxWidth: { xs: "100%", sm: "lg" },
+        mt: { xs: 15, sm: "100px", md: "120px" },
+        px: { xs: 2, sm: "auto" },
         display: "flex",
-        flexDirection: { xs: "column-reverse", sm: "row" },
+        flexDirection: { xs: "column", sm: "row" },
         alignItems: "center",
-        justifyContent: "space-between",
-        gap: 10,
       }}
     >
       <Box
         sx={{
           mb: 4,
           border: "1px solid #000",
-          p: 5,
+          p: {xs: 2, sm: 5},
           bgcolor: "rgb(0, 0, 0, 0.7)",
+          maxWidth: {xs: "80%", sm: "50%"},
+          mr: { xs: 0, sm: 10 },
+          display: "flex",
+          flexDirection: "column",
+          gap: 2,
+          borderRadius: "10px",
         }}
       >
         <Typography
-          variant="h4"
-          sx={{ fontSize: { xs: "1.5rem", md: "2rem" } }}
+          variant="h3"
+          sx={{textAlign: {sx: "center"}}}
         >
           WELCOME TO <br />
           BILL-PAVE-SOLUTIONS!
         </Typography>
         <Typography
           variant="body1"
-          sx={{ fontSize: { xs: "1rem", md: "1.2rem" }, my: 2 }}
+          sx={{textAlign: {sx: "center"}}}
         >
-          “Viața e scurtă, dar amintirile trăiesc mai mult. O curte pavată
-          devine locul momentelor care contează.”
+          "Life is short, but memories last longer. A paved yard becomes the place of moments that matter."
         </Typography>
         <Box
           sx={{
             display: "flex",
-            justifyContent: "center",
+            // justifyContent: "center",
             gap: 1,
-            // width: "50%"
           }}
         >
+          <Box sx={{ display: "flex", flexDirection: {xs:"row", sm: "row"}, gap: 2, mt: 2 }}>
           <Button
             variant="contained"
             color="primary"
             sx={{
               width: { xs: "100%", sm: "auto" },
-              fontSize: { xs: "0.8rem", sm: "1rem" },
+              fontSize: { xs: "0.5rem", md: "0.8rem" },
               py: { xs: 1, sm: 1.5 },
             }}
           >
@@ -65,23 +68,24 @@ export const Home = () => {
               color: "white",
               borderColor: "white",
               width: { xs: "100%", sm: "auto" },
-              fontSize: { xs: "0.8rem", sm: "1rem" },
-              py: { xs: 1, sm: 1.5 },
+              fontSize: { xs: "0.5rem", md: "0.8rem" },
+              py: { xs: 0.5, sm: 1.5 },
             }}
             href="/portfolio"
           >
-            See our portfolio
+            See portfolio
           </Button>
+          </Box>
         </Box>
       </Box>
       <Box
         sx={{
-          maxMidth: "300px",
+          // maxWidth: "200px",
           display: "flex",
-          flexDirection: "column",
+          flexDirection: {xs: "column", md: "row"},
           gap: 3,
           justifyContent: "center",
-          m: { xs: 8, sm: 0 },
+          m: { xs: 4, sm: 0 },
         }}
       >
         {[pavaja, pavajb, pavajc].map((src, index) => (
@@ -93,8 +97,8 @@ export const Home = () => {
             sx={{
               border: "1px solid rgb(255, 255, 255)",
               borderRadius: "5px",
-              width: { xs: "100%", md: "300px" },
-              maxWidth: "300px",
+              width: { xs: "100%", md: "180px" },
+              maxWidth: "180px",
               boxShadow: "4px 4px 10px rgba(0,0,0,0.5)",
             }}
           />

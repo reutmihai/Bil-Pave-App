@@ -1,8 +1,11 @@
 import React from "react";
 import { Button, Typography, Box, Container } from "@mui/material";
-import pavaja from "../../assets/images/pave5.jpg";
-import pavajb from "../../assets/images/pave6.jpg";
-import pavajc from "../../assets/images/pave7.jpg";
+import pav1 from "../../assets/homepage/pav1.webp";
+import pav2 from "../../assets/homepage/pav2.webp";
+import pav3 from "../../assets/homepage/pav3.webp";
+import pav4 from "../../assets/homepage/pav4.webp";
+import pav5 from "../../assets/homepage/pav5.webp";
+import pav6 from "../../assets/homepage/pav6.webp";
 
 export const Home = () => {
   return (
@@ -10,7 +13,7 @@ export const Home = () => {
       sx={{
         maxWidth: { xs: "100%", sm: "lg" },
         mt: { xs: 15, sm: "100px", md: "120px" },
-        px: { xs: 2, sm: "auto" },
+        p: { xs: 2, sm: "auto" },
         display: "flex",
         flexDirection: { xs: "column", sm: "row" },
         alignItems: "center",
@@ -41,7 +44,7 @@ export const Home = () => {
           variant="body1"
           sx={{textAlign: {sx: "center"}}}
         >
-          "Life is short, but memories last longer. A paved yard becomes the place of moments that matter."
+          "Life is short, but memories last longer. A paved yard becomes the place for moments that matter."
         </Typography>
         <Box
           sx={{
@@ -82,13 +85,14 @@ export const Home = () => {
         sx={{
           // maxWidth: "200px",
           display: "flex",
-          flexDirection: {xs: "column", md: "row"},
+          flexDirection: {xs: "column", sm: "row"},
+          flexWrap: "wrap",
           gap: 3,
           justifyContent: "center",
           m: { xs: 4, sm: 0 },
         }}
       >
-        {[pavaja, pavajb, pavajc].map((src, index) => (
+        {[pav1, pav2, pav3, pav4, pav5, pav6].map((src, index) => (
           <Box
             key={index}
             component="img"
@@ -97,9 +101,15 @@ export const Home = () => {
             sx={{
               border: "1px solid rgb(255, 255, 255)",
               borderRadius: "5px",
-              width: { xs: "100%", md: "180px" },
+              width: { xs: "100%", sm: "40%", md: "180px" },
+              height: { xs: "auto", sm: "130px", md: "200px" },
               maxWidth: "180px",
+              maxHeight: "200px",
               boxShadow: "4px 4px 10px rgba(0,0,0,0.5)",
+              transition: "transform 0.3s ease-in-out", 
+              "&:hover": {
+                transform: "scale(1.1)", 
+              },
             }}
           />
         ))}

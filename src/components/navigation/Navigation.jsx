@@ -7,16 +7,23 @@ import {
   Drawer,
   Box,
   IconButton,
+  MenuItem,
+  Menu,
 } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import logo from "../../assets/logo.png";
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import EmailIcon from '@mui/icons-material/Email';
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import EmailIcon from "@mui/icons-material/Email";
+import PhoneIcon from "@mui/icons-material/Phone";
+import ContactsIcon from "@mui/icons-material/Contacts";
 
 export const Navigation = () => {
   const location = useLocation();
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const handleOpenMenu = (event) => setAnchorEl(event.currentTarget);
+  const handleCloseMenu = () => setAnchorEl(null);
 
   const toggleDrawer = (open) => {
     setDrawerOpen(open);
@@ -35,7 +42,7 @@ export const Navigation = () => {
         sx={{
           position: "fixed",
           backgroundColor: "primary.yellowTransparent",
-          mt: {xs: "13px", sm:"20px", md:"35px"},
+          mt: { xs: "13px", sm: "20px", md: "35px" },
           maxHeight: "60px",
           zIndex: 1200,
         }}
@@ -55,40 +62,71 @@ export const Navigation = () => {
               justifyContent: "flex-star",
             }}
           >
-            {/* <Typography
-              variant="body1"
-              sx={{ fontSize: "14px", fontWeight: 600, ml: 1 }}
-            >
-              CONTACTS
-            </Typography> */}
-            <Box
+            {/* Buton Contact */}
+            <IconButton onClick={handleOpenMenu} color="inherit" aria-label="Contact Menu">
+              <ContactsIcon />
+            </IconButton>
+
+            {/* Meniu Contact */}
+            <Menu
+              anchorEl={anchorEl}
+              open={Boolean(anchorEl)}
+              onClose={handleCloseMenu}
               sx={{
-                display: "flex",
-                alignItems: "center",
+                mt: 1,
+                "& .MuiPaper-root": {
+                  backgroundColor: "#333",
+                  color: "white", 
+                },
               }}
             >
-              <WhatsAppIcon sx={{mr: "10px"}}/>
-              <Typography variant="body1" sx={{ display: {xs: "none", sm: "none", md: "inherit"} }}>
-                <a
-                  href="https:///wa.me/+0747605936"
-                  target="_blank"
-                  rel="noopener norefferer"
-                >
-                  0747605936
-                </a>
-              </Typography>
-            </Box>
-            <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <EmailIcon sx={{mr: "10px"}}/>
-            <Typography variant="body1" sx={{ display: {xs: "none", sm: "none", md: "inherit"} }}>
-              <a href="mailto:contact@firma.ro" target="_blank" rel="noopener norefferer">contact@firma.ro</a>
-            </Typography>
-          </Box>
+              <MenuItem
+                onClick={handleCloseMenu}
+                sx={{ "&:hover": { backgroundColor: "#555" } }}
+              >
+                <EmailIcon sx={{ mr: 1, color: "white" }} />
+                <Typography variant="body1">
+                  <a
+                    href="mailto:sebastianbelibou@gmail.ro"
+                    style={{ textDecoration: "none", color: "white" }}
+                  >
+                    sebastianbelibou@gmail.ro
+                  </a>
+                </Typography>
+              </MenuItem>
+
+              <MenuItem
+                onClick={handleCloseMenu}
+                sx={{ "&:hover": { backgroundColor: "#555" } }}
+              >
+                <WhatsAppIcon sx={{ mr: 1, color: "white" }} />
+                <Typography variant="body1">
+                  <a
+                    href="https://wa.me/40747605936"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ textDecoration: "none", color: "white" }}
+                  >
+                    0747605936
+                  </a>
+                </Typography>
+              </MenuItem>
+
+              <MenuItem
+                onClick={handleCloseMenu}
+                sx={{ "&:hover": { backgroundColor: "#555" } }}
+              >
+                <PhoneIcon sx={{ mr: 1, color: "white" }} />
+                <Typography variant="body1">
+                  <a
+                    href="tel:+31687430616"
+                    style={{ textDecoration: "none", color: "white" }}
+                  >
+                    +31687430616
+                  </a>
+                </Typography>
+              </MenuItem>
+            </Menu>
           </Box>
 
           {/* Logo */}
@@ -123,7 +161,7 @@ export const Navigation = () => {
             sx={{
               display: { xs: "none", sm: "flex" },
               justifyContent: "center",
-              gap: {sm: "3px", md: 3},
+              gap: { sm: "3px", md: 3 },
             }}
           >
             {menuItems.map((item) => (
@@ -133,7 +171,7 @@ export const Navigation = () => {
                   color: location.pathname === item.path ? "white" : "inherit",
                   fontWeight:
                     location.pathname === item.path ? "bold" : "normal",
-                  fontSize: { xs: "10px", md: "14px"},
+                  fontSize: { xs: "10px", md: "14px" },
                 }}
                 component={Link}
                 to={item.path}

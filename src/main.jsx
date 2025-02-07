@@ -24,11 +24,15 @@ const theme = createTheme({
 
   typography: {
     h1: {
+      fontFamily: "Alfa Slab One, sans-serif",
+      fontWeight: 600,
       fontSize: "2.5rem", 
       "@media (max-width:900px)": { fontSize: "2rem" }, 
       "@media (max-width:600px)": { fontSize: "1.5rem" }, 
     },
     h2: {
+      fontFamily: "Alfa Slab One, sans-serif",
+      fontWeight: 600,
       fontSize: "2rem",
       "@media (max-width:900px)": { fontSize: "1.8rem" },
       "@media (max-width:600px)": { fontSize: "1.3rem" },
@@ -40,10 +44,17 @@ const theme = createTheme({
       "@media (max-width:900px)": { fontSize: "1.2rem" },
       "@media (max-width:600px)": { fontSize: "0.9rem" },
     },
+    h4: {
+      fontFamily: "Alfa Slab One, sans-serif",
+      fontWeight: 500,
+      fontSize: "1.5rem",
+      "@media (max-width:900px)": { fontSize: "1.3rem" },
+      "@media (max-width:600px)": { fontSize: "1rem" },
+    },
     body1: {
       fontSize: "1rem",
-      "@media (max-width:900px)": { fontSize: "0.9rem" },
-      "@media (max-width:600px)": { fontSize: "0.7rem" },
+      "@media (max-width:900px)": { fontSize: "1.3rem" },
+      "@media (max-width:600px)": { fontSize: "1rem" },
     },
   },
 

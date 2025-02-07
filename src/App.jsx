@@ -9,7 +9,7 @@ import { SharedLayout } from "./components/SharedLayout/SharedLayout";
 
 function App() {
   return (
-    <Router basename="/Bil-Pave-App/">
+    <Router basename="/">
       <Routes>
         <Route path="/" element={<SharedLayout />}>
         <Route path="/" element={<Home />} />

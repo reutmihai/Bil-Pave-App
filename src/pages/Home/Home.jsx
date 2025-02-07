@@ -13,7 +13,7 @@ export const Home = () => {
       sx={{
         maxWidth: { xs: "100%", sm: "lg" },
         mt: { xs: 15, sm: "100px", md: "120px" },
-        p: { xs: 2, sm: "auto" },
+        p: { xs: "auto", sm: 2 },
         display: "flex",
         flexDirection: { xs: "column", sm: "row" },
         alignItems: "center",
@@ -35,7 +35,7 @@ export const Home = () => {
       >
         <Typography
           variant="h3"
-          sx={{textAlign: {sx: "center"}}}
+          sx={{textAlign: {xs: "center"}}}
         >
           WELCOME TO <br />
           BILL-PAVE-SOLUTIONS!
@@ -49,11 +49,11 @@ export const Home = () => {
         <Box
           sx={{
             display: "flex",
-            // justifyContent: "center",
+            justifyContent: "center",
             gap: 1,
           }}
         >
-          <Box sx={{ display: "flex", flexDirection: {xs:"row", sm: "row"}, gap: 2, mt: 2 }}>
+          <Box sx={{ display: "flex",flexDirection: {xs:"row", sm: "row"}, gap: 2, mt: 2 }}>
           <Button
             variant="contained"
             color="primary"
@@ -97,11 +97,12 @@ export const Home = () => {
             key={index}
             component="img"
             src={src}
-            alt="paving"
+            alt={`Paving example ${index + 1}`}
             sx={{
+              display: index >= 3 ? { xs: "none", sm: "block" } : "block",
               border: "1px solid rgb(255, 255, 255)",
               borderRadius: "5px",
-              width: { xs: "100%", sm: "45%", md: "180px" },
+              width: { xs: "100%", sm: "44%", md: "180px" },
               height: { xs: "auto", sm: "150px", md: "200px" },
               maxWidth: "180px",
               maxHeight: "200px",

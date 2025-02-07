@@ -47,7 +47,7 @@ const Footer = () => {
             </Link>
           </Box>
         </Box>
-        <Box sx={{ display: "flex", gap: 2, fontSize: "20px",mt: { xs: 2, sm: 0 } }}>
+        <Box sx={{ display: "flex", gap: 2, fontSize: "16px",mt: { xs: 2, sm: 0 } }}>
           <Link href="/" color="inherit" underline="hover">
             Home
           </Link>
@@ -58,7 +58,7 @@ const Footer = () => {
             Portfolio
           </Link>
           <Link href="/contact" color="inherit" underline="hover">
-            About Us
+            About
           </Link>
         </Box>
 

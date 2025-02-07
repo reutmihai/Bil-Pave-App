@@ -26,7 +26,9 @@ const Footer = () => {
       >
         <Box sx={{ display: "flex", flexDirection: "column-reverse", gap: 2, maxWidth: "400px", justifyContent: "center", alignItems: "center" }}>    
         <Typography variant="body1" textAlign="center" fontSize={14}>
-        „Peste 10 ani de muncă, sute de mii de kilometri străbătuți, fiecare pas ghidat de visurile voastre. Am transformat dorințe în realitate, iar astăzi suntem aici, pregătiți să dăm suflet curții voastre.”
+        "Over 10 years of hard work, hundreds of thousands of kilometers traveled, each step guided by
+         your dreams. We have transformed desires into reality, and today we are here, ready to give soul 
+         to your yard."
         </Typography>
         <Typography variant="h4">Bill-Pave-Solutions</Typography>
         <Box display="flex" alignItems="center" gap={2}>
@@ -74,7 +76,7 @@ const Footer = () => {
       </Container>
 
       <Typography variant="body1" align="center" fontWeight="600" sx={{ mt: 2 }}>
-        © {new Date().getFullYear()} Bill-Pave-Solutions. Toate drepturile rezervate.
+        © {new Date().getFullYear()} Bill-Pave-Solutions. All rights reserved.
       </Typography>
     </Box>
   );

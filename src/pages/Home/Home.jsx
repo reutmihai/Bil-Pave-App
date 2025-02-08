@@ -6,19 +6,29 @@ import pav3 from "../../assets/homepage/pav3.webp";
 import pav4 from "../../assets/homepage/pav4.webp";
 import pav5 from "../../assets/homepage/pav5.webp";
 import pav6 from "../../assets/homepage/pav6.webp";
+import { Reviews } from "../../components/Reviews/Reviews";
 
 export const Home = () => {
   return (
     <Container
       sx={{
-        maxWidth: { xs: "100%", sm: "lg" },
+        // maxWidth: { xs: "100%", sm: "lg" },
+        // mt: { xs: 15, sm: "100px", md: "120px" },
+        // p: { xs: "auto", sm: 2 },
+        display: "flex",
+        flexDirection: { xs: "column", sm: "column" },
+        alignItems: "center",
+      }}
+    >
+      <Box
+       sx={{
+        // maxWidth: { xs: "100%", sm: "lg" },
         mt: { xs: 15, sm: "100px", md: "120px" },
         p: { xs: "auto", sm: 2 },
         display: "flex",
         flexDirection: { xs: "column", sm: "row" },
         alignItems: "center",
-      }}
-    >
+      }}>
       <Box
         sx={{
           mb: 4,
@@ -115,6 +125,8 @@ export const Home = () => {
           />
         ))}
       </Box>
+      </Box>
+      <Reviews />
     </Container>
   );
 };

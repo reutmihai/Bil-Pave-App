@@ -46,7 +46,7 @@ const theme = createTheme({
     },
     h4: {
       fontFamily: "Alfa Slab One, sans-serif",
-      fontWeight: 500,
+      fontWeight: 400,
       fontSize: "1.5rem",
       "@media (max-width:900px)": { fontSize: "1.2rem" },
       "@media (max-width:600px)": { fontSize: "1rem" },

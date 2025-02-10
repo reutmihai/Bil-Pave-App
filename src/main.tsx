@@ -1,6 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import "@fontsource/alfa-slab-one";
+import "@fontsource/inter"; 
 import App from "./App";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
@@ -48,8 +49,23 @@ const theme = createTheme({
       "@media (max-width:900px)": { fontSize: "1.3rem" },
       "@media (max-width:600px)": { fontSize: "1rem" },
     },
-    body1: {
+    h5: {
+      fontFamily: "Alfa Slab One, sans-serif",
       fontSize: "1rem",
+      "@media (max-width:900px)": { fontSize: "0.8rem" },
+      "@media (max-width:600px)": { fontSize: "0.6rem" },
+    },
+    body1: {
+      fontFamily: "Inter",
+      fontSize: "1rem",
+      "@media (max-width:900px)": { fontSize: "0.8rem" },
+      "@media (max-width:600px)": { fontSize: "0.7rem" },
+    },
+    body2: {
+      fontFamily: "Inter",
+      fontSize: "1rem",
+      fontWeight: 800,
+      textDecoration: 'underline',
       "@media (max-width:900px)": { fontSize: "0.8rem" },
       "@media (max-width:600px)": { fontSize: "0.7rem" },
     },
@@ -97,6 +113,8 @@ const theme = createTheme({
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
+          overflowX: "hidden",
+          width: "100%",
         },
       },
     },
@@ -124,13 +142,31 @@ const theme = createTheme({
         },
       },
     },
+
+    MuiList: {
+      styleOverrides: {
+        root: {
+          paddingLeft: "20px",
+          listStyleType: "disc", 
+        },
+      },
+    },
+    MuiListItem: {
+      styleOverrides: {
+        root: {
+          fontSize: "16px", 
+          display: "list-item",
+          "@media (max-width:900px)": { fontSize: "0.8rem" },
+          "@media (max-width:600px)": { fontSize: "0.7rem" },
+        },
+      },
+    },
   },
 });
 
-// Obține elementul root
+
 const rootElement = document.getElementById("root");
 
-// Verifică dacă rootElement nu este null
 if (rootElement) {
   createRoot(rootElement).render(
     <React.StrictMode>

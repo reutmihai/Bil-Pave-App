@@ -22,6 +22,7 @@ const Footer: React.FC = () => {
           justifyContent: "space-between",
           alignItems: "center",
           textAlign: { xs: "center", sm: "left" },
+          width: "100%",
         }}
       >
         <Box

@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Typography, Rating, Container } from "@mui/material";
 
 interface Review {

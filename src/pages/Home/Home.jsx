@@ -1,11 +1,11 @@
 import React from "react";
 import { Button, Typography, Box, Container } from "@mui/material";
-import pav1 from "../../assets/homepage/pav1.webp";
-import pav2 from "../../assets/homepage/pav2.webp";
-import pav3 from "../../assets/homepage/pav3.webp";
-import pav4 from "../../assets/homepage/pav4.webp";
-import pav5 from "../../assets/homepage/pav5.webp";
-import pav6 from "../../assets/homepage/pav6.webp";
+import pav1 from "../../assets/images/homepage/pav1.webp";
+import pav2 from "../../assets/images/homepage/pav2.webp";
+import pav3 from "../../assets/images/homepage/pav3.webp";
+import pav4 from "../../assets/images/homepage/pav4.webp";
+import pav5 from "../../assets/images/homepage/pav5.webp";
+import pav6 from "../../assets/images/homepage/pav6.webp";
 import { Reviews } from "../../components/Reviews/Reviews";
 
 export const Home = () => {

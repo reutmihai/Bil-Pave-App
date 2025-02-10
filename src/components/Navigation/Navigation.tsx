@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, MouseEvent } from "react";
 import {
   AppBar,
   Toolbar,
@@ -12,24 +12,30 @@ import {
 } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/images/logo.png";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
 import ContactsIcon from "@mui/icons-material/Contacts";
 
-export const Navigation = () => {
-  const location = useLocation();
-  const [drawerOpen, setDrawerOpen] = useState(false);
-  const [anchorEl, setAnchorEl] = useState(null);
-  const handleOpenMenu = (event) => setAnchorEl(event.currentTarget);
-  const handleCloseMenu = () => setAnchorEl(null);
+interface MenuItemType {
+  label: string;
+  path: string;
+}
 
-  const toggleDrawer = (open) => {
+export const Navigation: React.FC = () => {
+  const location = useLocation();
+
+  const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const handleOpenMenu = (event: MouseEvent<HTMLButtonElement>): void =>
+    setAnchorEl(event.currentTarget);
+  const handleCloseMenu = (): void => setAnchorEl(null);
+  const toggleDrawer = (open: boolean): void => {
     setDrawerOpen(open);
   };
 
-  const menuItems = [
+  const menuItems: MenuItemType[] = [
     { label: "Home", path: "/" },
     { label: "Services", path: "/services" },
     { label: "Portfolio", path: "/portfolio" },
@@ -41,8 +47,8 @@ export const Navigation = () => {
       <AppBar
         sx={{
           position: "fixed",
-          backgroundColor: "primary.yellowTransparent",
-          mt: { xs: "13px", sm: "20px", md: "35px" },
+          backgroundColor: "primary.main",
+          mt: { xs: "13px", sm: "20px", md: "37px" },
           maxHeight: "60px",
           zIndex: 1200,
         }}
@@ -59,11 +65,15 @@ export const Navigation = () => {
               display: "flex",
               gap: 3,
               alignItems: "center",
-              justifyContent: "flex-star",
+              justifyContent: "flex-start",
             }}
           >
             {/* Buton Contact */}
-            <IconButton onClick={handleOpenMenu} color="inherit" aria-label="Contact Menu">
+            <IconButton
+              onClick={handleOpenMenu}
+              color="inherit"
+              aria-label="Contact Menu"
+            >
               <ContactsIcon />
             </IconButton>
 
@@ -76,7 +86,7 @@ export const Navigation = () => {
                 mt: 1,
                 "& .MuiPaper-root": {
                   backgroundColor: "#333",
-                  color: "white", 
+                  color: "white",
                 },
               }}
             >
@@ -146,7 +156,7 @@ export const Navigation = () => {
             </Link>
           </Box>
 
-          {/* Mobile navigation */}
+          {/* Navigație pentru mobil */}
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -157,6 +167,7 @@ export const Navigation = () => {
             <MenuIcon />
           </IconButton>
 
+          {/* Navigație pentru desktop */}
           <Box
             sx={{
               display: { xs: "none", sm: "flex" },
@@ -183,6 +194,7 @@ export const Navigation = () => {
         </Toolbar>
       </AppBar>
 
+      {/* Drawer pentru navigația mobilă */}
       <Drawer
         anchor="left"
         open={drawerOpen}
@@ -203,7 +215,6 @@ export const Navigation = () => {
             p: 2,
           }}
         >
-          {/* Meniu pentru mobil */}
           {menuItems.map((item) => (
             <Button
               key={item.label}

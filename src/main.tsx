@@ -1,54 +1,51 @@
+import React from "react";
 import { createRoot } from "react-dom/client";
 import "@fontsource/alfa-slab-one";
-// import "./index.css";
-import App from "./App.jsx";
-import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
+import App from "./App";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import { createTheme } from "@mui/material/styles";
 import backgroundImage from "./assets/images/bg.jpg";
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#E5C020",
-      yellowTransparent: "rgba(229, 192, 32, 0.8)",
-      blackTransparent: "rgba(0, 0, 0, 0.3)",
+      main: "rgba(229, 192, 32, 0.8)",
     },
     secondary: {
       main: "#000000",
-      white: "#FFFFFF",
     },
     text: {
       primary: "#FFFFFF",
-      secondary: "#000000"
-    }
+      secondary: "#000000",
+    },
   },
-
   typography: {
     h1: {
       fontFamily: "Alfa Slab One, sans-serif",
-      fontWeight: 600,
-      fontSize: "2.5rem", 
-      "@media (max-width:900px)": { fontSize: "2rem" }, 
-      "@media (max-width:600px)": { fontSize: "1.5rem" }, 
+      fontWeight: 300,
+      fontSize: "2.5rem",
+      "@media (max-width:900px)": { fontSize: "2rem" },
+      "@media (max-width:600px)": { fontSize: "1.5rem" },
     },
     h2: {
       fontFamily: "Alfa Slab One, sans-serif",
-      fontWeight: 600,
+      fontWeight: 300,
       fontSize: "2rem",
       "@media (max-width:900px)": { fontSize: "1.8rem" },
       "@media (max-width:600px)": { fontSize: "1.3rem" },
     },
     h3: {
       fontFamily: "Alfa Slab One, sans-serif",
-      fontWeight: 600,
-      fontSize: "1.2rem",
-      "@media (max-width:900px)": { fontSize: "1.6rem" },
+      fontWeight: 300,
+      fontSize: "2rem",
+      "@media (max-width:900px)": { fontSize: "1.5rem" },
       "@media (max-width:600px)": { fontSize: "1.2rem" },
     },
     h4: {
       fontFamily: "Alfa Slab One, sans-serif",
-      fontWeight: 400,
-      fontSize: "1.5rem",
-      "@media (max-width:900px)": { fontSize: "1.2rem" },
+      fontWeight: 300,
+      fontSize: "2rem",
+      "@media (max-width:900px)": { fontSize: "1.3rem" },
       "@media (max-width:600px)": { fontSize: "1rem" },
     },
     body1: {
@@ -57,13 +54,11 @@ const theme = createTheme({
       "@media (max-width:600px)": { fontSize: "0.7rem" },
     },
   },
-
   components: {
     MuiButton: {
       styleOverrides: {
         root: {
           "&:hover": {
-            // backgroundColor: "transparent",
             color: "#aaa9a9",
             transition: "color 0.3s ease",
           },
@@ -132,9 +127,19 @@ const theme = createTheme({
   },
 });
 
-createRoot(document.getElementById("root")).render(
-  <ThemeProvider theme={theme}>
-    <CssBaseline />
-    <App />
-  </ThemeProvider>
-);
+// Obține elementul root
+const rootElement = document.getElementById("root");
+
+// Verifică dacă rootElement nu este null
+if (rootElement) {
+  createRoot(rootElement).render(
+    <React.StrictMode>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <App />
+      </ThemeProvider>
+    </React.StrictMode>,
+  );
+} else {
+  console.error("⚠️ Root element not found!");
+}

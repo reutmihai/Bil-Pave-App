@@ -52,6 +52,7 @@ const theme = createTheme({
     h5: {
       fontFamily: "Alfa Slab One, sans-serif",
       fontSize: "1rem",
+      margin: "20px 0px 20px 0px",
       "@media (max-width:900px)": { fontSize: "0.8rem" },
       "@media (max-width:600px)": { fontSize: "0.6rem" },
     },
@@ -95,6 +96,11 @@ const theme = createTheme({
 
     MuiCssBaseline: {
       styleOverrides: {
+        img: {
+          // border: "2px solid #000",  
+          // padding: "5px",            
+          // borderRadius: "8px",       
+        },
         a: {
           color: "#000000",
           textDecoration: "none",

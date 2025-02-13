@@ -6,6 +6,7 @@ import App from "./App";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import backgroundImage from "./assets/images/bg.jpg";
+import { Widgets } from "@mui/icons-material";
 
 const theme = createTheme({
   palette: {
@@ -51,10 +52,17 @@ const theme = createTheme({
     },
     h5: {
       fontFamily: "Alfa Slab One, sans-serif",
-      fontSize: "1rem",
+      fontSize: "1.5rem",
       margin: "20px 0px 20px 0px",
-      "@media (max-width:900px)": { fontSize: "0.8rem" },
-      "@media (max-width:600px)": { fontSize: "0.6rem" },
+      "@media (max-width:900px)": { fontSize: "1.3rem" },
+      "@media (max-width:600px)": { fontSize: "1rem" },
+    },
+    h6: {
+      fontFamily: "Inter",
+      fontSize: "1.5rem",
+      margin: "20px 0px 20px 0px",
+      "@media (max-width:900px)": { fontSize: "1.3rem" },
+      "@media (max-width:600px)": { fontSize: "1rem" },
     },
     body1: {
       fontFamily: "Inter",
@@ -97,9 +105,11 @@ const theme = createTheme({
     MuiCssBaseline: {
       styleOverrides: {
         img: {
-          // border: "2px solid #000",  
-          // padding: "5px",            
-          // borderRadius: "8px",       
+          maxHeight: "300px",
+          height: "auto",
+          width: "100%",
+          maxWidth: "100%",
+          objectFit: "contain",
         },
         a: {
           color: "#000000",

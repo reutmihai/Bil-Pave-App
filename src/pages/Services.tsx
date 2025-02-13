@@ -80,12 +80,11 @@ export const Services: React.FC = () => {
         </Typography>
 
         <picture>
-          <source srcSet="images/services/picture26.webp" type="image/webp" />
+          <source srcSet="images/services/picture1.webp" type="image/webp" />
           <img
             src="images/services/picture1.jpg"
             alt="Descriere imagine"
             loading="lazy"
-            style={{}}
           />
         </picture>
 
@@ -107,6 +106,7 @@ export const Services: React.FC = () => {
               materials that may decompose over time, causing uneven surfaces.
             </Typography>
           </ListItem>
+        </List>
 
           <picture>
             <source srcSet="images/services/picture2.webp" type="image/webp" />
@@ -116,7 +116,7 @@ export const Services: React.FC = () => {
               loading="lazy"
             />
           </picture>
-
+          <List>
           <ListItem>
             <Typography variant="body1">
               For residential yards and pathways, we typically excavate to a
@@ -291,6 +291,7 @@ export const Services: React.FC = () => {
               stability of the pavement.
             </Typography>
           </ListItem>
+          </List>
           <picture>
             <source srcSet="images/services/picture10.webp" type="image/webp" />
             <img
@@ -306,6 +307,7 @@ export const Services: React.FC = () => {
               }}
             />
           </picture>
+          <List>
           <ListItem>
             <Typography variant="body1">
               The next layer consists of limestone, gravel with a granulation of
@@ -630,6 +632,7 @@ export const Services: React.FC = () => {
               leveling ruler or a stretched line.
             </Typography>
           </ListItem>
+          </List>
           <picture>
             <source srcSet="images/services/picture26.webp" type="image/webp" />
             <img
@@ -638,7 +641,7 @@ export const Services: React.FC = () => {
               loading="lazy"
             />
           </picture>
-
+          <List>
           <ListItem>
             <Typography variant="body1">
               A small joint of about 4-6 mm is left between them every 20 meters

@@ -107,13 +107,10 @@ export const Home: React.FC = () => {
               alt={`Paving example ${index + 1}`}
               sx={{
                 display: index >= 3 ? { xs: "none", sm: "block" } : "block",
-                border: "1px solid rgb(255, 255, 255)",
-                borderRadius: "5px",
                 width: { xs: "100%", sm: "44%", md: "180px" },
                 height: { xs: "auto", sm: "150px", md: "200px" },
                 maxWidth: "180px",
                 maxHeight: "200px",
-                boxShadow: "4px 4px 10px rgba(0,0,0,0.5)",
                 transition: "transform 0.3s ease-in-out",
                 "&:hover": {
                   transform: "scale(1.1)",

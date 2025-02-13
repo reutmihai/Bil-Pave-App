@@ -109,7 +109,13 @@ const theme = createTheme({
           height: "auto",
           width: "100%",
           maxWidth: "100%",
-          objectFit: "contain",
+          border: '1px solid white',
+          boxShadow: "4px 4px 10px rgba(0,0,0,0.5)",
+          borderRadius: "5px",
+        },
+        picture: {
+          display: 'block', 
+          margin: '0 auto', 
         },
         a: {
           color: "#000000",

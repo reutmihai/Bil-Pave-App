@@ -53,6 +53,8 @@ const Footer: React.FC = () => {
                   width: "auto",
                   transition: "all 0.3s ease",
                   pt: { xs: "5px", sm: "0px" },
+                  border: 'none',
+                  boxShadow: "none",
                 }}
               />
             </Link>

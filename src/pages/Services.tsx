@@ -298,13 +298,6 @@ export const Services: React.FC = () => {
               src="images/services/picture10.jpg"
               alt="Descriere imagine"
               loading="lazy"
-              style={{
-                maxHeight: "300px",
-                height: "auto",
-                maxWidth: "100%",
-                width: "100%",
-                objectFit: "contain",
-              }}
             />
           </picture>
           <List>

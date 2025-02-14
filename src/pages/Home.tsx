@@ -5,7 +5,7 @@ import pav3 from "../assets/images/homepage/pav3.webp";
 import pav4 from "../assets/images/homepage/pav4.webp";
 import pav5 from "../assets/images/homepage/pav5.webp";
 import pav6 from "../assets/images/homepage/pav6.webp";
-import { Reviews } from "../components/Reviews/Reviews";
+import { Reviews } from "../components/Reviews";
 
 export const Home: React.FC = () => {
   return (

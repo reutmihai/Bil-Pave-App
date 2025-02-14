@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
-import logo from "../../assets/images/logo.png";
+import logo from "../assets/images/logo.png";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";

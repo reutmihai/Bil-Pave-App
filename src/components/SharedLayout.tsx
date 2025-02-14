@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
-import { Navigation } from "../Navigation/Navigation";
+import { Navigation } from "./Navigation";
 import { Box } from "@mui/material";
-import Footer from "../Footer/Footer";
+import Footer from "./Footer";
 
 const SharedLayout: React.FC = () => {
   return (

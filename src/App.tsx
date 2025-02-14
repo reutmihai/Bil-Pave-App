@@ -3,7 +3,7 @@ import { Home } from "./pages/Home";
 import { Services } from "./pages/Services";
 import { Portfolio } from "./pages/Portfolio";
 import { About } from "./pages/About";
-import SharedLayout from "./components/SharedLayout/SharedLayout";
+import SharedLayout from "./components/SharedLayout";
 
 const App: React.FC = () => {
   return (

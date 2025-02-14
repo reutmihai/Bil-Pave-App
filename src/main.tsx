@@ -67,6 +67,7 @@ const theme = createTheme({
     body1: {
       fontFamily: "Inter",
       fontSize: "1rem",
+      maxWidth: 'md',
       "@media (max-width:900px)": { fontSize: "0.8rem" },
       "@media (max-width:600px)": { fontSize: "0.7rem" },
     },

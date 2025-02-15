@@ -1,6 +1,41 @@
-import { Box, Container, Typography } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import {
+  Box,
+  Container,
+  Typography,
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+} from "@mui/material";
+import Gallery from "../components/Gallery"; // Importă componenta Gallery
+import { getAlbums, Project } from "../api/api"; // Importă funcția din api.ts
 
 export const Portfolio: React.FC = () => {
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [openDialog, setOpenDialog] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getAlbums();
+      setProjects(data);
+    };
+    fetchData();
+  }, []);
+
+  // Deschide dialogul cu galeria de imagini pentru proiectul selectat
+  const openGallery = (project: Project) => {
+    setSelectedProject(project); // Setează proiectul selectat
+    setOpenDialog(true); // Deschide dialogul
+  };
+
+  // Închide dialogul
+  const closeDialog = () => {
+    setOpenDialog(false);
+    setSelectedProject(null);
+  };
+
   return (
     <Box sx={{ overflowX: "hidden", py: 5 }}>
       <Container
@@ -22,8 +57,16 @@ export const Portfolio: React.FC = () => {
             textAlign: "center",
           }}
         >
-          <Typography variant="h4" marginBottom={15}>
-            PPORTFOLIO BPS
+          <Typography
+            variant="h4"
+            textAlign={"center"}
+            marginTop={5}
+            marginBottom={10}
+            sx={{
+              mb: { xs: 4, sm: 3, md: 10 },
+            }}
+          >
+            Portfolios BPS - The Work Behind
           </Typography>
           <Typography variant="body1">
             We build with passion, we deliver excellence! Every project tells a
@@ -41,6 +84,8 @@ export const Portfolio: React.FC = () => {
             durability, and innovation. We invite you to explore our portfolio
             and become part of this success story.
           </Typography>
+
+          {/* Secțiunea România */}
           <Typography variant="h5">Projects in Romania</Typography>
           <Typography variant="body1">
             In Romania, we have focused on landscaping courtyards and alleys,
@@ -49,22 +94,21 @@ export const Portfolio: React.FC = () => {
             commercial spaces, each project reflects our attention to detail and
             the high-quality execution that defines us.
           </Typography>
-
-          {/* Poze proiecte Romania */}
-          <Box
-            sx={{
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "center",
-              gap: 2,
-              mt: 4,
-            }}
+          <Button
+            sx={{ mt: 5, mb: 10 }}
+            variant="contained"
+            color="primary"
+            onClick={() =>
+              openGallery(projects.filter((p) => p.country === "Romania")[0])
+            }
           >
-            {/* Aici vei adăuga componentele de imagine */}
-          </Box>
+            See the projects
+          </Button>
 
-          <Typography variant="h5">Projects in Germany</Typography>
-
+          {/* Secțiunea Germania */}
+          <Typography variant="h5" sx={{ mt: 4 }}>
+            Projects in Germany
+          </Typography>
           <Typography variant="body1">
             In Germany, we have had the honor of working with prestigious
             partners, contributing to the construction of essential
@@ -72,52 +116,76 @@ export const Portfolio: React.FC = () => {
             highest quality standards have guided us at every stage of these
             projects.
           </Typography>
-
-          {/* Poze proiecte Germania */}
-          <Box
-            sx={{
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "center",
-              gap: 2,
-              mt: 4,
-            }}
+          <Button
+            sx={{ mt: 5 }}
+            variant="contained"
+            color="primary"
+            onClick={() =>
+              openGallery(projects.filter((p) => p.country === "Germany")[0])
+            }
           >
-            {/* Aici vei adăuga componentele de imagine */}
-          </Box>
+            See the projects
+          </Button>
 
-          <Typography variant="h5">
+          <Button
+            sx={{ mt: 2, mb: 10 }}
+            variant="contained"
+            color="primary"
+            onClick={() =>
+              openGallery(
+                projects.filter((p) => p.country === "Germany(mentenance)")[0]
+              )
+            }
+          >
+            Maintenance projects
+          </Button>
+
+          {/* Secțiunea Olanda */}
+          <Typography variant="h5" sx={{ mt: 4 }}>
             Projects in the Netherlands
           </Typography>
-            <Typography variant="body1">
-              In the Netherlands, we have had the opportunity to work on
-              industrial-level projects, contributing to the infrastructure of
-              state-of-the-art data centers for technology giants like
-              Microsoft. We were responsible for constructing roads and
-              sidewalks, ensuring durability, functionality, and seamless
-              integration into these advanced technological ecosystems.
-            </Typography>
-            {/* Poze proiecte Olanda */}
-            <Box
-              sx={{
-                display: "flex",
-                flexWrap: "wrap",
-                justifyContent: "center",
-                gap: 2,
-                mt: 4,
-              }}
-            >
-              {/* Aici vei adăuga componentele de imagine */}
-            </Box>
-            <Typography variant="body1" fontSize="20px" marginTop={15}>
-              Each project is a reflection of our passion and determination. No
-              matter the complexity of the work, we ensure that we deliver
-              sustainable, innovative, and top-quality solutions. If you are
-              interested in collaborating with us, don't hesitate to contact us.
-              Together, we can build the future!{" "}
-            </Typography>
+          <Typography variant="body1">
+            In the Netherlands, we have had the opportunity to work on
+            industrial-level projects, contributing to the infrastructure of
+            state-of-the-art data centers for technology giants like Microsoft.
+            We were responsible for constructing roads and sidewalks, ensuring
+            durability, functionality, and seamless integration into these
+            advanced technological ecosystems.
+          </Typography>
+          <Button
+            sx={{ mt: 5, mb: 10 }}
+            variant="contained"
+            color="primary"
+            onClick={() =>
+              openGallery(
+                projects.filter((p) => p.country === "Netherlands")[0]
+              )
+            }
+          >
+            See the projects
+          </Button>
+
+          <Typography variant="body1" fontSize="20px" marginTop={15}>
+            Each project is a reflection of our passion and determination. No
+            matter the complexity of the work, we ensure that we deliver
+            sustainable, innovative, and top-quality solutions. If you are
+            interested in collaborating with us, don't hesitate to contact us.
+            Together, we can build the future!{" "}
+          </Typography>
         </Box>
       </Container>
+
+      {/* Modalul pentru galerie */}
+      <Dialog open={openDialog} onClose={closeDialog} maxWidth="md" fullWidth>
+        <DialogContent>
+          {selectedProject && <Gallery projects={[selectedProject]} />}
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={closeDialog} color="primary">
+            Close
+          </Button>
+        </DialogActions>
+      </Dialog>
     </Box>
   );
 };

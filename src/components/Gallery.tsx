@@ -4,10 +4,16 @@ import { Project } from "../api/api";
 
 // URL-ul de bază pentru imagini din Strapi
 const BASE_URL = "http://localhost:1337";
+const imgStyles = {
+  maxHeight: "350px",
+  // width: "100%",
+  width: "300px",
+  maxWidth: "100%",
+};
 
 const Gallery: React.FC<{ projects: Project[] }> = ({ projects }) => {
   return (
-    <Grid container spacing={2} justifyContent="center">
+    <Grid container spacing={2} justifyContent="center" flexDirection="column" alignContent="center">
       {projects.map((project) => (
         <Grid item xs={12} md={6} lg={4} key={project.id}>
           <Typography variant="h6" sx={{ textAlign: "center", my: 2 }}>
@@ -22,10 +28,9 @@ const Gallery: React.FC<{ projects: Project[] }> = ({ projects }) => {
                   <Card sx={{ maxWidth: 500, boxShadow: 3, borderRadius: 2 }}>
                     <CardMedia
                       component="img"
-                      height="200"
                       image={`${BASE_URL}${imageUrl}`}
                       alt={img.name}
-                      sx={{ objectFit: "cover" }}
+                      sx={{ ...imgStyles }}
                     />
                   </Card>
                 </Grid>

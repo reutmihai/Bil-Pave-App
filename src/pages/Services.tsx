@@ -37,9 +37,10 @@ const imgFlex = {
   m: { xs: 4, sm: 0 },
 };
 const imgStyles = {
-  maxHeight: "300px",
+  maxHeight: "350px",
   height: "auto",
   // width: "100%",
+  width: "auto",
   maxWidth: "100%",
 };
 
@@ -157,18 +158,16 @@ export const Services: React.FC = () => {
           </ListItem>
           <Box sx={{ ...imgFlex }}>
             {[picture3, picture4, picture5].map((src, index) => (
-              <Box key={index}>
-                <picture>
-                  <source srcSet={`${src}.webp`} type="image/webp" />
-                  <Box
-                    component="img"
-                    sx={{ ...imgStyles }}
-                    src={`${src}.jpg`}
-                    alt={`Paving example ${index + 1}`}
-                    loading="lazy"
-                  />
-                </picture>
-              </Box>
+              <picture key={index}>
+                <source srcSet={`${src}.webp`} type="image/webp" />
+                <Box
+                  component="img"
+                  sx={{ ...imgStyles }}
+                  src={`${src}.jpg`}
+                  alt={`Paving example ${index + 1}`}
+                  loading="lazy"
+                />
+              </picture>
             ))}
           </Box>
           <ListItem>
@@ -180,18 +179,16 @@ export const Services: React.FC = () => {
           </ListItem>
           <Box sx={{ ...imgFlex }}>
             {[picture6, picture7].map((src, index) => (
-              <Box key={index}>
-                <picture>
-                  <source srcSet={`${src}.webp`} type="image/webp" />
-                  <Box
-                    component="img"
-                    sx={{ ...imgStyles }}
-                    src={`${src}.jpg`}
-                    alt={`Paving example ${index + 1}`}
-                    loading="lazy"
-                  />
-                </picture>
-              </Box>
+              <picture key={index}>
+                <source srcSet={`${src}.webp`} type="image/webp" />
+                <Box
+                  component="img"
+                  sx={{ ...imgStyles }}
+                  src={`${src}.jpg`}
+                  alt={`Paving example ${index + 1}`}
+                  loading="lazy"
+                />
+              </picture>
             ))}
           </Box>
           <ListItem>
@@ -232,18 +229,16 @@ export const Services: React.FC = () => {
         </Typography>
         <Box sx={{ ...imgFlex }}>
           {[picture8, picture9].map((src, index) => (
-            <Box key={index}>
-              <picture>
-                <source srcSet={`${src}.webp`} type="image/webp" />
-                <Box
-                  component="img"
-                  sx={{ ...imgStyles }}
-                  src={`${src}.jpg`}
-                  alt={`Paving example ${index + 1}`}
-                  loading="lazy"
-                />
-              </picture>
-            </Box>
+            <picture key={index}>
+              <source srcSet={`${src}.webp`} type="image/webp" />
+              <Box
+                component="img"
+                sx={{ ...imgStyles }}
+                src={`${src}.jpg`}
+                alt={`Paving example ${index + 1}`}
+                loading="lazy"
+              />
+            </picture>
           ))}
         </Box>
         <Typography variant="body2">
@@ -304,8 +299,8 @@ export const Services: React.FC = () => {
         <picture>
           <source srcSet="images/services/picture10.webp" type="image/webp" />
           <Box
-                  component="img"
-                  sx={{ ...imgStyles }}
+            component="img"
+            sx={{ ...imgStyles }}
             src="images/services/picture10.jpg"
             alt="Descriere imagine"
             loading="lazy"
@@ -328,18 +323,16 @@ export const Services: React.FC = () => {
         </List>
         <Box sx={{ ...imgFlex }}>
           {[picture11, picture12].map((src, index) => (
-            <Box key={index}>
-              <picture>
-                <source srcSet={`${src}.webp`} type="image/webp" />
-                <Box
-                  component="img"
-                  sx={{ ...imgStyles }}
-                  src={`${src}.jpg`}
-                  alt={`Paving example ${index + 1}`}
-                  loading="lazy"
-                />
-              </picture>
-            </Box>
+            <picture key={index}>
+              <source srcSet={`${src}.webp`} type="image/webp" />
+              <Box
+                component="img"
+                sx={{ ...imgStyles }}
+                src={`${src}.jpg`}
+                alt={`Paving example ${index + 1}`}
+                loading="lazy"
+              />
+            </picture>
           ))}
         </Box>
         <Typography variant="h5" gutterBottom>
@@ -364,18 +357,16 @@ export const Services: React.FC = () => {
             }}
           >
             {[picture13, picture14].map((src, index) => (
-              <Box key={index}>
-                <picture>
-                  <source srcSet={`${src}.webp`} type="image/webp" />
-                  <Box
+              <picture key={index}>
+                <source srcSet={`${src}.webp`} type="image/webp" />
+                <Box
                   component="img"
                   sx={{ ...imgStyles }}
-                    src={`${src}.jpg`}
-                    alt={`Paving example ${index + 1}`}
-                    loading="lazy"
-                  />
-                </picture>
-              </Box>
+                  src={`${src}.jpg`}
+                  alt={`Paving example ${index + 1}`}
+                  loading="lazy"
+                />
+              </picture>
             ))}
           </Box>
           <ListItem>
@@ -429,18 +420,16 @@ export const Services: React.FC = () => {
         </Typography>
         <Box sx={{ ...imgFlex }}>
           {[picture15, picture16].map((src, index) => (
-            <Box key={index}>
-              <picture>
-                <source srcSet={`${src}.webp`} type="image/webp" />
-                <Box
-                  component="img"
-                  sx={{ ...imgStyles }}
-                  src={`${src}.jpg`}
-                  alt={`Paving example ${index + 1}`}
-                  loading="lazy"
-                />
-              </picture>
-            </Box>
+            <picture key={index}>
+              <source srcSet={`${src}.webp`} type="image/webp" />
+              <Box
+                component="img"
+                sx={{ ...imgStyles }}
+                src={`${src}.jpg`}
+                alt={`Paving example ${index + 1}`}
+                loading="lazy"
+              />
+            </picture>
           ))}
         </Box>
         <Typography variant="body2">
@@ -499,18 +488,16 @@ export const Services: React.FC = () => {
             }}
           >
             {[picture17, picture18].map((src, index) => (
-              <Box key={index}>
-                <picture>
-                  <source srcSet={`${src}.webp`} type="image/webp" />
-                  <Box
+              <picture key={index}>
+                <source srcSet={`${src}.webp`} type="image/webp" />
+                <Box
                   component="img"
                   sx={{ ...imgStyles }}
-                    src={`${src}.jpg`}
-                    alt={`Paving example ${index + 1}`}
-                    loading="lazy"
-                  />
-                </picture>
-              </Box>
+                  src={`${src}.jpg`}
+                  alt={`Paving example ${index + 1}`}
+                  loading="lazy"
+                />
+              </picture>
             ))}
           </Box>
           <ListItem>
@@ -528,18 +515,16 @@ export const Services: React.FC = () => {
             }}
           >
             {[picture19, picture20].map((src, index) => (
-              <Box key={index}>
-                <picture>
-                  <source srcSet={`${src}.webp`} type="image/webp" />
-                  <Box
+              <picture key={index}>
+                <source srcSet={`${src}.webp`} type="image/webp" />
+                <Box
                   component="img"
                   sx={{ ...imgStyles }}
-                    src={`${src}.jpg`}
-                    alt={`Paving example ${index + 1}`}
-                    loading="lazy"
-                  />
-                </picture>
-              </Box>
+                  src={`${src}.jpg`}
+                  alt={`Paving example ${index + 1}`}
+                  loading="lazy"
+                />
+              </picture>
             ))}
           </Box>
           <ListItem>
@@ -559,18 +544,16 @@ export const Services: React.FC = () => {
             }}
           >
             {[picture21, picture22, picture23].map((src, index) => (
-              <Box key={index}>
-                <picture>
-                  <source srcSet={`${src}.webp`} type="image/webp" />
-                  <Box
+              <picture key={index}>
+                <source srcSet={`${src}.webp`} type="image/webp" />
+                <Box
                   component="img"
                   sx={{ ...imgStyles }}
-                    src={`${src}.jpg`}
-                    alt={`Paving example ${index + 1}`}
-                    loading="lazy"
-                  />
-                </picture>
-              </Box>
+                  src={`${src}.jpg`}
+                  alt={`Paving example ${index + 1}`}
+                  loading="lazy"
+                />
+              </picture>
             ))}
           </Box>
         </List>
@@ -626,18 +609,16 @@ export const Services: React.FC = () => {
             }}
           >
             {[picture24, picture25].map((src, index) => (
-              <Box key={index}>
-                <picture>
-                  <source srcSet={`${src}.webp`} type="image/webp" />
-                  <Box
+              <picture key={index}>
+                <source srcSet={`${src}.webp`} type="image/webp" />
+                <Box
                   component="img"
                   sx={{ ...imgStyles }}
-                    src={`${src}.jpg`}
-                    alt={`Paving example ${index + 1}`}
-                    loading="lazy"
-                  />
-                </picture>
-              </Box>
+                  src={`${src}.jpg`}
+                  alt={`Paving example ${index + 1}`}
+                  loading="lazy"
+                />
+              </picture>
             ))}
           </Box>
           <ListItem>
@@ -649,12 +630,15 @@ export const Services: React.FC = () => {
         </List>
         <picture>
           <source srcSet="images/services/picture26.webp" type="image/webp" />
-          <img
+          <Box
+            component="img"
             src="images/services/picture26.jpg"
             alt="Descriere imagine"
             loading="lazy"
+            sx={{ ...imgStyles }}
           />
         </picture>
+
         <List>
           <ListItem>
             <Typography variant="body1">
@@ -665,18 +649,16 @@ export const Services: React.FC = () => {
         </List>
         <Box sx={{ ...imgFlex }}>
           {[picture27, picture28].map((src, index) => (
-            <Box key={index}>
-              <picture>
-                <source srcSet={`${src}.webp`} type="image/webp" />
-                <Box
-                  component="img"
-                  sx={{ ...imgStyles }}
-                  src={`${src}.jpg`}
-                  alt={`Paving example ${index + 1}`}
-                  loading="lazy"
-                />
-              </picture>
-            </Box>
+            <picture key={index}>
+              <source srcSet={`${src}.webp`} type="image/webp" />
+              <Box
+                component="img"
+                sx={{ ...imgStyles }}
+                src={`${src}.jpg`}
+                alt={`Paving example ${index + 1}`}
+                loading="lazy"
+              />
+            </picture>
           ))}
         </Box>
         <Typography variant="body1">
@@ -692,18 +674,16 @@ export const Services: React.FC = () => {
         </Typography>
         <Box sx={{ ...imgFlex }}>
           {[picture29, picture30].map((src, index) => (
-            <Box key={index}>
-              <picture>
-                <source srcSet={`${src}.webp`} type="image/webp" />
-                <Box
-                  component="img"
-                  sx={{ ...imgStyles }}
-                  src={`${src}.jpg`}
-                  alt={`Paving example ${index + 1}`}
-                  loading="lazy"
-                />
-              </picture>
-            </Box>
+            <picture key={index}>
+              <source srcSet={`${src}.webp`} type="image/webp" />
+              <Box
+                component="img"
+                sx={{ ...imgStyles }}
+                src={`${src}.jpg`}
+                alt={`Paving example ${index + 1}`}
+                loading="lazy"
+              />
+            </picture>
           ))}
         </Box>
         <Typography variant="body1">
@@ -739,18 +719,16 @@ export const Services: React.FC = () => {
         </Typography>
         <Box sx={{ ...imgFlex }}>
           {[picture31, picture32].map((src, index) => (
-            <Box key={index}>
-              <picture>
-                <source srcSet={`${src}.webp`} type="image/webp" />
-                <Box
-                  component="img"
-                  sx={{ ...imgStyles }}
-                  src={`${src}.jpg`}
-                  alt={`Paving example ${index + 1}`}
-                  loading="lazy"
-                />
-              </picture>
-            </Box>
+            <picture key={index}>
+              <source srcSet={`${src}.webp`} type="image/webp" />
+              <Box
+                component="img"
+                sx={{ ...imgStyles }}
+                src={`${src}.jpg`}
+                alt={`Paving example ${index + 1}`}
+                loading="lazy"
+              />
+            </picture>
           ))}
         </Box>
         <Typography variant="body1">

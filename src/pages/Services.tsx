@@ -1,5 +1,4 @@
 import { Box, Container, List, ListItem, Typography } from "@mui/material";
-
 const picture3 = "images/services/picture3";
 const picture4 = "images/services/picture4";
 const picture5 = "images/services/picture5";
@@ -29,14 +28,20 @@ const picture30 = "images/services/picture30";
 const picture31 = "images/services/picture31";
 const picture32 = "images/services/picture32";
 
-const imgStyles = {
+const imgFlex = {
   display: "flex",
   flexDirection: { xs: "column", sm: "row" },
   flexWrap: "wrap",
   gap: 3,
   justifyContent: "center",
   m: { xs: 4, sm: 0 },
-}
+};
+const imgStyles = {
+  maxHeight: "300px",
+  height: "auto",
+  // width: "100%",
+  maxWidth: "100%",
+};
 
 export const Services: React.FC = () => {
   return (
@@ -66,25 +71,27 @@ export const Services: React.FC = () => {
           marginTop={5}
           marginBottom={10}
           sx={{
-            mb: { xs: 4, sm: 3, md: 10},
+            mb: { xs: 4, sm: 3, md: 10 },
           }}
         >
           Our Services - The Science Behind a Perfect Pavement
         </Typography>
         <Typography variant="body1" pb={5} fontSize={"22px"}>
-          <b>At Bil Pave Solutions</b> (BPS), we don't just lay pavement - we build
-          durable foundations. Proper ground preparation is essential for a
-          strong and visually appealing pavement. Below, we outline the
+          <b>At Bil Pave Solutions</b> (BPS), we don't just lay pavement - we
+          build durable foundations. Proper ground preparation is essential for
+          a strong and visually appealing pavement. Below, we outline the
           professional process we follow to ensure our solutions remain stable,
           even in extreme weather conditions.
         </Typography>
 
         <picture>
           <source srcSet="images/services/picture1.webp" type="image/webp" />
-          <img
+          <Box
+            component="img"
             src="images/services/picture1.jpg"
             alt="Descriere imagine"
             loading="lazy"
+            sx={{ ...imgStyles }}
           />
         </picture>
 
@@ -108,15 +115,17 @@ export const Services: React.FC = () => {
           </ListItem>
         </List>
 
-          <picture>
-            <source srcSet="images/services/picture2.webp" type="image/webp" />
-            <img
-              src="images/services/picture2.jpg"
-              alt="Descriere imagine"
-              loading="lazy"
-            />
-          </picture>
-          <List>
+        <picture>
+          <source srcSet="images/services/picture2.webp" type="image/webp" />
+          <Box
+            component="img"
+            src="images/services/picture2.jpg"
+            alt="Descriere imagine"
+            loading="lazy"
+            sx={{ ...imgStyles }}
+          />
+        </picture>
+        <List>
           <ListItem>
             <Typography variant="body1">
               For residential yards and pathways, we typically excavate to a
@@ -130,12 +139,12 @@ export const Services: React.FC = () => {
           2. Drainage Systems - Protecting Your Pavement and Property
         </Typography>
         <Typography variant="body1" pb={2}>
-          At <b>BIL Pave Solutions (BPS)</b>, we understand how crucial proper water
-          management is for the durability of your pavement and the comfort of
-          your property. That's why we offer professional underground drainage
-          solutions, efficiently capturing and directing rainwater to prevent
-          accumulations that could damage the foundation, pavement, or other
-          structures in your yard.
+          At <b>BIL Pave Solutions (BPS)</b>, we understand how crucial proper
+          water management is for the durability of your pavement and the
+          comfort of your property. That's why we offer professional underground
+          drainage solutions, efficiently capturing and directing rainwater to
+          prevent accumulations that could damage the foundation, pavement, or
+          other structures in your yard.
         </Typography>
         <Typography variant="body2">Water Collection and Direction:</Typography>
         <List sx={{ pl: 2, pr: 2, wordWrap: "break-word" }}>
@@ -146,14 +155,14 @@ export const Services: React.FC = () => {
               pavement to a designated discharge point.
             </Typography>
           </ListItem>
-          <Box
-             sx={{...imgStyles}}
-          >
+          <Box sx={{ ...imgFlex }}>
             {[picture3, picture4, picture5].map((src, index) => (
               <Box key={index}>
                 <picture>
                   <source srcSet={`${src}.webp`} type="image/webp" />
-                  <img
+                  <Box
+                    component="img"
+                    sx={{ ...imgStyles }}
                     src={`${src}.jpg`}
                     alt={`Paving example ${index + 1}`}
                     loading="lazy"
@@ -169,14 +178,14 @@ export const Services: React.FC = () => {
               collection basin.
             </Typography>
           </ListItem>
-          <Box
-             sx={{...imgStyles}}
-          >
+          <Box sx={{ ...imgFlex }}>
             {[picture6, picture7].map((src, index) => (
               <Box key={index}>
                 <picture>
                   <source srcSet={`${src}.webp`} type="image/webp" />
-                  <img
+                  <Box
+                    component="img"
+                    sx={{ ...imgStyles }}
                     src={`${src}.jpg`}
                     alt={`Paving example ${index + 1}`}
                     loading="lazy"
@@ -221,14 +230,14 @@ export const Services: React.FC = () => {
           Each manhole is placed in a way that seamlessly integrates with the
           pavement, without compromising aesthetics or creating an obstacle.
         </Typography>
-        <Box
-           sx={{...imgStyles}}
-        >
+        <Box sx={{ ...imgFlex }}>
           {[picture8, picture9].map((src, index) => (
             <Box key={index}>
               <picture>
                 <source srcSet={`${src}.webp`} type="image/webp" />
-                <img
+                <Box
+                  component="img"
+                  sx={{ ...imgStyles }}
                   src={`${src}.jpg`}
                   alt={`Paving example ${index + 1}`}
                   loading="lazy"
@@ -291,16 +300,18 @@ export const Services: React.FC = () => {
               stability of the pavement.
             </Typography>
           </ListItem>
-          </List>
-          <picture>
-            <source srcSet="images/services/picture10.webp" type="image/webp" />
-            <img
-              src="images/services/picture10.jpg"
-              alt="Descriere imagine"
-              loading="lazy"
-            />
-          </picture>
-          <List>
+        </List>
+        <picture>
+          <source srcSet="images/services/picture10.webp" type="image/webp" />
+          <Box
+                  component="img"
+                  sx={{ ...imgStyles }}
+            src="images/services/picture10.jpg"
+            alt="Descriere imagine"
+            loading="lazy"
+          />
+        </picture>
+        <List>
           <ListItem>
             <Typography variant="body1">
               The next layer consists of limestone, gravel with a granulation of
@@ -315,14 +326,14 @@ export const Services: React.FC = () => {
             </Typography>
           </ListItem>
         </List>
-        <Box
-           sx={{...imgStyles}}
-        >
+        <Box sx={{ ...imgFlex }}>
           {[picture11, picture12].map((src, index) => (
             <Box key={index}>
               <picture>
                 <source srcSet={`${src}.webp`} type="image/webp" />
-                <img
+                <Box
+                  component="img"
+                  sx={{ ...imgStyles }}
                   src={`${src}.jpg`}
                   alt={`Paving example ${index + 1}`}
                   loading="lazy"
@@ -356,7 +367,9 @@ export const Services: React.FC = () => {
               <Box key={index}>
                 <picture>
                   <source srcSet={`${src}.webp`} type="image/webp" />
-                  <img
+                  <Box
+                  component="img"
+                  sx={{ ...imgStyles }}
                     src={`${src}.jpg`}
                     alt={`Paving example ${index + 1}`}
                     loading="lazy"
@@ -414,14 +427,14 @@ export const Services: React.FC = () => {
           external forces and weather conditions. In road construction, they
           also play a key role in structuring traffic spaces.
         </Typography>
-        <Box
-           sx={{...imgStyles}}
-        >
+        <Box sx={{ ...imgFlex }}>
           {[picture15, picture16].map((src, index) => (
             <Box key={index}>
               <picture>
                 <source srcSet={`${src}.webp`} type="image/webp" />
-                <img
+                <Box
+                  component="img"
+                  sx={{ ...imgStyles }}
                   src={`${src}.jpg`}
                   alt={`Paving example ${index + 1}`}
                   loading="lazy"
@@ -489,7 +502,9 @@ export const Services: React.FC = () => {
               <Box key={index}>
                 <picture>
                   <source srcSet={`${src}.webp`} type="image/webp" />
-                  <img
+                  <Box
+                  component="img"
+                  sx={{ ...imgStyles }}
                     src={`${src}.jpg`}
                     alt={`Paving example ${index + 1}`}
                     loading="lazy"
@@ -516,7 +531,9 @@ export const Services: React.FC = () => {
               <Box key={index}>
                 <picture>
                   <source srcSet={`${src}.webp`} type="image/webp" />
-                  <img
+                  <Box
+                  component="img"
+                  sx={{ ...imgStyles }}
                     src={`${src}.jpg`}
                     alt={`Paving example ${index + 1}`}
                     loading="lazy"
@@ -545,7 +562,9 @@ export const Services: React.FC = () => {
               <Box key={index}>
                 <picture>
                   <source srcSet={`${src}.webp`} type="image/webp" />
-                  <img
+                  <Box
+                  component="img"
+                  sx={{ ...imgStyles }}
                     src={`${src}.jpg`}
                     alt={`Paving example ${index + 1}`}
                     loading="lazy"
@@ -610,7 +629,9 @@ export const Services: React.FC = () => {
               <Box key={index}>
                 <picture>
                   <source srcSet={`${src}.webp`} type="image/webp" />
-                  <img
+                  <Box
+                  component="img"
+                  sx={{ ...imgStyles }}
                     src={`${src}.jpg`}
                     alt={`Paving example ${index + 1}`}
                     loading="lazy"
@@ -625,16 +646,16 @@ export const Services: React.FC = () => {
               leveling ruler or a stretched line.
             </Typography>
           </ListItem>
-          </List>
-          <picture>
-            <source srcSet="images/services/picture26.webp" type="image/webp" />
-            <img
-              src="images/services/picture26.jpg"
-              alt="Descriere imagine"
-              loading="lazy"
-            />
-          </picture>
-          <List>
+        </List>
+        <picture>
+          <source srcSet="images/services/picture26.webp" type="image/webp" />
+          <img
+            src="images/services/picture26.jpg"
+            alt="Descriere imagine"
+            loading="lazy"
+          />
+        </picture>
+        <List>
           <ListItem>
             <Typography variant="body1">
               A small joint of about 4-6 mm is left between them every 20 meters
@@ -642,14 +663,14 @@ export const Services: React.FC = () => {
             </Typography>
           </ListItem>
         </List>
-        <Box
-           sx={{...imgStyles}}
-        >
+        <Box sx={{ ...imgFlex }}>
           {[picture27, picture28].map((src, index) => (
             <Box key={index}>
               <picture>
                 <source srcSet={`${src}.webp`} type="image/webp" />
-                <img
+                <Box
+                  component="img"
+                  sx={{ ...imgStyles }}
                   src={`${src}.jpg`}
                   alt={`Paving example ${index + 1}`}
                   loading="lazy"
@@ -669,14 +690,14 @@ export const Services: React.FC = () => {
           7. Professional Pavement Installation - Precision, Durability, and
           Aesthetics
         </Typography>
-        <Box
-           sx={{...imgStyles}}
-        >
+        <Box sx={{ ...imgFlex }}>
           {[picture29, picture30].map((src, index) => (
             <Box key={index}>
               <picture>
                 <source srcSet={`${src}.webp`} type="image/webp" />
-                <img
+                <Box
+                  component="img"
+                  sx={{ ...imgStyles }}
                   src={`${src}.jpg`}
                   alt={`Paving example ${index + 1}`}
                   loading="lazy"
@@ -716,14 +737,14 @@ export const Services: React.FC = () => {
           quality of the installation, providing a uniform and elegant
           appearance.
         </Typography>
-        <Box
-           sx={{...imgStyles}}
-        >
+        <Box sx={{ ...imgFlex }}>
           {[picture31, picture32].map((src, index) => (
             <Box key={index}>
               <picture>
                 <source srcSet={`${src}.webp`} type="image/webp" />
-                <img
+                <Box
+                  component="img"
+                  sx={{ ...imgStyles }}
                   src={`${src}.jpg`}
                   alt={`Paving example ${index + 1}`}
                   loading="lazy"
@@ -740,7 +761,7 @@ export const Services: React.FC = () => {
           and focus on creativity, ensuring that each project is unique.
         </Typography>
         <Typography variant="h6">
-        <u>Conclusion:</u>  Why choose <b>BPS</b>? <br /> 
+          <u>Conclusion:</u> Why choose <b>BPS</b>? <br />
           R: If you want a pavement that remains stable and flawless for many
           years, choose professionals. Choose precision, durability, and
           elegance. Choose <b>BIL Pave Solutions</b>!

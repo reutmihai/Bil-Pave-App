@@ -173,6 +173,16 @@ const theme = createTheme({
         },
       },
     },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          background: 'transparent',
+          backdropFilter: 'blur(10px)', 
+          boxShadow: 'none', 
+        }
+      }
+    },
+
     MuiListItem: {
       styleOverrides: {
         root: {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   Box,
   Container,
@@ -8,29 +8,18 @@ import {
   DialogActions,
   DialogContent,
 } from "@mui/material";
-import Gallery from "../components/Gallery"; // Importă componenta Gallery
-import { getAlbums, Project } from "../api/api"; // Importă funcția din api.ts
+import Gallery from "../components/Gallery";
 
 export const Portfolio: React.FC = () => {
-  const [projects, setProjects] = useState<Project[]>([]);
   const [openDialog, setOpenDialog] = useState(false);
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [selectedProject, setSelectedProject] = useState<"Romania" | "Germany" | "Netherlands" | null>(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await getAlbums();
-      setProjects(data);
-    };
-    fetchData();
-  }, []);
-
-  // Deschide dialogul cu galeria de imagini pentru proiectul selectat
-  const openGallery = (project: Project) => {
-    setSelectedProject(project); // Setează proiectul selectat
-    setOpenDialog(true); // Deschide dialogul
+  // Deschide galeria pentru un proiect specific
+  const openGallery = (country: "Romania" | "Germany" | "Netherlands") => {
+    setSelectedProject(country);
+    setOpenDialog(true);
   };
 
-  // Închide dialogul
   const closeDialog = () => {
     setOpenDialog(false);
     setSelectedProject(null);
@@ -68,22 +57,6 @@ export const Portfolio: React.FC = () => {
           >
             Portfolios BPS - The Work Behind
           </Typography>
-          <Typography variant="body1">
-            We build with passion, we deliver excellence! Every project tells a
-            story. A story about dedicated work, about teams united by a common
-            vision, about challenges turned into opportunities. Over the years,
-            we have devoted our efforts and expertise to bringing impressive
-            projects to life, collaborating with industry leaders. We have had
-            the honor of working alongside renowned companies such as KWS Infra,
-            Thannhauser, and Blue-3, contributing to the development of
-            essential infrastructures—from highways and commercial spaces to
-            large-scale projects for business giants, including Microsoft. Each
-            project is a testament to our professionalism, attention to detail,
-            and commitment to excellence. Regardless of the location—Romania,
-            Germany, or the Netherlands—our standards remain the same: quality,
-            durability, and innovation. We invite you to explore our portfolio
-            and become part of this success story.
-          </Typography>
 
           {/* Secțiunea România */}
           <Typography variant="h5">Projects in Romania</Typography>
@@ -98,17 +71,13 @@ export const Portfolio: React.FC = () => {
             sx={{ mt: 5, mb: 10 }}
             variant="contained"
             color="primary"
-            onClick={() =>
-              openGallery(projects.filter((p) => p.country === "Romania")[0])
-            }
+            onClick={() => openGallery("Romania")}
           >
             See the projects
           </Button>
 
           {/* Secțiunea Germania */}
-          <Typography variant="h5" sx={{ mt: 4 }}>
-            Projects in Germany
-          </Typography>
+          <Typography variant="h5">Projects in Germany</Typography>
           <Typography variant="body1">
             In Germany, we have had the honor of working with prestigious
             partners, contributing to the construction of essential
@@ -117,33 +86,16 @@ export const Portfolio: React.FC = () => {
             projects.
           </Typography>
           <Button
-            sx={{ mt: 5 }}
+            sx={{ mt: 5, mb: 10 }}
             variant="contained"
             color="primary"
-            onClick={() =>
-              openGallery(projects.filter((p) => p.country === "Germany")[0])
-            }
+            onClick={() => openGallery("Germany")}
           >
             See the projects
           </Button>
 
-          <Button
-            sx={{ mt: 2, mb: 10 }}
-            variant="contained"
-            color="primary"
-            onClick={() =>
-              openGallery(
-                projects.filter((p) => p.country === "Germany(mentenance)")[0]
-              )
-            }
-          >
-            Maintenance projects
-          </Button>
-
           {/* Secțiunea Olanda */}
-          <Typography variant="h5" sx={{ mt: 4 }}>
-            Projects in the Netherlands
-          </Typography>
+          <Typography variant="h5">Projects in the Netherlands</Typography>
           <Typography variant="body1">
             In the Netherlands, we have had the opportunity to work on
             industrial-level projects, contributing to the infrastructure of
@@ -156,11 +108,7 @@ export const Portfolio: React.FC = () => {
             sx={{ mt: 5, mb: 10 }}
             variant="contained"
             color="primary"
-            onClick={() =>
-              openGallery(
-                projects.filter((p) => p.country === "Netherlands")[0]
-              )
-            }
+            onClick={() => openGallery("Netherlands")}
           >
             See the projects
           </Button>
@@ -178,7 +126,8 @@ export const Portfolio: React.FC = () => {
       {/* Modalul pentru galerie */}
       <Dialog open={openDialog} onClose={closeDialog} maxWidth="md" fullWidth>
         <DialogContent>
-          {selectedProject && <Gallery projects={[selectedProject]} />}
+          {/* Galerie cu pozele din România, Germania sau Olanda */}
+          {selectedProject && <Gallery country={selectedProject} />}
         </DialogContent>
         <DialogActions>
           <Button onClick={closeDialog} color="primary">

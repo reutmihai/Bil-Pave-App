@@ -58,6 +58,23 @@ export const Portfolio: React.FC = () => {
             Portfolios BPS - The Work Behind
           </Typography>
 
+          <Typography variant="body1">
+            We build with passion, we deliver excellence! Every project tells a
+            story. A story about dedicated work, about teams united by a common
+            vision, about challenges turned into opportunities. Over the years,
+            we have devoted our efforts and expertise to bringing impressive
+            projects to life, collaborating with industry leaders. We have had
+            the honor of working alongside renowned companies such as KWS Infra,
+            Thannhauser, and Blue-3, contributing to the development of
+            essential infrastructures—from highways and commercial spaces to
+            large-scale projects for business giants, including Microsoft. Each
+            project is a testament to our professionalism, attention to detail,
+            and commitment to excellence. Regardless of the location—Romania,
+            Germany, or the Netherlands—our standards remain the same: quality,
+            durability, and innovation. We invite you to explore our portfolio
+            and become part of this success story.
+          </Typography>
+
           {/* Secțiunea România */}
           <Typography variant="h5">Projects in Romania</Typography>
           <Typography variant="body1">

@@ -6,8 +6,10 @@ import pav4 from "../assets/images/homepage/pav4.webp";
 import pav5 from "../assets/images/homepage/pav5.webp";
 import pav6 from "../assets/images/homepage/pav6.webp";
 import { Reviews } from "../components/Reviews";
+import { useNavigate } from "react-router-dom";
 
 export const Home: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <Container
       sx={{
@@ -82,7 +84,7 @@ export const Home: React.FC = () => {
                   fontSize: { xs: "0.5rem", md: "0.8rem" },
                   py: { xs: 0.5, sm: 1.5 },
                 }}
-                href="/portfolio"
+                onClick={() => navigate("/portfolio")}
               >
                 See portfolio
               </Button>

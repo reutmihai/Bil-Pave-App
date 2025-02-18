@@ -1,6 +1,7 @@
 import React from "react";
-import { Box, Container, Typography, Link, IconButton } from "@mui/material";
-import { Facebook, Instagram, Phone } from "@mui/icons-material";
+import { Box, Container, Typography, IconButton, Link } from "@mui/material";
+import { Link as RouterLink } from "react-router-dom";
+import { WhatsApp, Phone, Email } from "@mui/icons-material";
 import logo from "../assets/images/logo.png";
 
 const Footer: React.FC = () => {
@@ -53,7 +54,7 @@ const Footer: React.FC = () => {
                   width: "auto",
                   transition: "all 0.3s ease",
                   pt: { xs: "5px", sm: "0px" },
-                  border: 'none',
+                  border: "none",
                   boxShadow: "none",
                 }}
               />
@@ -68,30 +69,51 @@ const Footer: React.FC = () => {
             mt: { xs: 2, sm: 0 },
           }}
         >
-          <Link href="/" color="inherit" underline="hover">
+          <Link component={RouterLink} to="/" color="inherit" underline="hover">
             Home
           </Link>
-          <Link href="/services" color="inherit" underline="hover">
+          <Link
+            component={RouterLink}
+            to="/services"
+            color="inherit"
+            underline="hover"
+          >
             Services
           </Link>
-          <Link href="/contact" color="inherit" underline="hover">
+          <Link
+            component={RouterLink}
+            to="/portfolio"
+            color="inherit"
+            underline="hover"
+          >
             Portfolio
           </Link>
-          <Link href="/contact" color="inherit" underline="hover">
+          <Link
+            component={RouterLink}
+            to="/about"
+            color="inherit"
+            underline="hover"
+          >
             About
           </Link>
         </Box>
 
         <Box sx={{ mt: { xs: 2, sm: 0 } }}>
-          <IconButton color="inherit">
-            <Facebook />
-          </IconButton>
-          <IconButton color="inherit">
-            <Instagram />
-          </IconButton>
-          <IconButton color="inherit">
-            <Phone />
-          </IconButton>
+          <Link color="inherit" href="https://wa.me/40747605936">
+            <IconButton color="inherit">
+              <WhatsApp />
+            </IconButton>
+          </Link>
+          <Link color="inherit" href="mailto:bil.paving98@gmail.com">
+            <IconButton color="inherit">
+              <Email />
+            </IconButton>
+          </Link>
+          <Link color="inherit" href="tel:+31687430616">
+            <IconButton color="inherit">
+              <Phone />
+            </IconButton>
+          </Link>
         </Box>
       </Container>
 

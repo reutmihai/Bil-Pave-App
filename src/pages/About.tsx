@@ -1,4 +1,5 @@
 import { Box, Container, Typography } from "@mui/material";
+import AboutUsCard from "../components/AboutUsCard";
 
 export const About: React.FC = () => {
   return (
@@ -101,6 +102,7 @@ export const About: React.FC = () => {
             <br />
             <b>Choose to believe. Choose to build beauty together!</b>
           </Typography>
+          <AboutUsCard />
         </Box>
       </Container>
     </Box>

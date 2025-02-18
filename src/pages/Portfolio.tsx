@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import portfolio from "../../public/images/portfolio/portfolio.png";
+import portfolio from "/images/portfolio/portfolio.png";
 import {
   Box,
   Container,

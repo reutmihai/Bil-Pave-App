@@ -4,10 +4,12 @@ import { Services } from "./pages/Services";
 import { Portfolio } from "./pages/Portfolio";
 import { About } from "./pages/About";
 import SharedLayout from "./components/SharedLayout";
+import ScrollToTop from "./components/ScrollToTop";
 
 const App: React.FC = () => {
   return (
     <Router basename="/Bil-Pave-App">
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route path="/" element={<Home />} />

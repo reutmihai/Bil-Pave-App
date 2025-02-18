@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import portfolio from "../../public/images/portfolio/portfolio.png";
 import {
   Box,
   Container,
@@ -43,7 +44,7 @@ export const Portfolio: React.FC = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            textAlign: "center",
+            gap: 4,
           }}
         >
           <Typography
@@ -52,11 +53,24 @@ export const Portfolio: React.FC = () => {
             marginTop={5}
             marginBottom={10}
             sx={{
-              mb: { xs: 4, sm: 3, md: 10 },
+              mb: { xs: 2, sm: 2, md: 5 },
             }}
           >
             Portfolios BPS - The Work Behind
           </Typography>
+          <Box
+              component="img"
+              src={portfolio}
+              alt={`Portfolio image`}
+              sx={{
+                width: { xs: "100%", sm: "100%", md: "600px" },
+                height: { xs: "auto", sm: "100%", md: "300px" },
+                maxWidth: "600px",
+                maxHeight: "300px",
+                marginBottom: "20px",
+                }
+              }
+            />
 
           <Typography variant="body1">
             We build with passion, we deliver excellence! Every project tells a
@@ -76,7 +90,8 @@ export const Portfolio: React.FC = () => {
           </Typography>
 
           {/* Secțiunea România */}
-          <Typography variant="h5">Projects in Romania</Typography>
+          <Box border='1px solid white' padding={2}>
+          <Typography variant="h5">Projects in Romania 🇷🇴</Typography>
           <Typography variant="body1">
             In Romania, we have focused on landscaping courtyards and alleys,
             transforming spaces into durable, functional, and aesthetic areas.
@@ -85,16 +100,18 @@ export const Portfolio: React.FC = () => {
             the high-quality execution that defines us.
           </Typography>
           <Button
-            sx={{ mt: 5, mb: 10 }}
+            sx={{ mt: 5 }}
             variant="contained"
             color="primary"
             onClick={() => openGallery("Romania")}
           >
             See the projects
           </Button>
+          </Box>
 
           {/* Secțiunea Germania */}
-          <Typography variant="h5">Projects in Germany</Typography>
+          <Box border='1px solid white' padding={2}>
+          <Typography variant="h5">Projects in Germany 🇩🇪</Typography>
           <Typography variant="body1">
             In Germany, we have had the honor of working with prestigious
             partners, contributing to the construction of essential
@@ -103,16 +120,18 @@ export const Portfolio: React.FC = () => {
             projects.
           </Typography>
           <Button
-            sx={{ mt: 5, mb: 10 }}
+            sx={{ mt: 5 }}
             variant="contained"
             color="primary"
             onClick={() => openGallery("Germany")}
           >
             See the projects
           </Button>
+          </Box>
 
           {/* Secțiunea Olanda */}
-          <Typography variant="h5">Projects in the Netherlands</Typography>
+          <Box border='1px solid white' padding={2}>
+          <Typography variant="h5">Projects in the Netherlands 🇳🇱</Typography>
           <Typography variant="body1">
             In the Netherlands, we have had the opportunity to work on
             industrial-level projects, contributing to the infrastructure of
@@ -122,20 +141,21 @@ export const Portfolio: React.FC = () => {
             advanced technological ecosystems.
           </Typography>
           <Button
-            sx={{ mt: 5, mb: 10 }}
+            sx={{ mt: 5 }}
             variant="contained"
             color="primary"
             onClick={() => openGallery("Netherlands")}
           >
             See the projects
           </Button>
+          </Box>
 
-          <Typography variant="body1" fontSize="20px" marginTop={15}>
+          <Typography variant="body1" fontSize="20px">
             Each project is a reflection of our passion and determination. No
             matter the complexity of the work, we ensure that we deliver
             sustainable, innovative, and top-quality solutions. If you are
-            interested in collaborating with us, don't hesitate to contact us.
-            Together, we can build the future!{" "}
+            interested in collaborating with us, don't hesitate to contact us.<br />
+            <b>Together, we can build the future!</b>
           </Typography>
         </Box>
       </Container>

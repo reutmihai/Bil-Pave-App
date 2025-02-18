@@ -105,10 +105,6 @@ const theme = createTheme({
     MuiCssBaseline: {
       styleOverrides: {
         img: {
-          // maxHeight: "300px",
-          // height: "auto",
-          // // width: "100%",
-          // maxWidth: "100%",
           border: '1px solid white',
           boxShadow: "4px 4px 10px rgba(0,0,0,0.5)",
           borderRadius: "5px",

@@ -31,8 +31,8 @@ export default function AboutUsCard() {
       <CardContent sx={{ flex: 1, p: 0 }}>
         <Typography variant="h5">Belibou Sebastian-Alexandru</Typography>
         <Typography variant="body1">
-          With over 10 years of experience in the construction industry, I am
-          committed to quality and professionalism in every project.
+        Wherever your dreams take you, we will pave the way, laying each stone like a red carpet where your memories will take shape.<br />
+        I am the founder of <b>BPS</b>, and I believe in the future we build together.
         </Typography>
       </CardContent>
     </Card>

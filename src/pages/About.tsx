@@ -70,7 +70,7 @@ export const About: React.FC = () => {
             We are aware that some have forgotten how to support one another,
             but we believe in a better future. We believe that every stone laid
             in its place, every perfectly aligned curb, and every renewed space
-            contributes to a more beautiful world – not just visually, but also
+            contributes to a more beautiful world - not just visually, but also
             on a human level.
             <br />
             <br />
@@ -95,7 +95,7 @@ export const About: React.FC = () => {
             <br />
             If you dream of an outdoor space that reflects your personality,
             where beauty meets functionality, then BIL Pave Solutions is the
-            partner you need. We don’t see a project as just work; we see it as
+            partner you need. We don't see a project as just work; we see it as
             an opportunity to make the world a more welcoming, warmer, and
             better-organized place.
             <br />

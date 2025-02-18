@@ -6,9 +6,9 @@ const BASE_URL = "https://pub-55b5041bb1d14e189dabddf69c760481.r2.dev";
 
 // Structura de imagini pentru fiecare țară
 const images = {
-  Romania: Array.from({ length: 63 }, (_, index) => `romania/ro${index + 1}.webp`),
-  Germany: Array.from({ length: 45 }, (_, index) => `germany/ger${index + 1}.webp`),
-  Netherlands: Array.from({ length: 0 }, (_, index) => `netherlands/ne${index + 1}.webp`),
+  Romania: Array.from({ length: 66 }, (_, index) => `romania/ro${index + 1}.webp`),
+  Germany: Array.from({ length: 42 }, (_, index) => `germany/ger${index + 1}.webp`),
+  Netherlands: Array.from({ length: 28 }, (_, index) => `netherlands/ne${index + 1}.webp`),
 };
 type Country = keyof typeof images;
 

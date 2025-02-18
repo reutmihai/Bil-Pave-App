@@ -97,10 +97,10 @@ export const Navigation: React.FC = () => {
                 <EmailIcon sx={{ mr: 1, color: "white" }} />
                 <Typography variant="body1">
                   <a
-                    href="mailto:sebastianbelibou@gmail.ro"
+                    href="mailto:bil.paving98@gmail.com"
                     style={{ textDecoration: "none", color: "white" }}
                   >
-                    sebastianbelibou@gmail.ro
+                    bil.paving98@gmail.com
                   </a>
                 </Typography>
               </MenuItem>

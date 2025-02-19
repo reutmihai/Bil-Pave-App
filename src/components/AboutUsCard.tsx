@@ -12,7 +12,7 @@ export default function AboutUsCard() {
         p: 2,
         borderRadius: 2,
         boxShadow: 3,
-        marginTop: 12,
+        marginBottom: 5,
         transition: "transform 0.3s ease-in-out",
         "&:hover": {
           transform: "scale(1.1)",

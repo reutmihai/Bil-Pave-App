@@ -1,5 +1,5 @@
 import { Modal, Box, Typography } from "@mui/material";
-import ApplyForm from "./ApplyForm";
+import OfferRequestForm from "./OfferRequestForm";
 
 const modalStyle = {
   position: "absolute" as "absolute",
@@ -13,17 +13,17 @@ const modalStyle = {
   p: 4,
 };
 
-const ModalApplyForm = ({ open, onClose }: { open: boolean; onClose: () => void }) => {
+const ModalOfferRequest = ({ open, onClose }: { open: boolean; onClose: () => void }) => {
   return (
-    <Modal open={open} onClose={onClose} aria-labelledby="apply-form-modal">
+    <Modal open={open} onClose={onClose} aria-labelledby="request-quote-modal">
       <Box sx={modalStyle}>
         <Typography variant="h5" sx={{ mb: 2, color: "black" }}>
-          Work with us
+          Request a Quote
         </Typography>
-        <ApplyForm onSuccess={onClose} />
+        <OfferRequestForm onClose={onClose} />
       </Box>
     </Modal>
   );
 };
 
-export default ModalApplyForm;
+export default ModalOfferRequest;

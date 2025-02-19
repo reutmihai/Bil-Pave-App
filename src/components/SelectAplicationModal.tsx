@@ -32,7 +32,7 @@ const SelectApplicationModal = () => {
   };
 
   return (
-    <Box sx={{my: 5}}>
+    <Box>
       <Button
         variant="contained"
         color="primary"

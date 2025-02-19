@@ -7,6 +7,7 @@ import pav5 from "../assets/images/homepage/pav5.webp";
 import pav6 from "../assets/images/homepage/pav6.webp";
 import { Reviews } from "../components/Reviews";
 import { useNavigate } from "react-router-dom";
+import ModalApplyForm from "../components/ModalApplyForm";
 
 export const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -64,17 +65,7 @@ export const Home: React.FC = () => {
                 mt: 2,
               }}
             >
-              <Button
-                variant="contained"
-                color="primary"
-                sx={{
-                  width: { xs: "100%", sm: "auto" },
-                  fontSize: { xs: "0.5rem", md: "0.8rem" },
-                  py: { xs: 1, sm: 1.5 },
-                }}
-              >
-                Click to aplly
-              </Button>
+            <ModalApplyForm />
               <Button
                 variant="outlined"
                 sx={{

@@ -1,7 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import "@fontsource/alfa-slab-one";
-import "@fontsource/inter"; 
+import "@fontsource/inter";
 import App from "./App";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
@@ -66,7 +66,7 @@ const theme = createTheme({
     body1: {
       fontFamily: "Inter",
       fontSize: "1rem",
-      maxWidth: 'md',
+      maxWidth: "md",
       "@media (max-width:900px)": { fontSize: "0.8rem" },
       "@media (max-width:600px)": { fontSize: "0.7rem" },
     },
@@ -74,12 +74,48 @@ const theme = createTheme({
       fontFamily: "Inter",
       fontSize: "1rem",
       fontWeight: 800,
-      textDecoration: 'underline',
+      textDecoration: "underline",
       "@media (max-width:900px)": { fontSize: "0.8rem" },
       "@media (max-width:600px)": { fontSize: "0.7rem" },
     },
   },
   components: {
+    MuiAlert: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#4caf50", 
+          color: "white", 
+          fontWeight: "bold",
+        },
+        filledSuccess: {
+          backgroundColor: "#388e3c", 
+        },
+      },
+    },
+
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          fontSize: "15px", 
+          "& .MuiInputLabel-root": {
+            color: 'black',
+            "@media (max-width:900px)": { fontSize: "13px" },
+            "@media (max-width:600px)": { fontSize: "12px" },
+          },
+          "& .MuiInputBase-input": {
+            "@media (max-width:900px)": { fontSize: "13px" },
+            "@media (max-width:600px)": { fontSize: "12px" },
+            color: 'black'
+          },
+          "& .MuiOutlinedInput-root": {
+            "&:hover .MuiOutlinedInput-notchedOutline": {
+              borderColor: "rgba(229, 192, 32, 0.3)", 
+            },
+          },
+        },
+      },
+    },
+
     MuiButton: {
       styleOverrides: {
         root: {
@@ -105,13 +141,13 @@ const theme = createTheme({
     MuiCssBaseline: {
       styleOverrides: {
         img: {
-          border: '1px solid white',
+          border: "1px solid white",
           boxShadow: "4px 4px 10px rgba(0,0,0,0.5)",
           borderRadius: "5px",
         },
         picture: {
-          display: 'block', 
-          margin: '0 auto', 
+          display: "block",
+          margin: "0 auto",
         },
         a: {
           color: "#000000",
@@ -165,24 +201,24 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           paddingLeft: "20px",
-          listStyleType: "disc", 
+          listStyleType: "disc",
         },
       },
     },
     MuiPaper: {
       styleOverrides: {
         root: {
-          background: 'transparent',
-          backdropFilter: 'blur(10px)', 
-          boxShadow: 'none', 
-        }
-      }
+          background: "transparent",
+          backdropFilter: "blur(10px)",
+          boxShadow: "none",
+        },
+      },
     },
 
     MuiListItem: {
       styleOverrides: {
         root: {
-          fontSize: "16px", 
+          fontSize: "16px",
           display: "list-item",
           "@media (max-width:900px)": { fontSize: "0.8rem" },
           "@media (max-width:600px)": { fontSize: "0.7rem" },
@@ -191,7 +227,6 @@ const theme = createTheme({
     },
   },
 });
-
 
 const rootElement = document.getElementById("root");
 
@@ -202,7 +237,7 @@ if (rootElement) {
         <CssBaseline />
         <App />
       </ThemeProvider>
-    </React.StrictMode>,
+    </React.StrictMode>
   );
 } else {
   console.error("⚠️ Root element not found!");

@@ -1,4 +1,6 @@
 import { Box, Container, List, ListItem, Typography } from "@mui/material";
+import ModalOfferRequest from "../components/ModalOfferRequest";
+import SelectApplicationModal from "../components/SelectAplicationModal";
 const picture3 = "images/services/picture3";
 const picture4 = "images/services/picture4";
 const picture5 = "images/services/picture5";
@@ -744,6 +746,7 @@ export const Services: React.FC = () => {
           years, choose professionals. Choose precision, durability, and
           elegance. Choose <b>BIL Pave Solutions</b>!
         </Typography>
+        <SelectApplicationModal />
       </Box>
     </Container>
   );

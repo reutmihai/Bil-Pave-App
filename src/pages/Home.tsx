@@ -8,6 +8,7 @@ import pav6 from "../assets/images/homepage/pav6.webp";
 import { Reviews } from "../components/Reviews";
 import { useNavigate } from "react-router-dom";
 import ModalApplyForm from "../components/ModalApplyForm";
+import SelectApplicationModal from "../components/SelectAplicationModal";
 
 export const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -65,7 +66,7 @@ export const Home: React.FC = () => {
                 mt: 2,
               }}
             >
-            <ModalApplyForm />
+            <SelectApplicationModal />
               <Button
                 variant="outlined"
                 sx={{

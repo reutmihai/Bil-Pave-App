@@ -1,5 +1,6 @@
 import { Box, Container, Typography } from "@mui/material";
 import AboutUsCard from "../components/AboutUsCard";
+import SelectApplicationModal from "../components/SelectAplicationModal";
 
 export const About: React.FC = () => {
   return (
@@ -8,7 +9,7 @@ export const About: React.FC = () => {
         maxWidth="lg"
         sx={{
           display: "flex",
-          flexDirection: { xs: "column", sm: "row" },
+          flexDirection: { xs: "column" },
           alignItems: "center",
           px: { xs: 2, sm: 4 },
         }}
@@ -28,12 +29,12 @@ export const About: React.FC = () => {
             marginTop={5}
             marginBottom={10}
             sx={{
-              mb: { xs: 4, sm: 3, md: 10 },
+              mb: { xs: 4, sm: 3, md: 5 },
             }}
           >
             About BPS - The Story Behind
           </Typography>
-
+          <AboutUsCard />
           <Typography variant="body1">
             <b>BIL Pave Solutions </b> - Building Beauty, Shaping the Future In
             a world where fast pace and indifference seem to take over, we, the
@@ -102,8 +103,9 @@ export const About: React.FC = () => {
             <br />
             <b>Choose to believe. Choose to build beauty together!</b>
           </Typography>
-          <AboutUsCard />
+          <SelectApplicationModal />
         </Box>
+        
       </Container>
     </Box>
   );

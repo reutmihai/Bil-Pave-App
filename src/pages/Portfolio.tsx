@@ -10,6 +10,7 @@ import {
   DialogContent,
 } from "@mui/material";
 import Gallery from "../components/Gallery";
+import SelectApplicationModal from "../components/SelectAplicationModal";
 
 export const Portfolio: React.FC = () => {
   const [openDialog, setOpenDialog] = useState(false);
@@ -157,6 +158,7 @@ export const Portfolio: React.FC = () => {
             interested in collaborating with us, don't hesitate to contact us.<br />
             <b>Together, we can build the future!</b>
           </Typography>
+          <SelectApplicationModal />
         </Box>
       </Container>
 

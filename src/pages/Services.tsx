@@ -744,9 +744,9 @@ export const Services: React.FC = () => {
           <u>Conclusion:</u> Why choose <b>BPS</b>? <br />
           R: If you want a pavement that remains stable and flawless for many
           years, choose professionals. Choose precision, durability, and
-          elegance. Choose <b>BIL Pave Solutions</b>!
+          elegance.<br /> Choose <b>BIL Pave Solutions</b>!
+          <SelectApplicationModal />
         </Typography>
-        <SelectApplicationModal />
       </Box>
     </Container>
   );

@@ -68,13 +68,12 @@ export const Home: React.FC = () => {
             >
             <SelectApplicationModal />
               <Button
-                variant="outlined"
+                variant="contained"
                 sx={{
-                  color: "white",
                   borderColor: "white",
                   width: { xs: "100%", sm: "auto" },
                   fontSize: { xs: "0.5rem", md: "0.8rem" },
-                  py: { xs: 0.5, sm: 1.5 },
+                  py: { xs: 0.2, md: 1 },
                 }}
                 onClick={() => navigate("/portfolio")}
               >
@@ -114,7 +113,6 @@ export const Home: React.FC = () => {
           ))}
         </Box>
       </Box>
-      <Reviews />
     </Container>
   );
 };

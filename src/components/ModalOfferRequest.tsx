@@ -18,7 +18,7 @@ const ModalOfferRequest = ({ open, onClose }: { open: boolean; onClose: () => vo
     <Modal open={open} onClose={onClose} aria-labelledby="request-quote-modal">
       <Box sx={modalStyle}>
         <Typography variant="h5" sx={{ mb: 2, color: "black" }}>
-          Request a Quote
+        Request services
         </Typography>
         <OfferRequestForm onClose={onClose} />
       </Box>

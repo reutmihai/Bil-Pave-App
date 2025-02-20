@@ -158,7 +158,8 @@ export const Portfolio: React.FC = () => {
             interested in collaborating with us, don't hesitate to contact us.<br />
             <b>Together, we can build the future!</b>
           </Typography>
-          <SelectApplicationModal />
+            <SelectApplicationModal />
+         
         </Box>
       </Container>
 

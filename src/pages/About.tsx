@@ -21,6 +21,7 @@ export const About: React.FC = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            gap: 4,
           }}
         >
           <Typography

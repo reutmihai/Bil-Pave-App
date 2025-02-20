@@ -19,7 +19,9 @@ const modalStyle = {
 
 const SelectApplicationModal = () => {
   const [open, setOpen] = useState(false);
-  const [selectedModal, setSelectedModal] = useState<"apply" | "quote" | null>(null);
+  const [selectedModal, setSelectedModal] = useState<"apply" | "quote" | null>(
+    null
+  );
 
   const handleClose = () => setOpen(false);
   const openApplyForm = () => {
@@ -35,12 +37,11 @@ const SelectApplicationModal = () => {
     <Box>
       <Button
         variant="contained"
-        color="primary"
         sx={{
-          width: { xs: "100%", sm: "auto" },
-          minWidth: "80px",
+          borderColor: "white",
+          width: { xs: "100%", md: "auto" },
           fontSize: { xs: "0.5rem", md: "0.8rem" },
-          py: { xs: 1, sm: 1.5 },
+          py: { xs: 0.2, md: 1 },
         }}
         onClick={() => setOpen(true)}
       >
@@ -48,23 +49,41 @@ const SelectApplicationModal = () => {
       </Button>
 
       {/* Modalul pentru alegerea tipului de aplicare */}
-      <Modal open={open} onClose={handleClose} aria-labelledby="select-application-modal">
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="select-application-modal"
+      >
         <Box sx={modalStyle}>
           <Typography variant="h6" sx={{ mb: 2 }}>
             What do you want to apply for?
           </Typography>
-          <Button variant="contained" color="secondary" sx={{ mb: 2, width: "100%" }} onClick={openApplyForm}>
+          <Button
+            variant="contained"
+            color="primary"
+            sx={{ mb: 2, width: "100%" }}
+            onClick={openApplyForm}
+          >
             Apply for a Job
           </Button>
-          <Button variant="contained" color="success" sx={{ width: "100%" }} onClick={openQuoteForm}>
-            Request a Quote
+          <Button
+            variant="contained"
+            color="primary"
+            sx={{ width: "100%" }}
+            onClick={openQuoteForm}
+          >
+            Request for services
           </Button>
         </Box>
       </Modal>
 
       {/* Modalele individuale */}
-      {selectedModal === "apply" && <ModalApplyForm open={true} onClose={() => setSelectedModal(null)} />}
-      {selectedModal === "quote" && <ModalOfferRequest open={true} onClose={() => setSelectedModal(null)} />}
+      {selectedModal === "apply" && (
+        <ModalApplyForm open={true} onClose={() => setSelectedModal(null)} />
+      )}
+      {selectedModal === "quote" && (
+        <ModalOfferRequest open={true} onClose={() => setSelectedModal(null)} />
+      )}
     </Box>
   );
 };

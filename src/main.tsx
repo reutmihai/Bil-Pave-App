@@ -52,14 +52,12 @@ const theme = createTheme({
     h5: {
       fontFamily: "Alfa Slab One, sans-serif",
       fontSize: "1.5rem",
-      margin: "20px 0px 20px 0px",
       "@media (max-width:900px)": { fontSize: "1.3rem" },
       "@media (max-width:600px)": { fontSize: "1rem" },
     },
     h6: {
       fontFamily: "Inter",
       fontSize: "1.5rem",
-      margin: "20px 0px 20px 0px",
       "@media (max-width:900px)": { fontSize: "1.3rem" },
       "@media (max-width:600px)": { fontSize: "1rem" },
     },

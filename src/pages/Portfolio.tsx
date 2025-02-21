@@ -29,6 +29,10 @@ export const Portfolio: React.FC = () => {
     setSelectedProject(null);
   };
 
+  const subtitleStyle = {
+    margin: {xs:"10px 0px", sm:"30px 0px"}
+  }
+
   return (
     <Box>
       <Container
@@ -93,7 +97,7 @@ export const Portfolio: React.FC = () => {
 
           {/* Secțiunea România */}
           <Box border="1px solid white" padding={2}>
-            <Typography variant="h5">Projects in Romania 🇷🇴</Typography>
+            <Typography variant="h5" sx={{...subtitleStyle}}>Projects in Romania 🇷🇴</Typography>
             <Typography variant="body1">
               In Romania, we have focused on landscaping courtyards and alleys,
               transforming spaces into durable, functional, and aesthetic areas.
@@ -113,7 +117,7 @@ export const Portfolio: React.FC = () => {
 
           {/* Secțiunea Germania */}
           <Box border="1px solid white" padding={2}>
-            <Typography variant="h5">Projects in Germany 🇩🇪</Typography>
+            <Typography variant="h5" sx={{...subtitleStyle}}>Projects in Germany 🇩🇪</Typography>
             <Typography variant="body1">
               In Germany, we have had the honor of working with prestigious
               partners, contributing to the construction of essential
@@ -133,7 +137,7 @@ export const Portfolio: React.FC = () => {
 
           {/* Secțiunea Olanda */}
           <Box border="1px solid white" padding={2}>
-            <Typography variant="h5">Projects in the Netherlands 🇳🇱</Typography>
+            <Typography variant="h5" sx={{...subtitleStyle}}>Projects in the Netherlands 🇳🇱</Typography>
             <Typography variant="body1">
               In the Netherlands, we have had the opportunity to work on
               industrial-level projects, contributing to the infrastructure of

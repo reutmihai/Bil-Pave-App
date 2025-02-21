@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
         bgcolor: "primary.main",
         color: "black",
         py: 3,
-        mt: 15,
+        mt: 5,
       }}
     >
       <Container

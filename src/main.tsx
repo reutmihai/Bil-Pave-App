@@ -166,9 +166,10 @@ const theme = createTheme({
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
+          backgroundAttachment: "fixed",
           backgroundRepeat: "no-repeat",
           overflowX: "hidden",
-          width: "100%",
+          backgroundColor: "rgba(0, 0, 0, 0.5)"
         },
       },
     },

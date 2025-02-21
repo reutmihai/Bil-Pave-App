@@ -11,7 +11,6 @@ export const About: React.FC = () => {
           display: "flex",
           flexDirection: { xs: "column" },
           alignItems: "center",
-          px: { xs: 2, sm: 4 },
         }}
       >
         <Box
@@ -47,13 +46,13 @@ export const About: React.FC = () => {
             <br />
             <br />
             With over 10 years of experience, we have learned from the best in
-            <b> Romania</b>, <b>Germany</b>, and the <b>Netherlands</b>, perfecting our techniques and
-            bringing the finest solutions to the country where we currently
-            operate. We have learned that it is not just about placing concrete
-            pieces on the ground, but about creating an environment that
-            inspires, offers comfort, and gives rise to precious moments. Each
-            of our projects is a testament to our passion for detail and our
-            desire to make the world a more beautiful place.
+            <b> Romania</b>, <b>Germany</b>, and the <b>Netherlands</b>,
+            perfecting our techniques and bringing the finest solutions to the
+            country where we currently operate. We have learned that it is not
+            just about placing concrete pieces on the ground, but about creating
+            an environment that inspires, offers comfort, and gives rise to
+            precious moments. Each of our projects is a testament to our passion
+            for detail and our desire to make the world a more beautiful place.
             <br />
             <br />
             <b>More than a Team - A Family</b>
@@ -104,9 +103,16 @@ export const About: React.FC = () => {
             <br />
             <b>Choose to believe. Choose to build beauty together!</b>
           </Typography>
-          <SelectApplicationModal />
+          <SelectApplicationModal
+            buttonText="Apply for a Service"
+            buttonStyle={{
+              position: "relative",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              padding: "12px 24px",
+            }}
+          />
         </Box>
-        
       </Container>
     </Box>
   );

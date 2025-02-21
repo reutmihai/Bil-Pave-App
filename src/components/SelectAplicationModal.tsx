@@ -17,7 +17,15 @@ const modalStyle = {
   textAlign: "center",
 };
 
-const SelectApplicationModal = () => {
+interface SelectApplicationModalProps {
+  buttonText: string;
+  buttonStyle?: object;  // Pentru stiluri personalizate
+}
+
+const SelectApplicationModal: React.FC<SelectApplicationModalProps> = ({
+  buttonText,
+  buttonStyle = {},
+}) => {
   const [open, setOpen] = useState(false);
   const [selectedModal, setSelectedModal] = useState<"apply" | "quote" | null>(
     null
@@ -39,13 +47,14 @@ const SelectApplicationModal = () => {
         variant="contained"
         sx={{
           borderColor: "white",
-          width: { xs: "100%", md: "auto" },
+          // width: { xs: "100%", md: "auto" },
           fontSize: { xs: "0.5rem", md: "0.8rem" },
           py: { xs: 0.2, md: 1 },
+          ...buttonStyle, 
         }}
         onClick={() => setOpen(true)}
       >
-        Apply for
+        {buttonText}
       </Button>
 
       {/* Modalul pentru alegerea tipului de aplicare */}

@@ -1,4 +1,5 @@
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+import profile_card from "../assets/images/about/profile_card.jpg";
 
 export default function AboutUsCard() {
   return (
@@ -22,7 +23,7 @@ export default function AboutUsCard() {
       {/* Imaginea de profil */}
       <CardMedia
         component="img"
-        image="images/about/profile_card.jpg"
+        image={profile_card}
         alt="Administrator"
         sx={{ width: 80, height: 80, borderRadius: "50%", mr: 2 }}
       />

@@ -6,11 +6,13 @@ const modalStyle = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: { xs: "100%", md: "600px" },
+  width: { xs: "80%", sm: "70%", md: "600px" }, // Responsive width
+  maxHeight: "90vh", // Setează o înălțime maximă pentru a nu depăși viewport-ul
   bgcolor: "background.paper",
   borderRadius: "10px",
   boxShadow: 24,
-  p: 4,
+  p: {xs: 2, sm: 4},
+  overflowY: "auto", // Permite scroll în cazul în care formularul este prea înalt
 };
 
 const ModalApplyForm = ({ open, onClose }: { open: boolean; onClose: () => void }) => {

@@ -16,7 +16,7 @@ export default function AboutUsCard() {
         marginBottom: 5,
         transition: "transform 0.3s ease-in-out",
         "&:hover": {
-          transform: "scale(1.1)",
+          transform: {xs: "none", sm:"scale(1.1)"},
         },
       }}
     >

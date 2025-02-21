@@ -49,6 +49,10 @@ const imgStyles = {
   maxWidth: "100%",
 };
 
+const subtitleStyle = {
+  margin: {xs:"10px 0px", sm:"30px 0px"}
+}
+
 export const Services: React.FC = () => {
   return (
     <Container
@@ -101,7 +105,7 @@ export const Services: React.FC = () => {
           />
         </picture>
 
-        <Typography variant="h5" gutterBottom>
+        <Typography variant="h5" sx={{...subtitleStyle}} gutterBottom>
           1. Ground Preparation - The Foundation of Durability
         </Typography>
         <Typography variant="body1">
@@ -141,7 +145,7 @@ export const Services: React.FC = () => {
             </Typography>
           </ListItem>
         </List>
-        <Typography variant="h5" gutterBottom>
+        <Typography variant="h5" sx={{...subtitleStyle}} gutterBottom>
           2. Drainage Systems - Protecting Your Pavement and Property
         </Typography>
         <Typography variant="body1" pb={2}>
@@ -203,7 +207,7 @@ export const Services: React.FC = () => {
             </Typography>
           </ListItem>
         </List>
-        <Typography variant="h5" gutterBottom>
+        <Typography variant="h5" sx={{...subtitleStyle}} gutterBottom>
           3. Installation of Manholes and Access to Facilities
         </Typography>
         <Typography variant="body2">
@@ -275,14 +279,13 @@ export const Services: React.FC = () => {
           </ListItem>
         </List>
         <Typography variant="body2">
-          {" "}
           Conclusion: A well-designed drainage system is an investment in the
           comfort and durability of your yard. At BIL Pave Solutions, we combine
           technical expertise with efficient solutions to ensure you have a dry,
           well-organized space without water accumulation issues.
         </Typography>
 
-        <Typography variant="h5" gutterBottom>
+        <Typography variant="h5" sx={{...subtitleStyle}} gutterBottom>
           4. Support Layer - Correct Stone and Granulation
         </Typography>
         <List>
@@ -340,7 +343,7 @@ export const Services: React.FC = () => {
             </picture>
           ))}
         </Box>
-        <Typography variant="h5" gutterBottom>
+        <Typography variant="h5" sx={{...subtitleStyle}} gutterBottom>
           5. Compaction - Long-Term Stability
         </Typography>
         <List>
@@ -414,7 +417,7 @@ export const Services: React.FC = () => {
             </Typography>
           </ListItem>
         </List>
-        <Typography variant="h5" gutterBottom>
+        <Typography variant="h5" sx={{...subtitleStyle}} gutterBottom>
           6. Curb Installation - Defining and Stabilizing the Paved Area
         </Typography>
         <Typography variant="body1">
@@ -673,7 +676,7 @@ export const Services: React.FC = () => {
           aesthetically pleasing, providing a result that remains stable for
           years to come.
         </Typography>
-        <Typography variant="h5" gutterBottom>
+        <Typography variant="h5" sx={{...subtitleStyle}} gutterBottom>
           7. Professional Pavement Installation - Precision, Durability, and
           Aesthetics
         </Typography>

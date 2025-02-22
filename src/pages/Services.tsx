@@ -746,12 +746,14 @@ export const Services: React.FC = () => {
           pattern, regardless of the installation design, we adapt to any style
           and focus on creativity, ensuring that each project is unique.
         </Typography>
-        <Typography variant="h6">
+        <Typography variant="h6" sx={{...subtitleStyle}}>
           <u>Conclusion:</u> Why choose <b>BPS</b>? <br />
           R: If you want a pavement that remains stable and flawless for many
           years, choose professionals. Choose precision, durability, and
           elegance.
           <br /> Choose <b>BIL Pave Solutions</b>!
+          <br />
+          <br />
         </Typography>
         <SelectApplicationModal
           buttonText="Apply for a Service"

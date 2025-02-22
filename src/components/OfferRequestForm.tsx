@@ -15,7 +15,9 @@ const OfferRequestForm = ({ onClose }: { onClose: () => void }) => {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -25,11 +27,23 @@ const OfferRequestForm = ({ onClose }: { onClose: () => void }) => {
     setLoading(true);
 
     emailjs
-      .send("service_nf3d0xl", "template_hnyehpg", formData, "IjP23_ENq-2bJHoP5")
+      .send(
+        "service_nf3d0xl",
+        "template_hnyehpg",
+        formData,
+        "IjP23_ENq-2bJHoP5"
+      )
       .then(
         () => {
           setSuccess(true);
-          setFormData({ name: "", email: "", phone: "", location: "", serviceType: "", message: "" }); // Reset formular
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            location: "",
+            serviceType: "",
+            message: "",
+          }); // Reset formular
           setTimeout(() => {
             setSuccess(false);
             onClose(); // Închide modalul după succes
@@ -44,8 +58,14 @@ const OfferRequestForm = ({ onClose }: { onClose: () => void }) => {
 
   return (
     <Box>
-      {success && <Alert severity="success">Request sent successfully! You will be contacted shortly.</Alert>}
-      {error && <Alert severity="error">Something went wrong. Please try again.</Alert>}
+      {success && (
+        <Alert severity="success">
+          Request sent successfully! You will be contacted shortly.
+        </Alert>
+      )}
+      {error && (
+        <Alert severity="error">Something went wrong. Please try again.</Alert>
+      )}
 
       <form onSubmit={handleSubmit}>
         <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
@@ -53,14 +73,75 @@ const OfferRequestForm = ({ onClose }: { onClose: () => void }) => {
             Fill out the form to be contacted by our team
           </Typography>
 
-          <TextField label="Full Name" name="name" value={formData.name} onChange={handleChange} fullWidth required />
-          <TextField type="email" label="Email" name="email" value={formData.email} onChange={handleChange} fullWidth required />
-          <TextField type="tel" label="Phone Number" name="phone" value={formData.phone} onChange={handleChange} fullWidth required />
-          <TextField label="Project Location" name="location" value={formData.location} onChange={handleChange} fullWidth required />
-          <TextField label="Type of Service" name="serviceType" value={formData.serviceType} onChange={handleChange} fullWidth required />
-          <TextField label="Additional Details" name="message" value={formData.message} onChange={handleChange} fullWidth multiline rows={4} />
+          <TextField
+            label="Full Name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            fullWidth
+            required
+          />
+          <TextField
+            type="email"
+            label="Email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            fullWidth
+            required
+          />
+          <TextField
+            type="tel"
+            label="Phone Number"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            fullWidth
+            required
+          />
+          <TextField
+            label="Project Location"
+            name="location"
+            value={formData.location}
+            onChange={handleChange}
+            fullWidth
+            required
+          />
+          <TextField
+            label="Type of Service"
+            name="serviceType"
+            value={formData.serviceType}
+            onChange={handleChange}
+            fullWidth
+            required
+          />
+          <TextField
+            label="Additional Details"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            fullWidth
+            multiline
+            rows={4}
+          />
+          <Box display="flex" alignItems="center" justifyContent="center">
+            <input
+              type="checkbox"
+              id="privacy-agreement"
+              name="privacy-agreement"
+              required
+            />
+            <Typography variant="body1" sx={{ color: "black" }}>
+              I agree to the Privacy Policy
+            </Typography>
+          </Box>
 
-          <Button variant="contained" type="submit" color="primary" disabled={loading}>
+          <Button
+            variant="contained"
+            type="submit"
+            color="primary"
+            disabled={loading}
+          >
             {loading ? "Sending..." : "Send Request"}
           </Button>
         </Box>

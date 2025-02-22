@@ -20,7 +20,6 @@ export const Home: React.FC = () => {
     >
       <Box
         sx={{
-          mt: { xs: 15, sm: "100px", md: "120px" },
           p: { xs: "auto", sm: 2 },
           display: "flex",
           flexDirection: { xs: "column", sm: "row" },
@@ -39,6 +38,7 @@ export const Home: React.FC = () => {
             flexDirection: "column",
             gap: 2,
             borderRadius: "10px",
+            marginTop: {xs: 10, sm: 0},
           }}
         >
           <Typography variant="h3" sx={{ textAlign: { xs: "center" } }}>

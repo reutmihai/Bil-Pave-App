@@ -15,7 +15,6 @@ export const About: React.FC = () => {
       >
         <Box
           sx={{
-            mt: { xs: 2, sm: "40px", md: "60px" },
             px: { xs: 2, sm: 4 },
             display: "flex",
             flexDirection: "column",

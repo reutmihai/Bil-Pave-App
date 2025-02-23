@@ -8,7 +8,7 @@ import ScrollToTop from "./components/ScrollToTop";
 
 const App: React.FC = () => {
   return (
-    <Router basename="/Bil-Pave-App">
+    <Router basename="/">
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<SharedLayout />}>

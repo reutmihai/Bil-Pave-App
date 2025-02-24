@@ -12,8 +12,6 @@ Hosting: Cloudflare
 
 Image Storage: Cloudflare R2
 
-CMS: Strapi (for managing reviews)
-
 Features
 
 ✅ Homepage with company introduction
@@ -33,7 +31,7 @@ Installation & Local Setup
 
 1. Clone the repository
    
-git clone https://github.com/reutmihai/bps-paving.com
+git clone https://github.com/reutmihai/Bil-Pave-App
 
 cd bps-paving
 

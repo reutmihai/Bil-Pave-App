@@ -29,7 +29,7 @@ export const Home: React.FC = () => {
         }}
       >
         <Helmet>
-          <title>Bill Pave Solutions (BPS) | Professional Paving Services</title>
+          <title>Bil Pave Solutions (BPS) | Professional Paving Services</title>
           <meta
             name="description"
             content="High-quality paving solutions for your home or business. Explore our portfolio and get in touch!"
@@ -52,7 +52,7 @@ export const Home: React.FC = () => {
         >
           <Typography variant="h3" sx={{ textAlign: { xs: "center" } }}>
             WELCOME TO <br />
-            BILL-PAVE-SOLUTIONS!
+            BIL-PAVE-SOLUTIONS!
           </Typography>
           <Typography variant="body1" sx={{ textAlign: { xs: "center" } }}>
             "Life is short, but memories last longer. A paved yard becomes the

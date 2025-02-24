@@ -123,7 +123,7 @@ const Footer: React.FC = () => {
         fontWeight="600"
         sx={{ mt: 2 }}
       >
-        © {new Date().getFullYear()} Bill-Pave-Solutions. All rights reserved.
+        © {new Date().getFullYear()} Bil-Pave-Solutions. All rights reserved.
       </Typography>
     </Box>
   );

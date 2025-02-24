@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
             desires into reality, and today we are here, ready to give soul to
             your yard."
           </Typography>
-          <Typography variant="h4">Bill-Pave-Solutions</Typography>
+          <Typography variant="h4">Bil-Pave-Solutions</Typography>
           <Box display="flex" alignItems="center" gap={2}>
             <Link href="/">
               <Box

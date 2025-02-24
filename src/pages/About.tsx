@@ -4,7 +4,7 @@ import SelectApplicationModal from "../components/SelectAplicationModal";
 
 export const About: React.FC = () => {
   return (
-    <Box sx={{ overflowX: "hidden", py: 5 }}>
+    <Box sx={{ overflowX: "hidden", width: "100%", py: 5 }}>
       <Container
         maxWidth="lg"
         sx={{
@@ -23,12 +23,10 @@ export const About: React.FC = () => {
           }}
         >
           <Typography
-            variant="h4"
+            variant="h1"
             textAlign={"center"}
-            marginTop={5}
-            marginBottom={10}
             sx={{
-              mb: { xs: 4, sm: 3, md: 5 },
+              my: { xs: 4, sm: 3, md: 5 },
             }}
           >
             About BPS - The Story Behind

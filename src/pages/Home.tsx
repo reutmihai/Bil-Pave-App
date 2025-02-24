@@ -7,6 +7,7 @@ import pav5 from "../assets/images/homepage/pav5.webp";
 import pav6 from "../assets/images/homepage/pav6.webp";
 import { useNavigate } from "react-router-dom";
 import SelectApplicationModal from "../components/SelectAplicationModal";
+import { Helmet } from "react-helmet-async";
 
 export const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -20,12 +21,20 @@ export const Home: React.FC = () => {
     >
       <Box
         sx={{
-          p: { xs: "auto", sm: 2 },
+          p: { sm: 2 },
+          marginTop: {sm: 5},
           display: "flex",
           flexDirection: { xs: "column", sm: "row" },
           alignItems: "center",
         }}
       >
+        <Helmet>
+          <title>Bill Pave Solutions (BPS) | Professional Paving Services</title>
+          <meta
+            name="description"
+            content="High-quality paving solutions for your home or business. Explore our portfolio and get in touch!"
+          />
+        </Helmet>
         <Box
           sx={{
             mb: 4,
@@ -38,7 +47,7 @@ export const Home: React.FC = () => {
             flexDirection: "column",
             gap: 2,
             borderRadius: "10px",
-            marginTop: {xs: 10, sm: 0},
+            marginTop: { xs: 10, sm: 0 },
           }}
         >
           <Typography variant="h3" sx={{ textAlign: { xs: "center" } }}>
@@ -68,6 +77,7 @@ export const Home: React.FC = () => {
 
               <Button
                 variant="contained"
+                aria-label="View our paving portfolio"
                 sx={{
                   borderColor: "white",
                   width: { xs: "100%", sm: "auto" },
@@ -96,13 +106,15 @@ export const Home: React.FC = () => {
               key={index}
               component="img"
               src={src}
-              alt={`Paving example ${index + 1}`}
+              alt={`Paving services example ${index + 1}`}
+              loading="lazy"
               sx={{
                 display: index >= 3 ? { xs: "none", sm: "block" } : "block",
                 width: { xs: "100%", sm: "44%", md: "180px" },
                 height: { xs: "auto", sm: "150px", md: "200px" },
                 maxWidth: "180px",
                 maxHeight: "200px",
+                objectFit: "cover",
                 transition: "transform 0.3s ease-in-out",
                 "&:hover": {
                   transform: "scale(1.1)",

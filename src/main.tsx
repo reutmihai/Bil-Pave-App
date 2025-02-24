@@ -6,6 +6,7 @@ import App from "./App";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import backgroundImage from "./assets/images/bg.jpg";
+import { HelmetProvider } from "react-helmet-async";
 
 const theme = createTheme({
   palette: {
@@ -234,7 +235,9 @@ if (rootElement) {
     <React.StrictMode>
       <ThemeProvider theme={theme}>
         <CssBaseline />
+        <HelmetProvider>
         <App />
+        </HelmetProvider>
       </ThemeProvider>
     </React.StrictMode>
   );

@@ -32,6 +32,7 @@ import picture29 from "../assets/images/services/picture29.webp";
 import picture30 from "../assets/images/services/picture30.webp";
 import picture31 from "../assets/images/services/picture31.webp";
 import picture32 from "../assets/images/services/picture32.webp";
+import { Helmet } from "react-helmet-async";
 
 const imgFlex = {
   display: "flex",
@@ -50,8 +51,8 @@ const imgStyles = {
 };
 
 const subtitleStyle = {
-  margin: {xs:"10px 0px", sm:"30px 0px"}
-}
+  margin: { xs: "10px 0px", sm: "30px 0px" },
+};
 
 export const Services: React.FC = () => {
   return (
@@ -75,13 +76,40 @@ export const Services: React.FC = () => {
           overflowX: "hidden",
         }}
       >
+        <Helmet>
+          <title>Paving Services BPS - Construction Company</title>
+          <meta
+            name="description"
+            content="We offer professional paving services for all types of construction projects. Contact us for more details."
+          />
+          <meta
+            name="keywords"
+            content="paving, construction services, paving for driveways, walkways, sidewalks"
+          />
+          <meta
+            property="og:title"
+            content="Paving Services - Construction Company"
+          />
+          <meta
+            property="og:description"
+            content="We offer professional paving services for all types of construction projects. Contact us for more details."
+          />
+          <meta property="og:image" content="paving-image-url.jpg" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta
+            name="twitter:title"
+            content="Paving Services - Construction Company"
+          />
+          <meta
+            name="twitter:description"
+            content="We offer professional paving services for all types of construction projects. Contact us for more details."
+          />
+        </Helmet>
         <Typography
-          variant="h4"
+          variant="h1"
           textAlign={"center"}
-          marginTop={5}
-          marginBottom={10}
           sx={{
-            mb: { xs: 4, sm: 3, md: 10 },
+            my: { xs: 4, sm: 3, md: 10 },
           }}
         >
           Our Services - The Science Behind a Perfect Pavement
@@ -105,7 +133,7 @@ export const Services: React.FC = () => {
           />
         </picture>
 
-        <Typography variant="h5" sx={{...subtitleStyle}} gutterBottom>
+        <Typography variant="h5" sx={{ ...subtitleStyle }} gutterBottom>
           1. Ground Preparation - The Foundation of Durability
         </Typography>
         <Typography variant="body1">
@@ -145,7 +173,7 @@ export const Services: React.FC = () => {
             </Typography>
           </ListItem>
         </List>
-        <Typography variant="h5" sx={{...subtitleStyle}} gutterBottom>
+        <Typography variant="h5" sx={{ ...subtitleStyle }} gutterBottom>
           2. Drainage Systems - Protecting Your Pavement and Property
         </Typography>
         <Typography variant="body1" pb={2}>
@@ -207,7 +235,7 @@ export const Services: React.FC = () => {
             </Typography>
           </ListItem>
         </List>
-        <Typography variant="h5" sx={{...subtitleStyle}} gutterBottom>
+        <Typography variant="h5" sx={{ ...subtitleStyle }} gutterBottom>
           3. Installation of Manholes and Access to Facilities
         </Typography>
         <Typography variant="body2">
@@ -285,7 +313,7 @@ export const Services: React.FC = () => {
           well-organized space without water accumulation issues.
         </Typography>
 
-        <Typography variant="h5" sx={{...subtitleStyle}} gutterBottom>
+        <Typography variant="h5" sx={{ ...subtitleStyle }} gutterBottom>
           4. Support Layer - Correct Stone and Granulation
         </Typography>
         <List>
@@ -343,7 +371,7 @@ export const Services: React.FC = () => {
             </picture>
           ))}
         </Box>
-        <Typography variant="h5" sx={{...subtitleStyle}} gutterBottom>
+        <Typography variant="h5" sx={{ ...subtitleStyle }} gutterBottom>
           5. Compaction - Long-Term Stability
         </Typography>
         <List>
@@ -417,7 +445,7 @@ export const Services: React.FC = () => {
             </Typography>
           </ListItem>
         </List>
-        <Typography variant="h5" sx={{...subtitleStyle}} gutterBottom>
+        <Typography variant="h5" sx={{ ...subtitleStyle }} gutterBottom>
           6. Curb Installation - Defining and Stabilizing the Paved Area
         </Typography>
         <Typography variant="body1">
@@ -676,7 +704,7 @@ export const Services: React.FC = () => {
           aesthetically pleasing, providing a result that remains stable for
           years to come.
         </Typography>
-        <Typography variant="h5" sx={{...subtitleStyle}} gutterBottom>
+        <Typography variant="h5" sx={{ ...subtitleStyle }} gutterBottom>
           7. Professional Pavement Installation - Precision, Durability, and
           Aesthetics
         </Typography>
@@ -746,7 +774,7 @@ export const Services: React.FC = () => {
           pattern, regardless of the installation design, we adapt to any style
           and focus on creativity, ensuring that each project is unique.
         </Typography>
-        <Typography variant="h6" sx={{...subtitleStyle}}>
+        <Typography variant="h6" sx={{ ...subtitleStyle }}>
           <u>Conclusion:</u> Why choose <b>BPS</b>? <br />
           R: If you want a pavement that remains stable and flawless for many
           years, choose professionals. Choose precision, durability, and

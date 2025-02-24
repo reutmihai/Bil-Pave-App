@@ -11,6 +11,8 @@ import {
 } from "@mui/material";
 import Gallery from "../components/Gallery";
 import SelectApplicationModal from "../components/SelectAplicationModal";
+import ProjectCard from "../components/ProjectCard";
+import { Helmet } from "react-helmet-async";
 
 export const Portfolio: React.FC = () => {
   const [openDialog, setOpenDialog] = useState(false);
@@ -18,8 +20,10 @@ export const Portfolio: React.FC = () => {
     "Romania" | "Germany" | "Netherlands" | null
   >(null);
 
+  type ProjectCountry = "Romania" | "Germany" | "Netherlands";
+
   // Deschide galeria pentru un proiect specific
-  const openGallery = (country: "Romania" | "Germany" | "Netherlands") => {
+  const openGallery = (country: ProjectCountry) => {
     setSelectedProject(country);
     setOpenDialog(true);
   };
@@ -30,8 +34,8 @@ export const Portfolio: React.FC = () => {
   };
 
   const subtitleStyle = {
-    margin: {xs:"10px 0px", sm:"30px 0px"}
-  }
+    margin: { xs: "10px 0px", sm: "30px 0px" },
+  };
 
   return (
     <Box>
@@ -54,8 +58,29 @@ export const Portfolio: React.FC = () => {
             gap: 4,
           }}
         >
+          <Helmet>
+            <title>Portfolio - BPS Construction Projects</title>
+            <meta
+              name="description"
+              content="Explore our portfolio of construction projects in Romania, Germany, and the Netherlands. Quality infrastructure solutions."
+            />
+            <meta name="robots" content="index, follow" />
+            <meta
+              property="og:title"
+              content="Portfolio - BPS Construction Projects"
+            />
+            <meta
+              property="og:description"
+              content="Explore our portfolio of construction projects in Romania, Germany, and the Netherlands. Quality infrastructure solutions."
+            />
+            <meta property="og:type" content="website" />
+            <meta
+              property="og:image"
+              content="link_to_image_for_social_sharing.jpg"
+            />
+          </Helmet>
           <Typography
-            variant="h4"
+            variant="h1"
             textAlign={"center"}
             marginTop={5}
             marginBottom={10}
@@ -68,7 +93,8 @@ export const Portfolio: React.FC = () => {
           <Box
             component="img"
             src={portfolio}
-            alt={`Portfolio image`}
+            alt="Portfolio showcasing construction projects"
+            loading="lazy"
             sx={{
               width: { xs: "100%", sm: "100%", md: "600px" },
               height: { xs: "auto", sm: "100%", md: "300px" },
@@ -95,66 +121,27 @@ export const Portfolio: React.FC = () => {
             and become part of this success story.
           </Typography>
 
-          {/* Secțiunea România */}
-          <Box border="1px solid white" padding={2}>
-            <Typography variant="h5" sx={{...subtitleStyle}}>Projects in Romania 🇷🇴</Typography>
-            <Typography variant="body1">
-              In Romania, we have focused on landscaping courtyards and alleys,
-              transforming spaces into durable, functional, and aesthetic areas.
-              Whether it's residential properties, company headquarters, or
-              commercial spaces, each project reflects our attention to detail
-              and the high-quality execution that defines us.
-            </Typography>
-            <Button
-              sx={{ mt: 5 }}
-              variant="contained"
-              color="primary"
-              onClick={() => openGallery("Romania")}
-            >
-              See the projects
-            </Button>
-          </Box>
-
-          {/* Secțiunea Germania */}
-          <Box border="1px solid white" padding={2}>
-            <Typography variant="h5" sx={{...subtitleStyle}}>Projects in Germany 🇩🇪</Typography>
-            <Typography variant="body1">
-              In Germany, we have had the honor of working with prestigious
-              partners, contributing to the construction of essential
-              infrastructures. Rigorous planning, precision, and adherence to
-              the highest quality standards have guided us at every stage of
-              these projects.
-            </Typography>
-            <Button
-              sx={{ mt: 5 }}
-              variant="contained"
-              color="primary"
-              onClick={() => openGallery("Germany")}
-            >
-              See the projects
-            </Button>
-          </Box>
-
-          {/* Secțiunea Olanda */}
-          <Box border="1px solid white" padding={2}>
-            <Typography variant="h5" sx={{...subtitleStyle}}>Projects in the Netherlands 🇳🇱</Typography>
-            <Typography variant="body1">
-              In the Netherlands, we have had the opportunity to work on
-              industrial-level projects, contributing to the infrastructure of
-              state-of-the-art data centers for technology giants. We were
-              responsible for constructing roads and sidewalks, ensuring
-              durability, functionality, and seamless integration into these
-              advanced technological ecosystems.
-            </Typography>
-            <Button
-              sx={{ mt: 5 }}
-              variant="contained"
-              color="primary"
-              onClick={() => openGallery("Netherlands")}
-            >
-              See the projects
-            </Button>
-          </Box>
+          <ProjectCard
+            country="Romania"
+            title="Projects in Romania"
+            flag="🇷🇴"
+            description="In Romania, we have focused on landscaping courtyards and alleys, transforming spaces into durable, functional, and aesthetic areas. Whether it's residential properties, company headquarters, or commercial spaces, each project reflects our attention to detail and the high-quality execution that defines us."
+            onOpenGallery={openGallery}
+          />
+          <ProjectCard
+            country="Germany"
+            title="Projects in Germany"
+            flag="🇩🇪"
+            description="In Germany, we have had the honor of working with prestigious partners, contributing to the construction of essential infrastructures. Rigorous planning, precision, and adherence to the highest quality standards have guided us at every stage of these projects."
+            onOpenGallery={openGallery}
+          />
+          <ProjectCard
+            country="Netherlands"
+            title="Projects in the Netherlands"
+            flag="🇳🇱"
+            description="In the Netherlands, we have had the opportunity to work on industrial-level projects, contributing to the infrastructure of state-of-the-art data centers."
+            onOpenGallery={openGallery}
+          />
 
           <Typography variant="body1" fontSize="20px">
             Each project is a reflection of our passion and determination. No

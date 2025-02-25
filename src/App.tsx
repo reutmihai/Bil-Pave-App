@@ -5,6 +5,7 @@ import { Portfolio } from "./pages/Portfolio";
 import { About } from "./pages/About";
 import SharedLayout from "./components/SharedLayout";
 import ScrollToTop from "./components/ScrollToTop";
+import { PrivacyPolicy } from "./pages/PrivacyPolicy";
 
 const App: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const App: React.FC = () => {
           <Route path="/services" element={<Services />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/about" element={<About />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
         </Route>
       </Routes>
     </Router>

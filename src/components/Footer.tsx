@@ -67,6 +67,7 @@ const Footer: React.FC = () => {
             gap: 2,
             fontSize: "16px",
             mt: { xs: 2, sm: 0 },
+            flexWrap: "wrap",
           }}
         >
           <Link component={RouterLink} to="/" color="inherit" underline="hover">
@@ -95,6 +96,14 @@ const Footer: React.FC = () => {
             underline="hover"
           >
             About
+          </Link>
+          <Link
+            component={RouterLink}
+            to="/privacy"
+            color="inherit"
+            underline="hover"
+          >
+            Privacy Policy
           </Link>
         </Box>
 

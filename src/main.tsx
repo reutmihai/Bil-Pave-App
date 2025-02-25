@@ -200,7 +200,6 @@ const theme = createTheme({
     MuiList: {
       styleOverrides: {
         root: {
-          paddingLeft: "20px",
           listStyleType: "disc",
         },
       },
@@ -219,6 +218,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           fontSize: "16px",
+          padding: "2px",
           display: "list-item",
           "@media (max-width:900px)": { fontSize: "0.8rem" },
           "@media (max-width:600px)": { fontSize: "0.7rem" },

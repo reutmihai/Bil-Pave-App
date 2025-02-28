@@ -188,6 +188,7 @@ export const Navigation: React.FC = () => {
                 }}
                 component={Link}
                 to={item.path}
+                onClick={() => toggleDrawer(false)}
               >
                 {item.label}
               </Button>
@@ -198,7 +199,7 @@ export const Navigation: React.FC = () => {
 
       {/* Drawer pentru navigația mobilă */}
       <Drawer
-        anchor="left"
+        anchor="right"
         open={drawerOpen}
         onClose={() => toggleDrawer(false)}
         sx={{

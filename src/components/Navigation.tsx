@@ -201,7 +201,6 @@ export const Navigation: React.FC = () => {
       <Drawer
         anchor="right"
         open={drawerOpen}
-        onClose={() => toggleDrawer(false)}
         sx={{
           position: "absolute",
           top: 0,
@@ -226,6 +225,7 @@ export const Navigation: React.FC = () => {
               }}
               component={Link}
               to={item.path}
+              onClick={() => toggleDrawer(false)}
             >
               {item.label}
             </Button>

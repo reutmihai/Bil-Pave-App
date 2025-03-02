@@ -1,5 +1,6 @@
 import { Modal, Box, Typography } from "@mui/material";
 import OfferRequestForm from "./OfferRequestForm";
+import { t } from "i18next";
 
 const modalStyle = {
   position: "absolute" as "absolute",
@@ -20,7 +21,7 @@ const ModalOfferRequest = ({ open, onClose }: { open: boolean; onClose: () => vo
     <Modal open={open} onClose={onClose} aria-labelledby="request-quote-modal">
       <Box sx={{...modalStyle}}>
         <Typography variant="h5" sx={{ mb: 2, color: "black" }}>
-        Request services
+        {t("form.requestServices")}
         </Typography>
         <OfferRequestForm onClose={onClose} />
       </Box>

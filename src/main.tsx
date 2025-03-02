@@ -7,6 +7,7 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import backgroundImage from "./assets/images/bg.jpg";
 import { HelmetProvider } from "react-helmet-async";
+import "./i18n";
 
 const theme = createTheme({
   palette: {
@@ -14,7 +15,7 @@ const theme = createTheme({
       main: "rgba(229, 192, 32, 0.8)",
     },
     secondary: {
-      main: "#000000",
+      main: "#FFFFFF",
     },
     text: {
       primary: "#FFFFFF",
@@ -201,6 +202,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           listStyleType: "disc",
+          padding: "10 0 10 0"
         },
       },
     },

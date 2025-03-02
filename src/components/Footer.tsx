@@ -3,8 +3,17 @@ import { Box, Container, Typography, IconButton, Link } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import { WhatsApp, Phone, Email } from "@mui/icons-material";
 import logo from "../assets/images/logo.png";
+import { useTranslation } from "react-i18next";
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
+  const links = [
+    { to: "/", label: `${t("navigation.home")}` },
+    { to: "/services", label: `${t("navigation.services")}` },
+    { to: "/portfolio", label: `${t("navigation.portfolio")}` },
+    { to: "/about", label: `${t("navigation.about")}` },
+    { to: "/privacy", label: `${t("navigation.privacyPolicy")}` },
+  ];
   return (
     <Box
       component="footer"
@@ -37,10 +46,7 @@ const Footer: React.FC = () => {
           }}
         >
           <Typography variant="body1" textAlign="center" fontSize={14}>
-            "Over 10 years of hard work, hundreds of thousands of kilometers
-            traveled, each step guided by your dreams. We have transformed
-            desires into reality, and today we are here, ready to give soul to
-            your yard."
+            {t("footerDescription")}
           </Typography>
           <Typography variant="h4">Bil-Pave-Solutions</Typography>
           <Box display="flex" alignItems="center" gap={2}>
@@ -70,41 +76,17 @@ const Footer: React.FC = () => {
             flexWrap: "wrap",
           }}
         >
-          <Link component={RouterLink} to="/" color="inherit" underline="hover">
-            Home
-          </Link>
-          <Link
-            component={RouterLink}
-            to="/services"
-            color="inherit"
-            underline="hover"
-          >
-            Services
-          </Link>
-          <Link
-            component={RouterLink}
-            to="/portfolio"
-            color="inherit"
-            underline="hover"
-          >
-            Portfolio
-          </Link>
-          <Link
-            component={RouterLink}
-            to="/about"
-            color="inherit"
-            underline="hover"
-          >
-            About
-          </Link>
-          <Link
-            component={RouterLink}
-            to="/privacy"
-            color="inherit"
-            underline="hover"
-          >
-            Privacy Policy
-          </Link>
+          {links.map((link) => (
+            <Link
+              key={link.to}
+              component={RouterLink}
+              to={link.to}
+              color="inherit"
+              underline="hover"
+            >
+              {link.label}
+            </Link>
+          ))}
         </Box>
 
         <Box sx={{ mt: { xs: 2, sm: 0 } }}>

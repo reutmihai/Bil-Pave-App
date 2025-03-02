@@ -33,6 +33,7 @@ import picture30 from "../assets/images/services/picture30.webp";
 import picture31 from "../assets/images/services/picture31.webp";
 import picture32 from "../assets/images/services/picture32.webp";
 import { Helmet } from "react-helmet-async";
+import { useTranslation } from "react-i18next";
 
 const imgFlex = {
   display: "flex",
@@ -55,6 +56,7 @@ const subtitleStyle = {
 };
 
 export const Services: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <Container
       maxWidth="lg"
@@ -70,7 +72,7 @@ export const Services: React.FC = () => {
         sx={{
           mt: { xs: 2, sm: "40px", md: "60px" },
           px: { xs: 2, sm: 4 },
-          gap: 1,
+          gap: 2,
           display: "flex",
           flexDirection: "column",
           overflowX: "hidden",
@@ -112,14 +114,10 @@ export const Services: React.FC = () => {
             my: { xs: 4, sm: 3, md: 10 },
           }}
         >
-          Our Services - The Science Behind a Perfect Pavement
+          {t("services.title")}
         </Typography>
         <Typography variant="body1" pb={5} fontSize={"22px"}>
-          <b>At Bil Pave Solutions</b> (BPS), we don't just lay pavement - we
-          build durable foundations. Proper ground preparation is essential for
-          a strong and visually appealing pavement. Below, we outline the
-          professional process we follow to ensure our solutions remain stable,
-          even in extreme weather conditions.
+          {t("services.description")}
         </Typography>
 
         <picture>
@@ -134,21 +132,18 @@ export const Services: React.FC = () => {
         </picture>
 
         <Typography variant="h5" sx={{ ...subtitleStyle }} gutterBottom>
-          1. Ground Preparation - The Foundation of Durability
+          {t("services.subtitle1")}
         </Typography>
-        <Typography variant="body1">
-          The durability of any pavement depends on how well the ground beneath
-          it is prepared. This process includes several essential steps:
+        <Typography variant="body1" id="1">
+          {t("services.text1")}
         </Typography>
-        <Typography variant="body2">
-          Excavation and Soil Stabilization:
+        <Typography variant="body2" id="2">
+          {t("services.text2")}
         </Typography>
         <List sx={{ pl: 2, pr: 2, wordWrap: "break-word" }}>
           <ListItem>
-            <Typography variant="body1">
-              The first step is removing the topsoil layer, stripping, and
-              regrading the ground through excavation to eliminate organic
-              materials that may decompose over time, causing uneven surfaces.
+            <Typography variant="body1" id="3">
+              {t("services.text3")}
             </Typography>
           </ListItem>
         </List>
@@ -165,32 +160,24 @@ export const Services: React.FC = () => {
         </picture>
         <List>
           <ListItem>
-            <Typography variant="body1">
-              For residential yards and pathways, we typically excavate to a
-              depth of 40-50 cm, depending on the soil type and expected load.
-              For projects intended for heavy vehicle traffic, the excavation
-              depth can reach 100-120 cm.{" "}
+            <Typography variant="body1" id="4">
+              {t("services.text4")}
             </Typography>
           </ListItem>
         </List>
         <Typography variant="h5" sx={{ ...subtitleStyle }} gutterBottom>
-          2. Drainage Systems - Protecting Your Pavement and Property
+          {t("services.subtitle2")}
         </Typography>
-        <Typography variant="body1" pb={2}>
-          At <b>BIL Pave Solutions (BPS)</b>, we understand how crucial proper
-          water management is for the durability of your pavement and the
-          comfort of your property. That's why we offer professional underground
-          drainage solutions, efficiently capturing and directing rainwater to
-          prevent accumulations that could damage the foundation, pavement, or
-          other structures in your yard.
+        <Typography variant="body1" id="5" pb={2}>
+          {t("services.text5")}
         </Typography>
-        <Typography variant="body2">Water Collection and Direction:</Typography>
+        <Typography variant="body2" id="6">
+          {t("services.text6")}
+        </Typography>
         <List sx={{ pl: 2, pr: 2, wordWrap: "break-word" }}>
           <ListItem>
-            <Typography variant="body1">
-              We install underground drainage pipes connected to the roof
-              drainage system and stormwater channels to guide water beneath the
-              pavement to a designated discharge point.
+            <Typography variant="body1" id="7">
+              {t("services.text7")}
             </Typography>
           </ListItem>
           <Box sx={{ ...imgFlex }}>
@@ -208,10 +195,8 @@ export const Services: React.FC = () => {
             ))}
           </Box>
           <ListItem>
-            <Typography variant="body1">
-              We use perforated or smooth PVC pipes, depending on the needs, to
-              direct water to a safe area, such as a drainage system or a
-              collection basin.
+            <Typography variant="body1" id="8">
+              {t("services.text8")}
             </Typography>
           </ListItem>
           <Box sx={{ ...imgFlex }}>
@@ -229,40 +214,36 @@ export const Services: React.FC = () => {
             ))}
           </Box>
           <ListItem>
-            <Typography variant="body1">
-              We prevent water accumulation beneath the pavement by using gravel
-              drainage layers, which allow for efficient water runoff.
+            <Typography variant="body1" id="9">
+              {t("services.text9")}
             </Typography>
           </ListItem>
         </List>
         <Typography variant="h5" sx={{ ...subtitleStyle }} gutterBottom>
-          3. Installation of Manholes and Access to Facilities
+          {t("services.subtitle3")}
         </Typography>
-        <Typography variant="body2">
-          To maintain easy access to utilities in the yard, we install manholes
-          at strategic points to ensure access is not blocked to:
+        <Typography variant="body2" id="10">
+          {t("services.text10")}
         </Typography>
         <List>
           <ListItem>
-            <Typography variant="body1">
-              Pressure tanks or other water supply installations. • Irrigation
-              systems or garden faucets.
+            <Typography variant="body1" id="11">
+              {t("services.text11")}
             </Typography>
           </ListItem>
           <ListItem>
-            <Typography variant="body1">
-              Irrigation systems or garden faucets.
+            <Typography variant="body1" id="12">
+              {t("services.text12")}
             </Typography>
           </ListItem>
           <ListItem>
-            <Typography variant="body1">
-              Access to inspection chambers for maintenance or repair work.
+            <Typography variant="body1" id="13">
+              {t("services.text13")}
             </Typography>
           </ListItem>
         </List>
-        <Typography variant="body1">
-          Each manhole is placed in a way that seamlessly integrates with the
-          pavement, without compromising aesthetics or creating an obstacle.
+        <Typography variant="body1" id="14">
+          {t("services.text14")}
         </Typography>
         <Box sx={{ ...imgFlex }}>
           {[picture8, picture9].map((src, index) => (
@@ -278,57 +259,47 @@ export const Services: React.FC = () => {
             </picture>
           ))}
         </Box>
-        <Typography variant="body2">
-          The Benefits of Professional Drainage:
+        <Typography variant="body2" id="15">
+          {t("services.text15")}
         </Typography>
         <List>
           <ListItem>
-            <Typography variant="body1">
-              Prevents pavement damage and keeps the surface stable over time.
+            <Typography variant="body1" id="16">
+              {t("services.text16")}
             </Typography>
           </ListItem>
           <ListItem>
-            <Typography variant="body1">
-              Prevents water accumulation that could affect the foundation of
-              the house or the garden.
+            <Typography variant="body1" id="17">
+              {t("services.text17")}
             </Typography>
           </ListItem>
           <ListItem>
-            <Typography variant="body1">
-              Ensures easy access to utilities without compromising the design
-              of the yard.
+            <Typography variant="body1" id="18">
+              {t("services.text18")}
             </Typography>
           </ListItem>
           <ListItem>
-            <Typography variant="body1">
-              Increases the lifespan of the paving system by eliminating the
-              risk of settling or deformation.
+            <Typography variant="body1" id="19">
+              {t("services.text19")}
             </Typography>
           </ListItem>
         </List>
-        <Typography variant="body2">
-          Conclusion: A well-designed drainage system is an investment in the
-          comfort and durability of your yard. At BIL Pave Solutions, we combine
-          technical expertise with efficient solutions to ensure you have a dry,
-          well-organized space without water accumulation issues.
+        <Typography variant="body2" id="20">
+          {t("services.text2")}
         </Typography>
 
         <Typography variant="h5" sx={{ ...subtitleStyle }} gutterBottom>
-          4. Support Layer - Correct Stone and Granulation
+          {t("services.subtitle4")}
         </Typography>
         <List>
           <ListItem>
-            <Typography variant="body1">
-              If the soil is unstable (clayey or wet), it is necessary to
-              stabilize it with a layer of crushed stone or geotextile to
-              prevent uneven settling.
+            <Typography variant="body1" id="21">
+              {t("services.text21")}
             </Typography>
           </ListItem>
           <ListItem>
-            <Typography variant="body1">
-              After excavation, we apply a layer of crushed stone with a
-              granulation of 0-63 mm, which ensures proper drainage and the
-              stability of the pavement.
+            <Typography variant="body1" id="22">
+              {t("services.text22")}
             </Typography>
           </ListItem>
         </List>
@@ -344,16 +315,13 @@ export const Services: React.FC = () => {
         </picture>
         <List>
           <ListItem>
-            <Typography variant="body1">
-              The next layer consists of limestone, gravel with a granulation of
-              4-8 mm, or sand with a granulation of 0.4, which creates an even
-              support for the paving installation.
+            <Typography variant="body1" id="23">
+              {t("services.text23")}
             </Typography>
           </ListItem>
           <ListItem>
-            <Typography variant="body1">
-              The support layer is compacted in successive layers to prevent
-              future settling.
+            <Typography variant="body1" id="24">
+              {t("services.text24")}
             </Typography>
           </ListItem>
         </List>
@@ -372,14 +340,12 @@ export const Services: React.FC = () => {
           ))}
         </Box>
         <Typography variant="h5" sx={{ ...subtitleStyle }} gutterBottom>
-          5. Compaction - Long-Term Stability
+          {t("services.subtitle5")}
         </Typography>
         <List>
           <ListItem>
-            <Typography variant="body1">
-              Compaction is performed using a vibrating plate or a roller
-              compactor to achieve an optimal level of density. The weight of
-              the compactors determines the compaction distance.
+            <Typography variant="body1" id="25">
+              {t("services.text25")}
             </Typography>
           </ListItem>
           <Box
@@ -406,53 +372,42 @@ export const Services: React.FC = () => {
             ))}
           </Box>
           <ListItem>
-            <Typography variant="body1">
-              For residential yards, the compacted layer reaches 40-45 cm, while
-              in industrial areas with heavier vehicle traffic, this layer can
-              extend to 90-100 cm, depending on the mechanical stress on the
-              surface. These dimensions may vary depending on the climate of the
-              respective country.
+            <Typography variant="body1" id="26">
+              {t("services.text26")}
             </Typography>
           </ListItem>
-          <Typography variant="body2">
-            The Role of Climate in Pavement Durability:
+          <Typography variant="body2" id="27">
+            {t("services.text27")}
           </Typography>
           <ListItem>
-            <Typography variant="body1">
-              Climate plays a crucial role in the long-term stability of
-              pavement. In regions with harsh winters, freezing can lift the
-              soil, and thawing can cause uneven settling.
+            <Typography variant="body1" id="28">
+              {t("services.text28")}
             </Typography>
           </ListItem>
           <ListItem>
-            <Typography variant="body1">
-              Frost and thaw cycles can lead to expansions and contractions in
-              the soil, gradually resulting in pavement irregularities.
+            <Typography variant="body1" id="29">
+              {t("services.text29")}
             </Typography>
           </ListItem>
-          <Typography variant="body2">To counteract these effects:</Typography>
+          <Typography variant="body2" id="30">
+            {t("services.text30")}
+          </Typography>
           <ListItem>
-            <Typography variant="body1">
-              The compacted layer must be thick enough and properly compacted to
-              prevent soil movements.
+            <Typography variant="body1" id="31">
+              {t("services.text31")}
             </Typography>
           </ListItem>
           <ListItem>
-            <Typography variant="body1">
-              Using a crushed stone sub-base allows for proper drainage,
-              reducing water accumulation that could lead to freezing and soil
-              expansion.
+            <Typography variant="body1" id="32">
+              {t("services.text32")}
             </Typography>
           </ListItem>
         </List>
         <Typography variant="h5" sx={{ ...subtitleStyle }} gutterBottom>
-          6. Curb Installation - Defining and Stabilizing the Paved Area
+          {t("services.subtitle6")}
         </Typography>
-        <Typography variant="body1">
-          Whether for your garden, yard, or industrial areas, curbs provide
-          clear boundaries and protection against displacement caused by
-          external forces and weather conditions. In road construction, they
-          also play a key role in structuring traffic spaces.
+        <Typography variant="body1" id="33">
+          {t("services.text33")}
         </Typography>
         <Box sx={{ ...imgFlex }}>
           {[picture15, picture16].map((src, index) => (
@@ -468,49 +423,42 @@ export const Services: React.FC = () => {
             </picture>
           ))}
         </Box>
-        <Typography variant="body2">
-          The Role of Curbs in Pavement Structure:
+        <Typography variant="body2" id="34">
+          {t("services.text34")}
         </Typography>
-        <Typography variant="body1">
-          Curbs are not just a decorative element; they serve essential
-          functions:
+        <Typography variant="body1" id="35">
+          {t("services.text35")}
         </Typography>
         <List>
           <ListItem>
-            <Typography variant="body1">
-              Define the paved surface, creating a clear transition between
-              paved areas and grass, pathways, or roads.
+            <Typography variant="body1" id="36">
+              {t("services.text36")}
             </Typography>
           </ListItem>
           <ListItem>
-            <Typography variant="body1">
-              Maintain pavement stability, preventing pavers from shifting over
-              time, especially in high-traffic areas or under natural forces
-              like rain and freeze-thaw cycles.
+            <Typography variant="body1" id="37">
+              {t("services.text37")}
             </Typography>
           </ListItem>
           <ListItem>
-            <Typography variant="body1">
-              Set the final pavement level, ensuring a uniform height and
-              preventing accidental edge sinking.
+            <Typography variant="body1" id="38">
+              {t("services.text38")}
             </Typography>
           </ListItem>
           <ListItem>
-            <Typography variant="body1">
-              Guide water drainage, helping control runoff and preventing water
-              accumulation that could damage the underlying soil.
+            <Typography variant="body1" id="39">
+              {t("services.text39")}
             </Typography>
           </ListItem>
-          <Typography variant="body2">
-            Types of Curbs and Their Applications
+          <Typography variant="body2" id="40">
+            {t("services.text40")}
           </Typography>
-          <Typography variant="body1">
-            Depending on the project's needs, we use different types of curbs:
+          <Typography variant="body1" id="41">
+            {t("services.text41")}
           </Typography>
           <ListItem>
-            <Typography variant="body1">
-              <b>Garden curbs</b> - smaller in size, used to separate pedestrian
-              walkways, flower beds, or lawns.
+            <Typography variant="body1" id="42">
+              {t("services.text42")}
             </Typography>
           </ListItem>
           <Box
@@ -537,8 +485,9 @@ export const Services: React.FC = () => {
             ))}
           </Box>
           <ListItem>
-            <b>Residential curbs</b> - used for yards and walkways, providing
-            both aesthetic appeal and structural support for the pavement.
+            <Typography variant="body1" id="43">
+              {t("services.text43")}
+            </Typography>
           </ListItem>
           <Box
             sx={{
@@ -564,9 +513,8 @@ export const Services: React.FC = () => {
             ))}
           </Box>
           <ListItem>
-            <Typography variant="body1">
-              <b>Industrial and road curbs</b> - durable and robust, used along
-              roads, in parking lots, or areas requiring high load resistance.
+            <Typography variant="body1" id="44">
+              {t("services.text44")}
             </Typography>
           </ListItem>
           <Box
@@ -593,45 +541,39 @@ export const Services: React.FC = () => {
             ))}
           </Box>
         </List>
-        <Typography variant="body2">
-          The Process of Border Installation:
+        <Typography variant="body2" id="45">
+          {t("services.text45")}
         </Typography>
         <List>
-          <Typography variant="body1">
-            <b>A. Excavation of the Trench and Foundation Preparation</b>
+          <Typography variant="body2" id="46">
+            {t("services.text46")}
           </Typography>
           <ListItem>
-            <Typography variant="body1">
-              Before installation, we excavate a trench 20-30 cm deep (depending
-              on the type of border).
+            <Typography variant="body1" id="47">
+              {t("services.text47")}
             </Typography>
           </ListItem>
           <ListItem>
-            <Typography variant="body1">
-              At the bottom of the trench, we apply a compacted layer of gravel
-              (granulation 0-63 mm) of about 10-15 cm to prevent future
-              settlement.
+            <Typography variant="body1" id="48">
+              {t("services.text48")}
             </Typography>
           </ListItem>
-          <Typography variant="body1">
-            <b>B. Securing the Borders with Concrete</b>
+          <Typography variant="body2" id="49">
+            {t("services.text49")}
           </Typography>
           <ListItem>
-            <Typography variant="body1">
-              The borders are fixed on a semi-dry concrete bed (B250 or B300,
-              depending on the mechanical load).
+            <Typography variant="body1" id="50">
+              {t("services.text50")}
             </Typography>
           </ListItem>
           <ListItem>
-            <Typography variant="body1">
-              The thickness of the concrete layer should be 10-15 cm beneath the
-              border and 10 cm on the sides for additional anchoring.
+            <Typography variant="body1" id="51">
+              {t("services.text51")}
             </Typography>
           </ListItem>
           <ListItem>
-            <Typography variant="body1">
-              For areas with heavy traffic, the borders can be secured with a
-              thicker concrete layer and greater depths for increased strength.
+            <Typography variant="body1" id="52">
+              {t("services.text52")}
             </Typography>
           </ListItem>
           <Box
@@ -658,9 +600,8 @@ export const Services: React.FC = () => {
             ))}
           </Box>
           <ListItem>
-            <Typography variant="body1">
-              The borders are carefully placed, perfectly aligned, using a
-              leveling ruler or a stretched line.
+            <Typography variant="body1" id="53">
+              {t("services.text53")}
             </Typography>
           </ListItem>
         </List>
@@ -677,9 +618,8 @@ export const Services: React.FC = () => {
 
         <List>
           <ListItem>
-            <Typography variant="body1">
-              A small joint of about 4-6 mm is left between them every 20 meters
-              to allow slight expansion.
+            <Typography variant="body1" id="54">
+              {t("services.text54")}
             </Typography>
           </ListItem>
         </List>
@@ -697,16 +637,11 @@ export const Services: React.FC = () => {
             </picture>
           ))}
         </Box>
-        <Typography variant="body1">
-          Borders are not just a design detail, but a structural element that
-          affects the durability of the entire pavement. At BIL Pave Solutions,
-          we ensure that each border is properly installed, durable, and
-          aesthetically pleasing, providing a result that remains stable for
-          years to come.
+        <Typography variant="body1" id="55">
+          {t("services.text55")}
         </Typography>
         <Typography variant="h5" sx={{ ...subtitleStyle }} gutterBottom>
-          7. Professional Pavement Installation - Precision, Durability, and
-          Aesthetics
+          {t("services.subtitle7")}
         </Typography>
         <Box sx={{ ...imgFlex }}>
           {[picture29, picture30].map((src, index) => (
@@ -722,36 +657,28 @@ export const Services: React.FC = () => {
             </picture>
           ))}
         </Box>
-        <Typography variant="body1">
-          The installation of the pavement is a process that requires
-          experience, precision, and attention to detail. At BIL Pave Solutions,
-          we use materials and techniques tailored to each project, selecting
-          the appropriate thickness based on the purpose of the surface:
+        <Typography variant="body1" id="56">
+          {t("services.text56")}
         </Typography>
         <List>
           <ListItem>
-            <Typography variant="body1">
-              <b>4 cm</b> - for pedestrian walkways and low-traffic areas.
+            <Typography variant="body1" id="57">
+              {t("services.text57")}
             </Typography>
           </ListItem>
           <ListItem>
-            <Typography variant="body1">
-              <b>6 cm</b>- ideal for residential yards and parking areas.
+            <Typography variant="body1" id="58">
+              {t("services.text58")}
             </Typography>
           </ListItem>
           <ListItem>
-            <Typography variant="body1">
-              <b>8-10 cm</b> - for areas with heavy vehicle traffic and
-              industrial zones.
+            <Typography variant="body1" id="59">
+              {t("services.text59")}
             </Typography>
           </ListItem>
         </List>
-        <Typography variant="body1">
-          We use professional cutting equipment, which allows us to make precise
-          cuts and perfect finishes in areas where the pavement, curbs, and
-          asphalt need to be adjusted. The details of these cuts reflect the
-          quality of the installation, providing a uniform and elegant
-          appearance.
+        <Typography variant="body1" id="60">
+          {t("services.text60")}
         </Typography>
         <Box sx={{ ...imgFlex }}>
           {[picture31, picture32].map((src, index) => (
@@ -767,24 +694,20 @@ export const Services: React.FC = () => {
             </picture>
           ))}
         </Box>
-        <Typography variant="body1">
-          Not only is technique important, but also visual harmony. We adapt the
-          color of the pavement to the surrounding environment, seamlessly
-          integrating it into the existing space. As for the installation
-          pattern, regardless of the installation design, we adapt to any style
-          and focus on creativity, ensuring that each project is unique.
+        <Typography variant="body1" id="61">
+          {t("services.text61")}
         </Typography>
-        <Typography variant="h6" sx={{ ...subtitleStyle }}>
-          <u>Conclusion:</u> Why choose <b>BPS</b>? <br />
-          R: If you want a pavement that remains stable and flawless for many
-          years, choose professionals. Choose precision, durability, and
-          elegance.
-          <br /> Choose <b>BIL Pave Solutions</b>!
-          <br />
-          <br />
+        <Typography variant="body1" id="62" sx={{ ...subtitleStyle }}>
+          {t("services.text62")}
+        </Typography>
+        <Typography variant="body1" id="63">
+          {t("services.text63")}
+        </Typography>
+        <Typography variant="body1" id="64">
+          {t("services.text64")}
         </Typography>
         <SelectApplicationModal
-          buttonText="Apply for a Service"
+          buttonText={t("applyBtn")}
           buttonStyle={{
             position: "relative",
             left: "50%",

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import emailjs from "emailjs-com";
 import { Box, Button, TextField, Typography, Alert } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const OfferRequestForm = ({ onClose }: { onClose: () => void }) => {
   const [formData, setFormData] = useState({
@@ -46,7 +47,7 @@ const OfferRequestForm = ({ onClose }: { onClose: () => void }) => {
           }); // Reset formular
           setTimeout(() => {
             setSuccess(false);
-            onClose(); // Închide modalul după succes
+            onClose(); 
           }, 2000);
         },
         () => {
@@ -55,26 +56,27 @@ const OfferRequestForm = ({ onClose }: { onClose: () => void }) => {
       )
       .finally(() => setLoading(false));
   };
+  const { t } = useTranslation();
 
   return (
     <Box>
       {success && (
         <Alert severity="success">
-          Request sent successfully! You will be contacted shortly.
+          {t("form.successMessage")}
         </Alert>
       )}
       {error && (
-        <Alert severity="error">Something went wrong. Please try again.</Alert>
+        <Alert severity="error">{t("form.errorMessage")}</Alert>
       )}
 
       <form onSubmit={handleSubmit}>
         <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
           <Typography variant="body1" color="black">
-            Fill out the form to be contacted by our team
+            {t("form.fillMessage")}
           </Typography>
 
           <TextField
-            label="Full Name"
+            label={t('form.fullName')}
             name="name"
             value={formData.name}
             onChange={handleChange}
@@ -83,7 +85,7 @@ const OfferRequestForm = ({ onClose }: { onClose: () => void }) => {
           />
           <TextField
             type="email"
-            label="Email"
+            label={t('form.email')}
             name="email"
             value={formData.email}
             onChange={handleChange}
@@ -92,7 +94,7 @@ const OfferRequestForm = ({ onClose }: { onClose: () => void }) => {
           />
           <TextField
             type="tel"
-            label="Phone Number"
+            label={t('form.phone')}
             name="phone"
             value={formData.phone}
             onChange={handleChange}
@@ -100,7 +102,7 @@ const OfferRequestForm = ({ onClose }: { onClose: () => void }) => {
             required
           />
           <TextField
-            label="Project Location"
+            label={t('form.location')}
             name="location"
             value={formData.location}
             onChange={handleChange}
@@ -108,7 +110,7 @@ const OfferRequestForm = ({ onClose }: { onClose: () => void }) => {
             required
           />
           <TextField
-            label="Type of Service"
+            label={t('form.typeOfService')}
             name="serviceType"
             value={formData.serviceType}
             onChange={handleChange}
@@ -116,7 +118,7 @@ const OfferRequestForm = ({ onClose }: { onClose: () => void }) => {
             required
           />
           <TextField
-            label="Additional Details"
+            label={t('form.additionalInfo')}
             name="message"
             value={formData.message}
             onChange={handleChange}
@@ -132,7 +134,7 @@ const OfferRequestForm = ({ onClose }: { onClose: () => void }) => {
               required
             />
             <Typography variant="body1" sx={{ color: "black" }}>
-              I agree to the Privacy Policy
+              {t("form.privacyAgreement")}
             </Typography>
           </Box>
 
@@ -142,7 +144,7 @@ const OfferRequestForm = ({ onClose }: { onClose: () => void }) => {
             color="primary"
             disabled={loading}
           >
-            {loading ? "Sending..." : "Send Request"}
+            {loading ? "Sending..." : `${t('form.sendBtn')}`}
           </Button>
         </Box>
       </form>

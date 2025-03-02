@@ -1,6 +1,7 @@
 import { useState } from "react";
 import emailjs from "emailjs-com";
 import { Box, Button, TextField, Alert, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const ApplyForm = ({ onSuccess }: { onSuccess: () => void }) => {
   const [formData, setFormData] = useState({
@@ -49,26 +50,21 @@ const ApplyForm = ({ onSuccess }: { onSuccess: () => void }) => {
       .catch(() => setError(true))
       .finally(() => setLoading(false));
   };
+  const { t } = useTranslation();
 
   return (
     <Box>
-      {success && (
-        <Alert severity="success">
-          Application sent successfully! You will be contacted shortly.
-        </Alert>
-      )}
-      {error && (
-        <Alert severity="error">Something went wrong. Please try again.</Alert>
-      )}
+      {success && <Alert severity="success">{t("form.successMessage")}</Alert>}
+      {error && <Alert severity="error">{t("form.errorMessage")}</Alert>}
 
       <form onSubmit={handleSubmit}>
         <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
           <Typography variant="body1" color="black">
-            Fill out the form to apply for a job
+            {t("form.fillMessage")}
           </Typography>
 
           <TextField
-            label="Full Name"
+            label={t("form.fullName")}
             name="name"
             value={formData.name}
             onChange={handleChange}
@@ -77,7 +73,7 @@ const ApplyForm = ({ onSuccess }: { onSuccess: () => void }) => {
           />
           <TextField
             type="email"
-            label="Email"
+            label={t("form.email")}
             name="email"
             value={formData.email}
             onChange={handleChange}
@@ -86,7 +82,7 @@ const ApplyForm = ({ onSuccess }: { onSuccess: () => void }) => {
           />
           <TextField
             type="tel"
-            label="Phone Number"
+            label={t("form.phone")}
             name="phone"
             value={formData.phone}
             onChange={handleChange}
@@ -94,7 +90,7 @@ const ApplyForm = ({ onSuccess }: { onSuccess: () => void }) => {
             required
           />
           <TextField
-            label="Your Certifications"
+            label={t("form.certifications")}
             name="certifications"
             value={formData.certifications}
             onChange={handleChange}
@@ -102,7 +98,7 @@ const ApplyForm = ({ onSuccess }: { onSuccess: () => void }) => {
             required
           />
           <TextField
-            label="Why do you want to join our team?"
+            label={t("form.reasonJoin")}
             name="message"
             value={formData.message}
             onChange={handleChange}
@@ -119,7 +115,7 @@ const ApplyForm = ({ onSuccess }: { onSuccess: () => void }) => {
               required
             />
             <Typography variant="body1" sx={{ color: "black" }}>
-              I agree to the Privacy Policy
+              {t("form.privacyAgreement")}
             </Typography>
           </Box>
           <Button
@@ -128,7 +124,7 @@ const ApplyForm = ({ onSuccess }: { onSuccess: () => void }) => {
             color="primary"
             disabled={loading}
           >
-            {loading ? "Sending..." : "Send Application"}
+            {loading ? "Sending..." : `${t("form.sendBtn")}`}
           </Button>
         </Box>
       </form>

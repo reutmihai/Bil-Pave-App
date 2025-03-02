@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Modal, Box, Button, Typography } from "@mui/material";
 import ModalApplyForm from "./ModalApplyForm";
 import ModalOfferRequest from "./ModalOfferRequest";
+import { useTranslation } from "react-i18next";
 
 const modalStyle = {
   position: "absolute" as "absolute",
@@ -40,6 +41,7 @@ const SelectApplicationModal: React.FC<SelectApplicationModalProps> = ({
     setSelectedModal("quote");
     handleClose();
   };
+  const { t } = useTranslation();
 
   return (
     <Box>
@@ -65,7 +67,7 @@ const SelectApplicationModal: React.FC<SelectApplicationModalProps> = ({
       >
         <Box sx={modalStyle}>
           <Typography variant="h6" sx={{ mb: 2 }}>
-            What do you want to apply for?
+            {t("form.apllyOption")}
           </Typography>
           <Button
             variant="contained"
@@ -73,7 +75,7 @@ const SelectApplicationModal: React.FC<SelectApplicationModalProps> = ({
             sx={{ mb: 2, width: "100%" }}
             onClick={openApplyForm}
           >
-            Apply for a Job
+            {t("form.applyForJob")}
           </Button>
           <Button
             variant="contained"
@@ -81,7 +83,7 @@ const SelectApplicationModal: React.FC<SelectApplicationModalProps> = ({
             sx={{ width: "100%" }}
             onClick={openQuoteForm}
           >
-            Request for services
+            {t("form.applyForService")}
           </Button>
         </Box>
       </Modal>

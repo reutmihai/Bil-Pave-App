@@ -13,6 +13,7 @@ import Gallery from "../components/Gallery";
 import SelectApplicationModal from "../components/SelectAplicationModal";
 import ProjectCard from "../components/ProjectCard";
 import { Helmet } from "react-helmet-async";
+import { useTranslation } from "react-i18next";
 
 export const Portfolio: React.FC = () => {
   const [openDialog, setOpenDialog] = useState(false);
@@ -33,9 +34,7 @@ export const Portfolio: React.FC = () => {
     setSelectedProject(null);
   };
 
-  const subtitleStyle = {
-    margin: { xs: "10px 0px", sm: "30px 0px" },
-  };
+  const { t } = useTranslation();
 
   return (
     <Box>
@@ -88,7 +87,7 @@ export const Portfolio: React.FC = () => {
               mb: { xs: 2, sm: 2, md: 5 },
             }}
           >
-            Portfolios BPS - The Work Behind
+            {t("portfolio.title")}
           </Typography>
           <Box
             component="img"
@@ -105,54 +104,48 @@ export const Portfolio: React.FC = () => {
           />
 
           <Typography variant="body1">
-            We build with passion, we deliver excellence! Every project tells a
-            story. A story about dedicated work, about teams united by a common
-            vision, about challenges turned into opportunities. Over the years,
-            we have devoted our efforts and expertise to bringing impressive
-            projects to life, collaborating with industry leaders. We have had
-            the honor of working alongside renowned companies such as KWS Infra,
-            Thannhauser, and Blue-3, contributing to the development of
-            essential infrastructures—from highways and commercial spaces to
-            large-scale projects for business giants. Each project is a
-            testament to our professionalism, attention to detail, and
-            commitment to excellence. Regardless of the location—Romania,
-            Germany, or the Netherlands—our standards remain the same: quality,
-            durability, and innovation. We invite you to explore our portfolio
-            and become part of this success story.
+            {t("portfolio.description1")}
+          </Typography>
+          <Typography variant="body1">
+           {t("portfolio.description2")}
+          </Typography>
+          <Typography variant="body1">
+           {t("portfolio.description3")}
+          </Typography>
+          <Typography variant="body1">
+           {t("portfolio.description4")}
           </Typography>
 
           <ProjectCard
             country="Romania"
-            title="Projects in Romania"
+            title={t("portfolio.romania_title")}
             flag="🇷🇴"
-            description="In Romania, we have focused on landscaping courtyards and alleys, transforming spaces into durable, functional, and aesthetic areas. Whether it's residential properties, company headquarters, or commercial spaces, each project reflects our attention to detail and the high-quality execution that defines us."
+            description={t("portfolio.romania_description")}
             onOpenGallery={openGallery}
           />
           <ProjectCard
             country="Germany"
-            title="Projects in Germany"
+            title={t("portfolio.germany_title")}
             flag="🇩🇪"
-            description="In Germany, we have had the honor of working with prestigious partners, contributing to the construction of essential infrastructures. Rigorous planning, precision, and adherence to the highest quality standards have guided us at every stage of these projects."
+            description={t("portfolio.germany_description")}
             onOpenGallery={openGallery}
           />
           <ProjectCard
             country="Netherlands"
-            title="Projects in the Netherlands"
+            title={t("portfolio.netherlands_title")}
             flag="🇳🇱"
-            description="In the Netherlands, we have had the opportunity to work on industrial-level projects, contributing to the infrastructure of state-of-the-art data centers."
+            description={t("portfolio.netherlands_description")}
             onOpenGallery={openGallery}
           />
 
           <Typography variant="body1" fontSize="20px">
-            Each project is a reflection of our passion and determination. No
-            matter the complexity of the work, we ensure that we deliver
-            sustainable, innovative, and top-quality solutions. If you are
-            interested in collaborating with us, don't hesitate to contact us.
-            <br />
-            <b>Together, we can build the future!</b>
+            {t("portfolio.text1")}
+           </Typography>
+           <Typography variant="body1" fontWeight="600" fontSize="24px">
+            {t("portfolio.text2")}
           </Typography>
           <SelectApplicationModal
-            buttonText="Apply for a Service"
+            buttonText={t("applyBtn")}
             buttonStyle={{
               position: "relative",
               left: "50%",

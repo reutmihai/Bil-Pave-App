@@ -1,7 +1,9 @@
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import profile_card from "../assets/images/about/profile_card.jpg";
+import { useTranslation } from "react-i18next";
 
 export default function AboutUsCard() {
+  const { t } = useTranslation();
   return (
     <Card
       sx={{
@@ -32,8 +34,7 @@ export default function AboutUsCard() {
       <CardContent sx={{ flex: 1, p: 0 }}>
         <Typography variant="h5">Belibou Sebastian-Alexandru</Typography>
         <Typography variant="body1">
-        Wherever your dreams take you, we will pave the way, laying each stone like a red carpet where your memories will take shape.<br />
-        I am the founder of <b>BPS</b>, and I believe in the future we build together.
+       {t("cardDescription")}
         </Typography>
       </CardContent>
     </Card>

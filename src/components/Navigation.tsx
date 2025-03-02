@@ -17,6 +17,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
 import ContactsIcon from "@mui/icons-material/Contacts";
 import logo from "../assets/images/logo.png";
+import { useTranslation } from "react-i18next";
 
 interface MenuItemType {
   label: string;
@@ -25,21 +26,29 @@ interface MenuItemType {
 
 export const Navigation: React.FC = () => {
   const location = useLocation();
+  const { t, i18n } = useTranslation();
 
+  // Starea pentru meniul de contact
+  const [anchorElContact, setAnchorElContact] = useState<null | HTMLElement>(null);
+  const handleOpenContactMenu = (event: MouseEvent<HTMLButtonElement>) =>
+    setAnchorElContact(event.currentTarget);
+  const handleCloseContactMenu = () => setAnchorElContact(null);
+
+  // Starea pentru meniul de limbă
+  const [anchorElLanguage, setAnchorElLanguage] = useState<null | HTMLElement>(null);
+  const handleOpenLanguageMenu = (event: MouseEvent<HTMLButtonElement>) =>
+    setAnchorElLanguage(event.currentTarget);
+  const handleCloseLanguageMenu = () => setAnchorElLanguage(null);
+
+  // Starea pentru drawer (meniul mobil)
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const handleOpenMenu = (event: MouseEvent<HTMLButtonElement>): void =>
-    setAnchorEl(event.currentTarget);
-  const handleCloseMenu = (): void => setAnchorEl(null);
-  const toggleDrawer = (open: boolean): void => {
-    setDrawerOpen(open);
-  };
+  const toggleDrawer = (open: boolean) => setDrawerOpen(open);
 
   const menuItems: MenuItemType[] = [
-    { label: "Home", path: "/" },
-    { label: "Services", path: "/services" },
-    { label: "Portfolio", path: "/portfolio" },
-    { label: "About Us", path: "/about" },
+    { label: t("navigation.home"), path: "/" },
+    { label: t("navigation.services"), path: "/services" },
+    { label: t("navigation.portfolio"), path: "/portfolio" },
+    { label: t("navigation.about"), path: "/about" },
   ];
 
   return (
@@ -53,85 +62,43 @@ export const Navigation: React.FC = () => {
           zIndex: 1200,
         }}
       >
-        <Toolbar
-          sx={{
-            display: "flex",
-            justifyContent: "space-around",
-            alignItems: "center",
-          }}
-        >
-          <Box
-            sx={{
-              display: "flex",
-              gap: 3,
-              alignItems: "center",
-              justifyContent: "flex-start",
-            }}
-          >
-            {/* Buton Contact */}
-            <IconButton
-              onClick={handleOpenMenu}
-              color="inherit"
-              aria-label="Contact Menu"
-            >
+        <Toolbar sx={{ display: "flex", justifyContent: "space-around", alignItems: "center" }}>
+          {/* Buton Contact */}
+          <Box sx={{ display: "flex", gap: 3, alignItems: "center" }}>
+            <IconButton onClick={handleOpenContactMenu} color="inherit" aria-label="Contact Menu">
               <ContactsIcon />
             </IconButton>
 
             {/* Meniu Contact */}
             <Menu
-              anchorEl={anchorEl}
-              open={Boolean(anchorEl)}
-              onClose={handleCloseMenu}
+              anchorEl={anchorElContact}
+              open={Boolean(anchorElContact)}
+              onClose={handleCloseContactMenu}
               sx={{
                 mt: 1,
-                "& .MuiPaper-root": {
-                  backgroundColor: "#333",
-                  color: "white",
-                },
+                "& .MuiPaper-root": { backgroundColor: "#333", color: "white" },
               }}
             >
-              <MenuItem
-                onClick={handleCloseMenu}
-                sx={{ "&:hover": { backgroundColor: "#555" } }}
-              >
+              <MenuItem onClick={handleCloseContactMenu} sx={{ "&:hover": { backgroundColor: "#555" } }}>
                 <EmailIcon sx={{ mr: 1, color: "white" }} />
                 <Typography variant="body1">
-                  <a
-                    href="mailto:bil.paving98@gmail.com"
-                    style={{ textDecoration: "none", color: "white" }}
-                  >
+                  <a href="mailto:bil.paving98@gmail.com" style={{ textDecoration: "none", color: "white" }}>
                     bil.paving98@gmail.com
                   </a>
                 </Typography>
               </MenuItem>
-
-              <MenuItem
-                onClick={handleCloseMenu}
-                sx={{ "&:hover": { backgroundColor: "#555" } }}
-              >
+              <MenuItem onClick={handleCloseContactMenu} sx={{ "&:hover": { backgroundColor: "#555" } }}>
                 <WhatsAppIcon sx={{ mr: 1, color: "white" }} />
                 <Typography variant="body1">
-                  <a
-                    href="https://wa.me/40747605936"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ textDecoration: "none", color: "white" }}
-                  >
+                  <a href="https://wa.me/40747605936" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "white" }}>
                     0747605936
                   </a>
                 </Typography>
               </MenuItem>
-
-              <MenuItem
-                onClick={handleCloseMenu}
-                sx={{ "&:hover": { backgroundColor: "#555" } }}
-              >
+              <MenuItem onClick={handleCloseContactMenu} sx={{ "&:hover": { backgroundColor: "#555" } }}>
                 <PhoneIcon sx={{ mr: 1, color: "white" }} />
                 <Typography variant="body1">
-                  <a
-                    href="tel:+31687430616"
-                    style={{ textDecoration: "none", color: "white" }}
-                  >
+                  <a href="tel:+31687430616" style={{ textDecoration: "none", color: "white" }}>
                     +31687430616
                   </a>
                 </Typography>
@@ -151,11 +118,26 @@ export const Navigation: React.FC = () => {
                   width: "auto",
                   transition: "all 0.3s ease",
                   pt: { xs: "5px", sm: "0px" },
-                  border: 'none',
+                  border: "none",
                   boxShadow: "none",
                 }}
               />
             </Link>
+          </Box>
+
+          {/* Selectare limbă */}
+          <Box>
+            <Button onClick={handleOpenLanguageMenu} color="inherit">
+              🌍 {i18n.language.toUpperCase()} ▼
+            </Button>
+            <Menu anchorEl={anchorElLanguage} open={Boolean(anchorElLanguage)} onClose={handleCloseLanguageMenu}>
+              <MenuItem onClick={() => { i18n.changeLanguage("en"); handleCloseLanguageMenu(); }}>
+                🇬🇧 English
+              </MenuItem>
+              <MenuItem onClick={() => { i18n.changeLanguage("ro"); handleCloseLanguageMenu(); }}>
+                🇷🇴 Română
+              </MenuItem>
+            </Menu>
           </Box>
 
           {/* Navigație pentru mobil */}
@@ -170,20 +152,13 @@ export const Navigation: React.FC = () => {
           </IconButton>
 
           {/* Navigație pentru desktop */}
-          <Box
-            sx={{
-              display: { xs: "none", sm: "flex" },
-              justifyContent: "center",
-              gap: { sm: "3px", md: 3 },
-            }}
-          >
+          <Box sx={{ display: { xs: "none", sm: "flex" }, justifyContent: "center", gap: { sm: "3px", md: 3 } }}>
             {menuItems.map((item) => (
               <Button
                 key={item.label}
                 sx={{
                   color: location.pathname === item.path ? "white" : "inherit",
-                  fontWeight:
-                    location.pathname === item.path ? "bold" : "normal",
+                  fontWeight: location.pathname === item.path ? "bold" : "normal",
                   fontSize: { xs: "10px", md: "14px" },
                 }}
                 component={Link}
@@ -198,35 +173,10 @@ export const Navigation: React.FC = () => {
       </AppBar>
 
       {/* Drawer pentru navigația mobilă */}
-      <Drawer
-        anchor="right"
-        open={drawerOpen}
-        sx={{
-          position: "absolute",
-          top: 0,
-          right: 0,
-          bottom: 0,
-        }}
-      >
-        <Box
-          sx={{
-            width: 250,
-            display: "flex",
-            flexDirection: "column",
-            gap: 2,
-            p: 2,
-          }}
-        >
+      <Drawer anchor="right" open={drawerOpen} onClose={() => toggleDrawer(false)}>
+        <Box sx={{ width: 250, display: "flex", flexDirection: "column", gap: 2, p: 2 }}>
           {menuItems.map((item) => (
-            <Button
-              key={item.label}
-              sx={{
-                color: location.pathname === item.path ? "white" : "inherit",
-              }}
-              component={Link}
-              to={item.path}
-              onClick={() => toggleDrawer(false)}
-            >
+            <Button key={item.label} sx={{ color: location.pathname === item.path ? "white" : "inherit" }} component={Link} to={item.path} onClick={() => toggleDrawer(false)}>
               {item.label}
             </Button>
           ))}

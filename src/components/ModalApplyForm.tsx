@@ -1,5 +1,6 @@
 import { Modal, Box, Typography } from "@mui/material";
 import ApplyForm from "./ApplyForm";
+import { useTranslation } from "react-i18next";
 
 const modalStyle = {
   position: "absolute" as "absolute",
@@ -16,11 +17,12 @@ const modalStyle = {
 };
 
 const ModalApplyForm = ({ open, onClose }: { open: boolean; onClose: () => void }) => {
+  const { t } = useTranslation();
   return (
     <Modal open={open} onClose={onClose} aria-labelledby="apply-form-modal">
       <Box sx={modalStyle}>
         <Typography variant="h5" sx={{ mb: 2, color: "black" }}>
-          Work with us
+          {t("form.workWithUs")}
         </Typography>
         <ApplyForm onSuccess={onClose} />
       </Box>

@@ -8,9 +8,11 @@ import pav6 from "../assets/images/homepage/pav6.webp";
 import { useNavigate } from "react-router-dom";
 import SelectApplicationModal from "../components/SelectAplicationModal";
 import { Helmet } from "react-helmet-async";
+import { useTranslation } from "react-i18next";
 
 export const Home: React.FC = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   return (
     <Container
       sx={{
@@ -50,13 +52,11 @@ export const Home: React.FC = () => {
             marginTop: { xs: 10, sm: 0 },
           }}
         >
-          <Typography variant="h3" sx={{ textAlign: { xs: "center" } }}>
-            WELCOME TO <br />
-            BIL-PAVE-SOLUTIONS!
+          <Typography variant="h1" sx={{ textAlign: { xs: "center" } }}>
+          {t("welcome")}
           </Typography>
           <Typography variant="body1" sx={{ textAlign: { xs: "center" } }}>
-            "Life is short, but memories last longer. A paved yard becomes the
-            place for moments that matter."
+           {t("welcomeText")}
           </Typography>
           <Box
             sx={{
@@ -73,7 +73,7 @@ export const Home: React.FC = () => {
                 mt: 2,
               }}
             >
-              <SelectApplicationModal buttonText="Apply for" />
+              <SelectApplicationModal buttonText={t("applyBtn")} />
 
               <Button
                 variant="contained"
@@ -86,7 +86,7 @@ export const Home: React.FC = () => {
                 }}
                 onClick={() => navigate("/portfolio")}
               >
-                See portfolio
+                {t("viewPortfolioBtn")}
               </Button>
             </Box>
           </Box>

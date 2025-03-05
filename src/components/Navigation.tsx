@@ -57,7 +57,7 @@ export const Navigation: React.FC = () => {
         sx={{
           position: "fixed",
           backgroundColor: "primary.main",
-          mt: { xs: "13px", sm: "20px", md: "37px" },
+          mt: { xs: "23px", sm: "20px", md: "37px" },
           maxHeight: "60px",
           zIndex: 1200,
         }}
@@ -114,7 +114,7 @@ export const Navigation: React.FC = () => {
                 src={logo}
                 alt="logo"
                 sx={{
-                  height: { xs: "90px", sm: "100px", md: "130px" },
+                  height: { xs: "110px", sm: "120px", md: "130px" },
                   width: "auto",
                   transition: "all 0.3s ease",
                   pt: { xs: "5px", sm: "0px" },
@@ -181,6 +181,21 @@ export const Navigation: React.FC = () => {
             </Button>
           ))}
         </Box>
+        <Link to="/" onClick={() => toggleDrawer(false)}>
+              <Box
+                component="img"
+                src={logo}
+                alt="logo"
+                sx={{
+                  height:"110px",
+                  width: "auto",
+                  transition: "all 0.3s ease",
+                  pt: { xs: "5px", sm: "0px" },
+                  border: "none",
+                  boxShadow: "none",
+                }}
+              />
+            </Link>
       </Drawer>
     </>
   );

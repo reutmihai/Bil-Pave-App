@@ -183,7 +183,7 @@ export const Navigation: React.FC = () => {
 
       {/* Drawer pentru navigația mobilă */}
       <Drawer anchor="right" open={drawerOpen} onClose={() => toggleDrawer(false)}>
-        <Box sx={{ width: 250, display: "flex", flexDirection: "column", gap: 2, p: 2 }}>
+        <Box sx={{ width: "auto", display: "flex", flexDirection: "column", gap: 2, p: 4 }}>
           {menuItems.map((item) => (
             <Button key={item.label} sx={{ color: location.pathname === item.path ? "white" : "inherit" }} component={Link} to={item.path} onClick={() => toggleDrawer(false)}>
               {item.label}
@@ -196,10 +196,11 @@ export const Navigation: React.FC = () => {
                 src={logo}
                 alt="logo"
                 sx={{
-                  height:"110px",
+                  height:"180px",
                   width: "auto",
                   transition: "all 0.3s ease",
                   pt: { xs: "5px", sm: "0px" },
+                  mt: { xs: "100px"},
                   border: "none",
                   boxShadow: "none",
                 }}

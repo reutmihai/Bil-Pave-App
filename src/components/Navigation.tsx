@@ -128,14 +128,23 @@ export const Navigation: React.FC = () => {
           {/* Selectare limbă */}
           <Box>
             <Button onClick={handleOpenLanguageMenu} color="inherit">
-              🌍 {i18n.language.toUpperCase()} ▼
+            {t("flag")} {i18n.language.toUpperCase()} ▼
             </Button>
             <Menu anchorEl={anchorElLanguage} open={Boolean(anchorElLanguage)} onClose={handleCloseLanguageMenu}>
+            <MenuItem onClick={() => { i18n.changeLanguage("ro"); handleCloseLanguageMenu(); }}>
+                🇷🇴 Romanian
+              </MenuItem>
               <MenuItem onClick={() => { i18n.changeLanguage("en"); handleCloseLanguageMenu(); }}>
                 🇬🇧 English
               </MenuItem>
-              <MenuItem onClick={() => { i18n.changeLanguage("ro"); handleCloseLanguageMenu(); }}>
-                🇷🇴 Română
+              <MenuItem onClick={() => { i18n.changeLanguage("fr"); handleCloseLanguageMenu(); }}>
+              🇫🇷 French
+              </MenuItem>
+              <MenuItem onClick={() => { i18n.changeLanguage("de"); handleCloseLanguageMenu(); }}>
+               🇩🇪 German 
+              </MenuItem>
+              <MenuItem onClick={() => { i18n.changeLanguage("nl"); handleCloseLanguageMenu(); }}>
+              🇳🇱 Dutch 
               </MenuItem>
             </Menu>
           </Box>

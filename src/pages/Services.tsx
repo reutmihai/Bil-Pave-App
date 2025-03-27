@@ -79,7 +79,7 @@ export const Services: React.FC = () => {
         }}
       >
         <Helmet>
-          <title>Paving Services BPS - Construction Company</title>
+          <title>Services - BPS Construction Paving</title>
           <meta
             name="description"
             content="We offer professional paving services for all types of construction projects. Contact us for more details."

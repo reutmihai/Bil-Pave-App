@@ -31,10 +31,10 @@ export const Home: React.FC = () => {
         }}
       >
         <Helmet>
-          <title>Bil Pave Solutions (BPS) | Professional Paving Services</title>
+          <title>{"Bil Pave Solutions (BPS) | Civil Construction, Underground Utilities & Paving"}</title>
           <meta
             name="description"
-            content="High-quality paving solutions for your home or business. Explore our portfolio and get in touch!"
+            content="Civil construction works: underground utility installation, landscaping and paving, including data-centre infrastructure projects. Explore our portfolio and get in touch!"
           />
         </Helmet>
         <Box
@@ -52,6 +52,18 @@ export const Home: React.FC = () => {
             marginTop: { xs: 10, sm: 0 },
           }}
         >
+          <Typography
+            variant="overline"
+            sx={{
+              color: "primary.main",
+              fontWeight: 700,
+              letterSpacing: 2,
+              lineHeight: 1.6,
+              textAlign: { xs: "center" },
+            }}
+          >
+            {t("welcomeTagline")}
+          </Typography>
           <Typography variant="h1" sx={{ textAlign: { xs: "center" } }}>
           {t("welcome")}
           </Typography>
@@ -77,7 +89,7 @@ export const Home: React.FC = () => {
 
               <Button
                 variant="contained"
-                aria-label="View our paving portfolio"
+                aria-label="View our project portfolio"
                 sx={{
                   borderColor: "white",
                   width: { xs: "100%", sm: "auto" },
@@ -106,7 +118,7 @@ export const Home: React.FC = () => {
               key={index}
               component="img"
               src={src}
-              alt={`Paving services example ${index + 1}`}
+              alt={`BPS civil construction project ${index + 1}`}
               loading="lazy"
               sx={{
                 display: index >= 3 ? { xs: "none", sm: "block" } : "block",
